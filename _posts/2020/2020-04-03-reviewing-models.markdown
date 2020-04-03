@@ -64,7 +64,7 @@ Once again, SOTA is just one of the heuristics that the tired and underpaid revi
 
 Now, compiling such guidelines is admittedly not easy: no paper is perfect. The best reviewers are weighing the strengths and the weaknesses of papers on case-by-case basis, necessarily comparing apples to oranges with some degree of subjectivity. Still, for starters, here is a list compiled from many Twitter discussions [(suggestions welcome)](#share--cite--discuss-this-post). 
 
-> A new system may fail to reach SOTA, but still be publication-worthy if it achieves good performance while offering one or more of the following advantages over the competition:
+> A new system may fail to reach SOTA, but still be publication-worthy if it achieves good performance while having a strong edge over the competition in one or more of the following ways:
 >
 > * more computation-efficient (less resources to train and/or deploy);
 > * more data-efficient (requires less data to train, or less high-quality data);
