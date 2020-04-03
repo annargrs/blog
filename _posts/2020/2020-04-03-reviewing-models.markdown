@@ -126,3 +126,9 @@ If you're concerned about the above issues, here are some events and workshops t
 * [Evaluation and Comparison of NLP Systems](https://nlpevaluation2020.github.io/) at EMNLP 2020: designing evaluation metrics, reporting trustworthy results and creating adequate and correct evaluation data.
 
 Note also that [EMNLP 2020](https://2020.emnlp.org/call-for-papers) implements a reproducibility checklist based on work by [Joel Pinneau](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf) and {% cite DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results %}, which includes the number of hyperparameter search trials and some measure of performance "mean and variance as a function of the number of hyperparameter trials". Hopefully that by itself should draw some of the reviewers' attention towards model efficiency.
+
+## Discuss this on Twitter
+
+(placeholder for the Twitter discussion link)
+
+{% include bib_footer.markdown %}

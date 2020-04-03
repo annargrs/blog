@@ -7,11 +7,12 @@
     {% assign simpleKey = simpleKey | join: "_" %}
 
     <button class="btn--info" onclick="showBibtex('{{ simpleKey }}')">BibTex</button>
+
     {% if entry.url %}
     <button class="btn--success" onclick="window.location.href = '{{ entry.url }}'">URL</button>
     {% endif %}
+
 <div class="bibtex" id='{{ simpleKey }}'><pre>{{ entry.bibtex }}</pre>
-{{ entry.url }}
 </div>
 </div>
 
