@@ -2,8 +2,8 @@ language: ruby
 rvm:
 - 2.3.1
 install:
-- bundle update --bundler
 - bundle update html-pipeline
+- bundle update --bundler
 - bundle install
 deploy:
   provider: pages
