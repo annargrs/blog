@@ -8,6 +8,7 @@ mathjax: true
 redirect_from: "/leaderboards/"
 toc: true
 excerpt: "With the huge Transformer-based models such as BERT, GPT-2, and XLNet, are we losing track of how the state-of-the-art performance is achieved?"
+twitter_thread: https://twitter.com/annargrs/status/1152194347942731776
 header:
     og_image: /assets/images/compete.png
 ---
@@ -119,6 +120,3 @@ Another update from a later discussion with Sam Bowman: leaderboards where you w
 
 {% include bib_footer.markdown %}
 
-## Leave a comment (Twitter)
-
-[https://twitter.com/annargrs/status/1152194347942731776](https://twitter.com/annargrs/status/1152194347942731776)

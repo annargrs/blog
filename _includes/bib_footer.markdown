@@ -2,14 +2,14 @@
 
 {% bibliography --cited %}
 
-## Cite this post
+## Share / cite / discuss this post
 
-If you'd like to cite this post, please use the following <button class="btn--info" onclick="showBibtex('{{ 12345 }}')">BibTex</button>.
+{% if page.share %}{% include social-share.html %}{% endif %} 
 
 {% assign num = page.url | size | minus: 1 %}
 {% assign citekey = page.url | replace: "/", "_" | slice: 0, num %}
 
-<div class="bibtex" style="display:none;" id='{{ 12345 }}'>
+<div class="bibtex" style="display:none;" id='{{ postCite }}'>
 <pre>
 @misc{Rogers{{ citekey }},
   title = { {{ page.title }}},

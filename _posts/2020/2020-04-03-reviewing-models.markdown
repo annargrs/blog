@@ -3,7 +3,7 @@ layout: single
 title:  "Peer review in NLP: reject-if-not-SOTA"
 date:   2020-04-03 09:00:47 -0400
 categories: squib
-tags: academia methodology review 
+tags: academia methodology peer-review 
 mathjax: false
 toc: true
 excerpt: "For many reviewers in major NLP venues the main prerequisite to acceptance is that the proposed model beats the state-of-the-art. It is a quick heuristic that is simple, convenient, and wrong."
@@ -113,11 +113,11 @@ Follow these amazing #NLProc people who contributed to the Twitter discussion on
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Deep apologies if I missed anyone! 
+Apologies if I missed or misread anyone! 
 
 Myself: <a href="https://twitter.com/annargrs" class="twitter-follow-button" data-show-count="false">Follow Anna Rogers</a>
 
-## 2020 events to accept your non-SOTAing paper
+## 2020 events for your non-SOTAing paper
 
 If you're concerned about the above issues, here are some events and workshops this year that work towards mitigating it:
 
@@ -126,9 +126,5 @@ If you're concerned about the above issues, here are some events and workshops t
 * [Evaluation and Comparison of NLP Systems](https://nlpevaluation2020.github.io/) at EMNLP 2020: designing evaluation metrics, reporting trustworthy results and creating adequate and correct evaluation data.
 
 Note also that [EMNLP 2020](https://2020.emnlp.org/call-for-papers) implements a reproducibility checklist based on work by [Joel Pinneau](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf) and {% cite DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results %}, which includes the number of hyperparameter search trials and some measure of performance "mean and variance as a function of the number of hyperparameter trials". Hopefully that by itself should draw some of the reviewers' attention towards model efficiency.
-
-## Discuss this on Twitter
-
-(placeholder for the Twitter discussion link)
 
 {% include bib_footer.markdown %}
