@@ -29,9 +29,9 @@ Moreover, the coveted SOTA [does not even necessarily advance the field](https:/
 * how well the model is tuned, which depends on how much computation budget the authors had {% cite DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results %}. If even BERT {% cite DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding %} was "significantly undertrained" {% cite LiuOttEtAl_2019_RoBERTa_Robustly_Optimized_BERT_Pretraining_Approach %}, what about work from smaller labs?
 * differences in model size, amount of pre-training data, and pre-training time: increasing any of them could be expected to yield improvements, but [that is not research news](https://hackingsemantics.xyz/2019/leaderboards/).
 
-In addition to all the above problems, the leaderboards put us in a hamster wheel. They are updated so quickly that SOTA claims should really be taken as ["SOTA at the time of submitting this paper"](https://twitter.com/tallinzen/status/1193904779191365632?s=20). If the paper is accepted, it will likely lose the SOTA status even before publication. If it is rejected, the authors [have to try their luck at the next conference *without* being able to claim SOTA anymore](https://twitter.com/nlpmattg/status/1220089814717886464?s=20).
+In addition to all the above issues, the leaderboards put us in a hamster wheel. They are updated so quickly that SOTA claims should really be taken as ["SOTA at the time of submitting this paper"](https://twitter.com/tallinzen/status/1193904779191365632?s=20). If the paper is accepted, it will likely lose the SOTA status even before publication. If it is rejected, the authors [have to try their luck at the next conference *without* being able to claim SOTA anymore](https://twitter.com/nlpmattg/status/1220089814717886464?s=20).
 
-The SOTA chase takes an absurd twist when a tired reviewer glances at the leaderboard and dislikes the paper for not including the very latest models. For instance, at least two EMNLP 2019 reviewers requested a comparison with XLNet {% cite YangDaiEtAl_2019_XLNet_Generalized_Autoregressive_Pretraining_for_Language_Understanding %}, which topped the leaderboards *after* EMNLP submission deadline:
+The SOTA chase takes an absurd twist when a tired reviewer glances at the leaderboard and dislikes the paper for not including the very latest models. For instance, at least two EMNLP 2019 reviewers requested a comparison with XLNet {% cite YangDaiEtAl_2019_XLNet_Generalized_Autoregressive_Pretraining_for_Language_Understanding %}, which topped the leaderboards *after* the EMNLP submission deadline:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">re &quot;Why not consider other models? such as XLNet&quot;: I agree with the reviewer on the importance of time travel research, but it&#39;s slightly out of the scope of this paper.</p>&mdash; Kyunghyun Cho (@kchonyc) <a href="https://twitter.com/kchonyc/status/1149826779999363072?ref_src=twsrc%5Etfw">July 12, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -46,35 +46,33 @@ I would conjecture that two factors are in play:
 
 The first factor deserves its own post. The lack of time, the low prestige and lack of career or monetary compensation for reviewing means that people are strongly incentivized to rely on heuristics, of which SOTA is just one example. To combat that, we need deep, systemic changes, which will take a long time to implement.
 
-The second factor is specific to the reject-if-not-SOTA. This heuristic has certain historical legitimacy because of the era of deep learning in NLP began by a wave of papers where the basic idea was to take some task/dataset and to show that a neural method could solve it better than possible before. For instance, ACL 2013 program included the following papers:
+The second factor is specific to the reject-if-not-SOTA. This heuristic has an air of historical legitimacy because  the era of deep learning in NLP began by a wave of papers taking some task/dataset and showing that a neural method could handle it better than was possible before. For instance, ACL 2013 program included the following:
 
-* Large tagset labeling using Feed Forward Neural Networks. Case study on Romanian Language
-* Word Alignment Modeling with Context Dependent Deep Neural Network
-* Adaptation Data Selection using Neural Language Models: Experiments in Machine Translation
+* [Large tagset labeling using Feed Forward Neural Networks. Case study on Romanian Language](https://www.aclweb.org/anthology/P13-1068.pdf)
+* [Word Alignment Modeling with Context Dependent Deep Neural Network](https://www.aclweb.org/anthology/P13-1017.pdf)
+* [Adaptation Data Selection using Neural Language Models: Experiments in Machine Translation](https://www.aclweb.org/anthology/P13-2119/)
 
-All of these papers report that their neural methods outperformed the previous-generation methods while avoiding their disadvantages. This was a clear engineering contribution, but it also demonstrated the possibility of using neural nets for different NLP tasks, which in 2013 was not taken for granted.
-
-The side effect was a generation of authors whose publications were accepted for achieving the best results on some task with a DL-based method. Accordingly, this is the kind of result that they expect in the papers they review *today*. 
+All of these papers report that their neural methods either outperformed the previous-generation methods or performed comparably while avoiding their disadvantages. This was a clear engineering contribution, and it also demonstrated the possibility of using neural nets for different NLP tasks, which in 2013 was not taken for granted. That latter part of contribution no longer applies today:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Common misunderstanding about research: a set of routines *that constitute research* at time A may no longer at time B &gt; A. Getting deep nets to work for various tasks *contributed basic knowledge* when the outcome was uncertain (4+ yrs ago). That alone is not research today.</p>&mdash; Zachary Lipton (@zacharylipton) <a href="https://twitter.com/zacharylipton/status/1233348783678873600?ref_src=twsrc%5Etfw">February 28, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+As for the SOTA part, my guess is that at least some of the reject-if-not-SOTA reviewers probably come from the cohort of authors whose papers were accepted for achieving the best results on some task, and this is why they expect to see this kind of contribution. But that is also outdated, because, [as discussed above,](#everything-wrong-with-reject-if-not-sota) the current leaderboards do not necessarily indicate superiority of the *architecture*. 
+
 ## Solution: guidelines on what constitutes an acceptable contribution
 
-Once again, SOTA is just one of the heuristics that the tired and underpaid reviewers are resorting to to cope with the deluge of papers, and in the long run we need to implement systemic changes to the review system. But there is something we could do right now to mitigate the heuristic. We could *expand* it.
+Once again, SOTA is just one of the heuristics that the tired and underpaid reviewers are resorting to to cope with the deluge of papers, and in the long run we need to implement systemic changes to the review system. But there is something we could do right now to mitigate this particular heuristic: we could *expand* it. We could have  guidelines for authors, reviewers and ACs, which would contain a list of alternative publication-worthy contributions in modeling papers that could make up for the lack of SOTA. The authors would then have a fighting chance against the heuristic in the rebuttals, and the reviewers would hopefully be discouraged from using it in the first place. 
 
-> What if the guidelines for authors, reviewers and ACs would contain a list of alternative publication-worthy contributions in modeling papers that could make up for the lack of SOTA? The authors would then have a fighting chance against the heuristic in the rebuttals, and the reviewers would hopefully be discouraged from using it in the first place. 
+Now, compiling such guidelines is admittedly not easy: no paper is perfect. The best reviewers are weighing the strengths and the weaknesses of papers on case-by-case basis, necessarily comparing apples to oranges with some degree of subjectivity. Still, for starters, here is a list compiled from many Twitter discussions [(suggestions welcome)](#share--cite--discuss-this-post). 
 
-Compiling such guidelines is admittedly not easy. No paper is perfect, and the best reviewers are weighing the strengths and the weaknesses in many diverse areas, necessarily comparing apples to oranges. Some degree of subjectivity is unavoidable. 
-
-Still, for starters, here is a list compiled from many Twitter discussions (suggestions welcome). A new system may be publication-worthy if it achieves good performance while offering one or more of the following advantages over the competition:
-
+> A new system may fail to reach SOTA, but still be publication-worthy if it achieves good performance while offering one or more of the following advantages over the competition:
+>
 > * more computation-efficient (less resources to train and/or deploy);
 > * more data-efficient (requires less data to train, or less high-quality data);
 > * more stable over possible hyperparameters and/or random initializations, easier to tune;
 > * better generalizability (less biased, able to avoid learning from data artifacts, better generalizing across datasets and domains, more adversarially robust);
 > * having different properties (e.g. different output type, making different kinds of predictions and errors);   
 > * more interpretable (humans can engage with the output better, easier to understand where it goes wrong and how to fix it);
-> * conceptually simpler (this would likely overlap with computation efficiency);
+> * conceptually simpler (this would likely overlap with computation efficiency and stability);
 > * more cognitively plausible (more consistent with what is known about human language processing);
 > * making unexpected connections between subfields, bringing some technique in a completely new context;
 
@@ -82,7 +80,7 @@ It goes without saying that **the study should clearly state its hypothesis (doi
 
 The above concerns systems that perform well *while* offering some other kind of advantage, such as generalizability/efficiency etc. Given the history of deep learning, it should not be impossible to publish a valuable idea, even if for some reason it could not be made to perform well yet. However, the idea should be actually novel, rather than "just make it bigger". A rule-of-thumb criterion for a paper with an interesting idea (attributed to Serge Abiteboul) is that you'd feel tempted to have your students read it.
 
-## How reject-if-not-SOTA hurts non-modeling papers
+## What about non-modeling papers?
 
 Now, what about all the other kinds of studies? It would seem that modeling papers are the ones the most affected by the reject-if-not-SOTA heuristic, but they are actually the priviledged class because at least they *contain* the kind of experiments that the reject-if-not-SOTA reviewers expect. All other kinds of papers are just unacceptable by definition:
 
@@ -107,7 +105,7 @@ But one thing we could realistically do about the SOTA heuristic right now is to
 
 ## Acknowledgements
 
-Follow these amazing #NLProc people who contributed to the Twitter discussion on which this post is based. In alphabetical order:
+Follow these amazing #NLProc people who contributed to the Twitter discussions on which this post is based. In alphabetical order:
 
 > Niranjan Balasubramanian <a href="https://twitter.com/b_niranjan" class="twitter-follow-button" data-show-count="false">Follow Niranjan Balasubramanian</a>, Emily Bender <a href="https://twitter.com/emilymbender" class="twitter-follow-button" data-show-count="false">Follow Emily Bender</a>, Kyunghyun Cho <a href="https://twitter.com/kchonyc" class="twitter-follow-button" data-show-count="false">Follow Kyunghyun Cho</a>, Leshem Choshen <a href="https://twitter.com/LChoshen" class="twitter-follow-button" data-show-count="false">Follow Leshem Choshen</a>, Aleksandr Drozd <a href="https://twitter.com/bkbrd" class="twitter-follow-button" data-show-count="false">Follow Aleksandr Drozd</a>, Gregg Durett <a href="https://twitter.com/gregd_nlp" class="twitter-follow-button" data-show-count="false">Follow Gregg Durett</a>, Matt Gardner <a href="https://twitter.com/nlpmattg" class="twitter-follow-button" data-show-count="false">Follow Matt Gardner</a>, Alvin Grissom II <a href="https://twitter.com/AlvinGrissomII" class="twitter-follow-button" data-show-count="false">Follow Alvin Grissom II</a>, Kristian Kersing <a href="https://twitter.com/kerstingAIML" class="twitter-follow-button" data-show-count="false">Follow Kristian Kersing</a>, Tal Linzen <a href="https://twitter.com/tallinzen" class="twitter-follow-button" data-show-count="false">Follow Tal Linzen</a>, Zachary Lipton <a href="https://twitter.com/zacharylipton" class="twitter-follow-button" data-show-count="false">Follow Zachary Lipton</a>,  Florian Mai <a href="https://twitter.com/_florianmai" class="twitter-follow-button" data-show-count="false">Follow Florian Mai</a>, Marten van Schijndel <a href="https://twitter.com/marty_with_an_e" class="twitter-follow-button" data-show-count="false">Follow Marten van Schijndel</a>, Evpok Padding <a href="https://twitter.com/EvpokPadding" class="twitter-follow-button" data-show-count="false">Follow Evpok Padding</a>, Stephen Roller <a href="https://twitter.com/stephenroller" class="twitter-follow-button" data-show-count="false">Follow Stephen Roller</a>, Jesse Thomason <a href="https://twitter.com/_jessethomason_" class="twitter-follow-button" data-show-count="false">Follow Jesse Thomason</a>
 
@@ -117,12 +115,12 @@ Apologies if I missed or misread anyone!
 
 Myself: <a href="https://twitter.com/annargrs" class="twitter-follow-button" data-show-count="false">Follow Anna Rogers</a>
 
-## 2020 events for your non-SOTAing paper
+## 2020 events for your SOTA-free paper
 
 If you're concerned about the above issues, here are some events and workshops this year that work towards mitigating it:
 
 * Efficient NLP systems: [SustaiNLP](https://sites.google.com/view/sustainlp2019) workshop at EMNLP 2020
-* [Workshop on Insights from Negative Results](https://insights-workshop.github.io/) will accept short papers describing failures that we should learn from, rather than ignore;
+* [Workshop on Insights from Negative Results](https://insights-workshop.github.io/) invites short papers describing failures that we should learn from, rather than ignore;
 * [Evaluation and Comparison of NLP Systems](https://nlpevaluation2020.github.io/) at EMNLP 2020: designing evaluation metrics, reporting trustworthy results and creating adequate and correct evaluation data.
 
 Note also that [EMNLP 2020](https://2020.emnlp.org/call-for-papers) implements a reproducibility checklist based on work by [Joel Pinneau](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf) and {% cite DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results %}, which includes the number of hyperparameter search trials and some measure of performance "mean and variance as a function of the number of hyperparameter trials". Hopefully that by itself should draw some of the reviewers' attention towards model efficiency.
