@@ -6,7 +6,7 @@ categories: squib
 tags: academia methodology peer-review 
 mathjax: false
 toc: true
-excerpt: "For many reviewers in major NLP venues the main prerequisite to acceptance is that the proposed model beats the state-of-the-art. It is a quick heuristic that is simple, convenient, and wrong."
+excerpt: "Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong."
 header:
     og_image: /assets/images/compete.png
 ---
