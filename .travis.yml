@@ -2,8 +2,7 @@ language: ruby
 rvm:
 - 2.3.1
 install:
-- bundle update --bundler --full-index
-- bundle update html-pipeline
+- rm Gemfile.lock
 - bundle install
 deploy:
   provider: pages
