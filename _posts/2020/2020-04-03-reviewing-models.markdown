@@ -7,6 +7,7 @@ tags: academia methodology peer-review
 mathjax: false
 toc: true
 excerpt: "Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong."
+twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
 header:
     og_image: /assets/images/compete.png
 ---
@@ -49,7 +50,7 @@ The first factor deserves its own post. The lack of time, the low prestige and l
 
 The second factor is specific to the reject-if-not-SOTA. Ehud Reiter makes a useful [distinction](https://ehudreiter.com/2020/03/02/why-use-18-year-old-bleu/) between "evaluation metrics" vs "scoring functions". Language is complex, and our benchmarks far from perfect, so ideally we would have (1) the introduction of a benchmark, (2) a wave of system papers that hopefully reaches human performance, and then (3) a massive switch to an improved benchmark. Instead, we get stuck in step 2, and the benchmark becomes a scoring function that simply enables the community to publish tons of SOTA-claiming papers. 
 
-For example, we now have [SuperGLUE](https://super.gluebenchmark.com/leaderboard) and over 80 QA datasets, but new system papers will still most evaluate on [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/) and [GLUE](https://gluebenchmark.com/leaderboard), because these are the names that the reviewers most likely know and expect. Since both SQuAD and GLUE are solved well past human baselines, the result is likely an exercise in overfitting.
+For example, we now have [SuperGLUE](https://super.gluebenchmark.com/leaderboard) and over 80 QA datasets, but new system papers will still mostly evaluate on [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/) and [GLUE](https://gluebenchmark.com/leaderboard), because these are the names that the reviewers most likely know and expect. Since both SQuAD and GLUE are solved well past human baselines, the result is likely an exercise in overfitting.
 
 Additionally, while the benchmark problem is nothing new, the current SOTA chase might have had an extra push from the fact that there was a massive wave of papers with the common trajectory: taking some task/dataset and showing that a neural method could handle it better than was possible before. Many of these papers were written by new authors, and they might still expect the same kind of contributions. But that expectation is outdated. [As discussed above,](#everything-wrong-with-reject-if-not-sota) the current leaderboards do not necessarily indicate superiority of the *architecture*, and the very possibility of using neural nets for different NLP tasks is now taken for granted.
 
