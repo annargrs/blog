@@ -78,7 +78,7 @@ It goes without saying that for any of these criteria **the study should clearly
 
 The above list aims to give a fighting chance to systems that perform well *while* offering some other kind of advantage, such as generalizability/efficiency etc. But given the history of deep learning, it should not be impossible to publish a valuable idea, even if for some reason it could not be made to perform well yet. However, the idea should be actually novel, rather than "just make it bigger". A rule-of-thumb criterion for a paper with an interesting idea (attributed to Serge Abiteboul) is that you'd feel tempted to have your students read it.
 
-## What about non-system papers?
+## Reject-if-not-SOTA and non-modeling papers
 
 It would seem that NLP system papers are the ones the most affected by the reject-if-not-SOTA heuristic, but they are actually the priviledged class because at least they *contain* the kind of experiments that the reject-if-not-SOTA reviewers expect. All other kinds of papers are just unacceptable by definition:
 
