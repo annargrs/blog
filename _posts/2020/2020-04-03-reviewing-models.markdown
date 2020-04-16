@@ -112,8 +112,6 @@ Follow these amazing #NLProc people who contributed to the Twitter discussions o
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Apologies if I missed or misread anyone! 
-
 Myself: <a href="https://twitter.com/annargrs" class="twitter-follow-button" data-show-count="false">Follow Anna Rogers</a>
 
 ## 2020 events for your SOTA-free paper
