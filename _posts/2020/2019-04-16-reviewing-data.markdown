@@ -6,7 +6,7 @@ categories: squib
 tags: academia methodology peer-review 
 mathjax: false
 toc: true
-excerpt: "Despite dedicated resource & evaluation tracks, some reviewers do not recognize resources as something that belongs in the major NLP conferences."
+excerpt: "Despite dedicated resource & evaluation tracks, some reviewers do not recognize resource papers as something that belongs in the major NLP conferences at all."
 twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
 header:
     og_image: /assets/images/orange-conference.png
