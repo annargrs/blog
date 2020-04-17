@@ -6,7 +6,7 @@ categories: squib
 tags: academia methodology peer-review 
 mathjax: false
 toc: true
-excerpt: "Resource papers strike back: how the authors and reviewers can stop talking past each other."
+excerpt: "Resource papers strike back: how the authors and the reviewers can stop talking past each other."
 twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
 header:
     og_image: /assets/images/orange.png
