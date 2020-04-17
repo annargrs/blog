@@ -6,7 +6,7 @@ categories: squib
 tags: academia methodology peer-review 
 mathjax: false
 toc: true
-excerpt: "Resource papers strike back: how the authors and the reviewers can stop talking past each other."
+excerpt: "Resource papers strike back! How the authors and the reviewers can stop talking past each other."
 twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
 header:
     og_image: /assets/images/orange.png
@@ -105,7 +105,7 @@ Dozens of comments later, it became clear that people simply think of different 
 In between these two extremes are the kinds of resources that *could* be easily framed as DL tasks/benchmarks, but it is not clear whether that *should* be required, or even is the best thing to do. Specifically, this concerns:
 
 * *Non-public data releases*: the resources of data that was non publicly available before, such as anonymized medical data or data from private companies. The author contribution is the legal/administrative work that made the release possible.
-* *Resources with linguistic annotation* (treebanks, coreference, anaphora, temporal relations and others): the quality of these resources is traditionally measured by inter-annotator agreement. The author contribution is the annotation effort and/or annotation methodology.
+* *Resources with linguistic annotation* (treebanks, coreference, anaphora, temporal relations, etc.): the quality of these resources is traditionally measured by inter-annotator agreement. The author contribution is the annotation effort and/or annotation methodology.
 
 In both of these cases, the data may be used in many different ways. It could be possible to just offer standard train/test splits and present the resource as a new task or benchmark, making life easier for practitioners who are simply looking for a new task to set their favorite algorithm on. But this may be not the only, or even the best way to think of the new data. At this point, the discussion turns into an unscientific tug-of-war along the following lines:
 
