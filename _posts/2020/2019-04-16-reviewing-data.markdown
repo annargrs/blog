@@ -6,14 +6,14 @@ categories: squib
 tags: academia methodology peer-review 
 mathjax: false
 toc: true
-excerpt: "Despite dedicated resource & evaluation tracks, some reviewers do not recognize resource papers as something that belongs in the major NLP conferences at all."
+excerpt: "Resource papers strike back: how the authors and reviewers can stop talking past each other."
 twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
 header:
-    og_image: /assets/images/orange-conference.png
+    og_image: /assets/images/orange.png
 ---
 
 <figure>
-	<img src="/assets/images/orange-conference.png">
+	<img src="/assets/images/orange.png">
 </figure>
 
 Most success stories in NLP are about supervised or semi-supervised learning. Fundamentally, that means that our parsers, sentiment classifiers, QA systems and everything else are only as good as the training data, and that fact makes data and model engineering equally important for further progress. This is why top-tier conferences of Association for Computational Linguistics usually have a dedicated "Resources and evaluation" track, and awards for best resource papers.
