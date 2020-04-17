@@ -50,6 +50,8 @@ logo: "/assets/images/logo-3col.png"
 masthead_title: "Hacking Semantics"
 # Build settings
 markdown: kramdown
+# related posts
+lsi: true
 #theme: minima
 theme: minimal-mistakes-jekyll
 plugins:
