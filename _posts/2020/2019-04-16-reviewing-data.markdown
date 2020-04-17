@@ -93,7 +93,7 @@ Interestingly, the same argument can be made about systems papers: should there 
 
 ## Myth 6: Every resource paper has to come with DL experiments
 
-All of the above myths are straightforward to rebuff, because they reflect logical fallacies and predispositions to dislike research that does not resemble a mainstream NLP system paper. But there is one that seems to correspond to a genuine raft in the community:
+All of the above myths are straightforward to rebuff, because they reflect logical fallacies and predispositions to dislike research that does not resemble a mainstream NLP system paper. But there is one that seems to correspond to a genuine rift in the community:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Going on with the <a href="https://twitter.com/hashtag/NLProc?src=hash&amp;ref_src=twsrc%5Etfw">#NLProc</a> peer review debate!<br><br>The most thorny issue so far: should *ACL should require resource papers to have some proof-of-concept application?<br><br>* FOR: no ML experiments =&gt; go to LREC<br>* AGAINST: super-new methodology/ high-impact data could suffice<br><br>Your take?</p>&mdash; Anna Rogers (@annargrs) <a href="https://twitter.com/annargrs/status/1247593874794713089?ref_src=twsrc%5Etfw">April 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
 
