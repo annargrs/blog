@@ -96,7 +96,9 @@ Rachel Bawden [cites](https://rbawden.wordpress.com/2019/07/19/one-paper-nine-re
 
 > The paper is mostly a description of the corpus and its collection and contains little scientific contribution.
 
-Reviewers with CS backgrounds who are not interested in methodology, theoretical, linguistic, or psychological work should not simply reject these kinds of contributions, recommending that the authors try LREC or workshops. They should **decline the assignment and ask the ACs to find a better match**. NLP is an interdisciplinary field, human language is incredibly complex, and we need all the help we can get.
+Reviewers with CS backgrounds who are not interested in methodology, theoretical, linguistic, or psychological work should not simply reject these kinds of contributions, recommending that the authors try LREC or workshops. They should **decline the assignment and ask the ACs to find a better match**. NLP is an interdisciplinary field, human language is incredibly complex, and we need all the help we can get. 
+
+Update (09.05.2020): Here is a [post](https://hackingsemantics.xyz/2020/reviewing-data/) specifically on dos and don'ts in reviewing resource papers.
 
 ## Conclusion
 
