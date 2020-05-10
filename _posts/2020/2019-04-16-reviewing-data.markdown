@@ -125,7 +125,7 @@ To give a concrete example, one of my papers contributed a new sentiment annotat
 
 Our comment about in-domain embeddings simply described the table of results and was not meant to come as a revelation. The contribution was in the resource and methodology. But the very presence of these experiments apparently set off the wrong kind of expectations. Our paper was accepted, but many others probably fell in this trap.
 
-## How to write a good review for a resource paper
+## How to write a good review
 
 ### Am I the right reviewer for this paper?
 
