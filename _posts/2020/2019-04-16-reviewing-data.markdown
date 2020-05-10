@@ -16,16 +16,18 @@ header:
 	<img src="/assets/images/orange.png">
 </figure>
 
+## Dangerous preconceptions about resource papers
+
 Most success stories in NLP are about supervised or semi-supervised learning. Fundamentally, that means that our parsers, sentiment classifiers, QA systems and everything else are only as good as the training data, and that fact makes data and model engineering equally important for further progress. This is why top-tier conferences of Association for Computational Linguistics usually have a dedicated "Resources and evaluation" track, and awards for best resource papers.
 
 However, creating models and resources are tasks that require different skill sets, traditionally come from different fields, and are often performed by people who have different expectations of what a paper should look like. That turns reviewer assignment into a minefield: an apple looks wrong if you expect an orange. With the best intentions on all sides, a paper may be rejected not for any actual flaws, but for its fundamental methodology.
 
 This post grew out of online and offline discussions with many frustrated authors. One thing is clear: a submission is a waste of both the authors' and the reviewers' time, if they fundamentally disagree about what a paper should even look like. 
- This post aims to list some of the common misconceptions about resource papers, and hopefully help the people who *use* data to better understand the people who *make* data. 
+ I hope it would help the people who *use* data to better understand the people who *make* data, and to provide better reviews for their papers. 
  
- This is not a rant by disgruntled linguists who feel like they missed the deep learning train. The fact is, NLP is an interdisciplinary venture by necessity: [benchmarks have to co-evolve with the models](https://ehudreiter.com/2020/03/02/why-use-18-year-old-bleu/), or we start optimizing for the wrong thing. That means that *ACL conferences really need people who make data and people who use data brought together, so they could react to each other's ~~hacks~~ developments.
+Let us start by dispelling some myths about resource papers. Unfortunately, all the quotes below come from real *ACL reviews!
 
-## Myth 1: Resource papers are not science
+### Myth 1: Resource papers are not science
 
 Perhaps the clearest example of this view is [cited](https://rbawden.wordpress.com/2019/07/19/one-paper-nine-reviews/) by Rachel Bawden. An ACL 2019 reviewer gave the following opinion of her MT-mediated bilingual dialogue resource {% cite bawden2019diabla %}:
 
@@ -37,15 +39,13 @@ Here is a fresh report from ACL 2020:
 > We got three positive reviews (4-4-3.5) for our recent #acl2020nlp short paper submission, but the meta-reviewer rejected it with this concluding statement: "Given the limited novelty of the idea and the fact that no new method is proposed, this is basically a 'resource paper'."
 {:/}
 
-Given that ACL 2019 had a dedicated "Resource and evaluation" area, it seems impossible that this kind of argument should even be made, much less considered acceptable in a review. 
-
-To be clear, in principle, construction of resources adds knowledge in at least 3 ways:
+Given that ACL 2019 had a dedicated "Resource and evaluation" area, it seems impossible that this kind of argument should even be made, much less considered acceptable in a review! To be clear, construction of resources does add knowledge in at least 3 ways:
 
 - they are prerequisite to any knowledge obtainable from modeling;
 - in addition to the resource, there may be annotation guidelines or new data collection methodology;
 - iterative guidelines development based on annotation increases the knowledge of long-tail phenomena.
 
-## Myth 2: Resource papers are more appropriate for LREC or workshops
+### Myth 2: Resource papers are more appropriate for LREC or workshops
 
 Most *ACL conferences offer a dedicated "Resource and evaluation" track, yet the authors of resource papers are often advised to take their work to LREC or some thematic workshop instead. Again, let us borrow a quote from [Rachel Bawden's ACL 2019 review](https://rbawden.wordpress.com/2019/07/19/one-paper-nine-reviews/):
 
@@ -55,9 +55,9 @@ This view is perhaps related to the widespread perception that NLP system engine
 
 This view is both unfair and counter-productive. First, the authors of NLP engineering papers typically get several chances to submit to main conferences during a year. LREC is the only conference specializing in resources, and it's bi-annual.  
 
-Second, as mentioned above, the progress in NLP depends on the [co-evolution of systems and benchmarks](https://ehudreiter.com/2020/03/02/why-use-18-year-old-bleu/). NLP benchmarks are not perfect, and when we get stuck on any of them for too long we are likely to start optimizing for the wrong thing, publishing a lot of SOTA-claiming papers, but making no real progress. Therefore, development of more challenging benchmarks is as important as modeling work, and publications at top-tier conferences is the least we could do to incentivize it. Also, putting data and models in different conferences is unlikely to improve the flow of ideas between the two communities.
+Second, the progress in NLP depends on the [co-evolution of systems and benchmarks](https://ehudreiter.com/2020/03/02/why-use-18-year-old-bleu/). NLP benchmarks are not perfect, and when we get stuck on any of them for too long we are likely to start optimizing for the wrong thing, publishing a lot of SOTA-claiming papers, but making no real progress. Therefore, development of more challenging benchmarks is as important as modeling work, and publications at top-tier conferences is the least we could do to incentivize it. Also, putting data and models in different conferences is unlikely to improve the flow of ideas between the two communities.
 
-## Myth 3: A new resource must be bigger than competition 
+### Myth 3: A new resource must be bigger than competition 
 
 I have received a version of this myself at ACL 2020: 
 
@@ -67,7 +67,7 @@ This argument is the resource paper version of the [reject-if-not-SOTA approach 
 
 Since large volume tends to be inversely proportional to data quality, this attitude implicitly encourages crowdsourcing and discourages expert annotation. The above ACL 2020 submission contributed a resource with expert linguistic annotation, for which there existed larger-but-noisier crowdsourced alternatives. The paper specifically discussed why directly comparing these resources by size makes little sense. Still, one of the reviewers argued that the new corpus is smaller than the crowdsourced one, and that apparently made it less valuable.
 
-## Myth 4: A resource has to be either English or very cross-lingual
+### Myth 4: A resource has to be either English or very cross-lingual
 
 The number of languages seems to perform roughly the same function as the size of the dataset: a heuristic for judging its potential impact. Here is a quote provided by Robert Munro from another ACL review:
 
@@ -79,7 +79,7 @@ The result is that such work is being marginalized and discouraged. I had a chan
 
 Conflating the number of languages with potential impact of the paper leads to an interesting consequence to cross-lingual studies: the more languages they have, the better they are in the eyes of the reviewers. However, if any meaningful analysis in all these languages is performed, the number of languages typically grows as a function of the author list length: the Universal Dependencies paper has 85 authors {% cite NivreAgicEtAl_2015_Universal_Dependencies_12 %}. An average machine learning lab has no means to do anything like that, so to please the reviewers they have an incentive to resort to machine translation, even for making typological claims {% cite SinghMcCannEtAl_2019_BERT_is_Not_Interlingua_and_Bias_of_Tokenization %}. In that case, the number of languages is unlikely to be a good proxy for the overall quality of the paper.
 
-## Myth 5: Too many datasets already
+### Myth 5: Too many datasets already
 
 Here is an example of this argument from an EMNLP 2019 review: 
 
@@ -91,7 +91,7 @@ An argument could be made that having a lot of benchmarks dilutes the community 
 
 Interestingly, the same argument can be made about systems papers: should there be a cap on how many incremental modifications of BERT {% cite RogersKovalevaEtAl_2020_Primer_in_BERTology_What_we_know_about_how_BERT_works %} the community should produce before the next breakthrough?
 
-## Myth 6: Every resource paper has to come with DL experiments
+### Myth 6: Every *ACL resource paper has to come with DL experiments
 
 All of the above myths are straightforward to rebuff, because they reflect logical fallacies and predispositions to dislike research that does not resemble a mainstream NLP system paper. But there is one that seems to correspond to a genuine rift in the community:
 
@@ -125,9 +125,11 @@ To give a concrete example, one of my papers contributed a new sentiment annotat
 
 Our comment about in-domain embeddings simply described the table of results and was not meant to come as a revelation. The contribution was in the resource and methodology. But the very presence of these experiments apparently set off the wrong kind of expectations. Our paper was accepted, but many others probably fell in this trap.
 
-## Conclusion
+## How to write a good review for a resource paper
 
-Apples are apples, oranges are oranges, and both are good in their own way. It is pointless to reject a resource paper for not being a systems paper. To write a constructive review, first of all you need to see its contribution from the same methodological perspective as the authors. If there is a mismatch, if you've been assigned a paper with a type of contribution that is not in your research sphere, it is better to ask the AC to reassign it.
+### Am I the right reviewer for this paper?
+
+Apples are apples, oranges are oranges, and both are good in their own way. It is pointless to reject a resource paper for not being a systems paper. To write a constructive review, first of all you need to see its contribution from the same methodological perspective as the authors. If there is a mismatch, if you've been assigned a paper with a type of contribution that is not in your research sphere, it is better to **ask the AC to reassign it**.
 
 Here are some of the major types of resource papers, and the expertise needed to write a high-quality review:
 
@@ -135,11 +137,29 @@ Here are some of the major types of resource papers, and the expertise needed to
 * Corpora with linguistic annotation (syntax, anaphora, coreference, temporal relations): knowledge of the relevant linguistic theory and annotation experience, annotation reliability estimation, and existing resources in this particular subfield. *Ideally, you've built at least one resource of this type yourself.*
 * Linguistic knowledge resources (grammars, dictionaries, lexical databases): knowledge of the rest of linguistic theory and all the other relevant resources. *Ideally, you've built at least one resource of this type yourself.*
 
-Once you've made sure that the paper is well-matched, the review process is not so different for system and resource papers. Most conferences are interested in how novel is the approach, how substantial the contribution, how big the potential impact. The authors of an ACL-worthy paper, of any type, do need to make a strong case at least on one of these counts. But the trial is only fair if apples are judged as apples, not as oranges.
+What about non-English resources? We can't expect to always have the pool of reviewers who are experts in the right areas and also speak a given rare language, so the answer is probably "division of labor". When we register for conferences as reviewers, we could all specify which languages we speak, in addition to our areas of expertise. If a resource (or systems) paper is not on English, the ACs would ideally try to find at least one reviewer who does speak that language, in addition to two experts in the target area. People who don't speak the language could still evaluate the parts of the contribution that you can judge (methodology, analysis, meaningful comparisons to other work). As long as we are clear in your review what parts of the paper were out of your scope, the AC will be able to make informed decisions and recruit extra reviewers if necessary. The authors should of course help their own case by including glosses.
 
-What about non-English resources? We can't expect to always have the pool of reviewers who are experts in the right areas and also speak a given rare language, so the answer is probably "division of labor". When we register for conferences as reviewers, we could all specify which languages we speak, in addition to our areas of expertise. If a resource (or systems) paper is not on English, the ACs would ideally try to find at least one reviewer who does speak that language, in addition to two experts in the target area. People who don't speak the language could still evaluate the parts of the contribution that you can judge (methodology, analysis, meaningful comparisons to other work). As long as we are clear in your review what parts of the paper were out of your scope, the AC will be able to make informed decisions and recruit extra reviewers if necessary. 
+### What makes an *ACL-worthy resource paper?
 
-> Note: the post was updated on 20.04.2020, with feedback from Mike Lewis.
+Once you made sure that you are looking at the paper from the same methodological perspective as the authors, you need to actually judge its contribution. Of course, not every resource paper deserves to be published at a top NLP conference! The acceptance criteria are really not that different for systems and resources. Most conferences are interested in how novel is the approach, how substantial the contribution, how big the potential impact. The authors of an *ACL-worthy paper, of any type, do need to make a strong case on **at least one** of these counts. 
+
+Here are some examples of the types of resource papers that would (and wouldn't) fit these criteria.
+
+* **High novelty**: significant conceptual innovation <br/>
+  *Examples*: new task, new annotation methodology; <br/>
+  *Counter-examples*: using an existing framework to collect more data or update an existing resource, or simply translating an existing resource to another language. 
+
+* **High impact**: addressing a widespread problem, presenting new methodology with high generalizability (across languages or tasks).<br/>
+  *Examples*: discovering biases that affect multiple datasets, releasing time-sensitive data (e.g. the recent dataset of research papers on coronavirus); <br/>
+  *Counter-examples*: mitigating a specific bias induced by annotator guidelines in one specific dataset.
+
+* **High quality, richness, or size**: significant public data releases that offer clear advantages in the depth of linguistic description, data quality, or volume of the resource.<br/> 
+  *Examples*: linguistic databases like VerbNet, corpora with linguistic annotation, data collected organically in specific contexts (such as anonymized medical data);<br/>
+  *Counter-examples*: noisy data without clear advantages over alternatives, non-openly-available data.
+
+To reiterate: a paper could be publication-worthy by meeting only **one** of these criteria. A narrow problem can be solved in a highly novel way. A noisy dataset can have high impact if it's all there is. A resource simply recast to another language might make big waves if it shows that the techniques developed for the English version completely fail to generalize. But the authors do need to show that at least one criterion applies strongly, and convince the reviewers that there are no serious flaws (e.g. if the inter-annotator agreement was inflated by discarding large portions of data).
+
+> Note: the post was updated on 20.04.2020 and 09.05.2020.
 
 ## Acknowledgements
 
@@ -152,3 +172,5 @@ A lot of amazing #NLProc people contributed to the Twitter discussions on which 
 Myself: <a href="https://twitter.com/annargrs" class="twitter-follow-button" data-show-count="false">Follow Anna Rogers</a>
 
 {% include bib_footer.markdown %}
+
+Special thanks go to EMNLP 2020 organizers. 
