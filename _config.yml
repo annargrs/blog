@@ -26,17 +26,31 @@ repository: "annargrs/blog"
 
 author:
   name: "Anna Rogers"
-  avatar: "/assets/images/aro.png"
-  bio: "Thinking aloud: computational linguistics, cognition, AI and NLP"
-  uri: "http://www.cs.uml.edu/~arogers/"
+  avatar: "/assets/images/aro.jpg"
+#  bio: "computational linguistics, cognition, AI and NLP"
+#  uri: "http://www.annargrs.github.io"
   twitter: "annargrs"
-  github: "annargrs"
-  vine: "doesn't matter"
-#  medium: ".aravindiyer"
   linkedin: "annargrs"
-# linking to author account on Twitter
-twitter:
-  username: "annargrs"
+  github: "annargrs"
+#  vine: "doesn't matter"
+  links:
+    - label: "University of Copenhagen"
+      icon: "fas fa-fw fa-university"
+      url: "http://sodas.ku.dk/"
+    - label: "Homepage"
+      icon: "fas fa-fw fa-home"
+      url: "http://annargrs.github.io/"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar ai"
+      # ai-semantic-scholar, ai-orcid - see more at https://jpswalsh.github.io/academicons/
+      url: "https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en"
+    - label: "Semantic Scholar"
+      icon: "ai ai-semantic-scholar ai"
+      url: "https://www.semanticscholar.org/author/Anna-Rogers/145046059"
+    - label: "ORCID"
+      icon: "ai ai-orcid ai"
+      url: "https://orcid.org/0000-0002-4845-4023"
+
 
 #todo add a default 120-x120 image to be used in cards for imageless posts
 #og_image: /assets/images/site-logo.png
