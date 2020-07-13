@@ -1,7 +1,7 @@
 ---
 layout: single
-title:  "Peer review or PR review? How ACL rolling review reform can go double-blind."
-date:   2020-07-10 09:00:47 -0400
+title:  "Peer review or PR review? How ACL can go double-blind."
+date:   2020-07-13 09:00:47 -0400
 categories: squib
 tags: academia peer-review  
 mathjax: false
@@ -12,15 +12,19 @@ header:
     og_image: /assets/images/justice.jpg
 ---
 
-It is a truth universally acknowledged that single-blind peer review is strongly biased towards established authors and famous labs {% cite TomkinsZhangEtAl_2017_Reviewer_bias_in_single-_versus_double-blind_peer_review %}. In fact, it is nothing new. Nearly 30 years ago {% cite PetersCeci_1982_fate_of_published_articles_submitted_again %} conducted an experiment where they resubmitted 12 articles to reputable psychology journals that already *published* these very same articles - but this time the author names and institutions changed to unknown names. Only 8% of editors and reviewes detected the resubmisson, and 89% recommended rejection, in many cases for 'methodology flaws'!
+## Why peer review should be double-blind
 
-It is a truth less universally acknowledged that non-blind peer review, like any other non-blind human interaction, is at risk of being compromised by social biases, such as biases by race, gender, ethnicity, age group. There is more than enough evidence to be concerned {%  cite BornmannMutzEtAl_2007_Gender_differences_in_grant_peer_review_meta-analysis KaatzGutierrezEtAl_2014_Threats_to_objectivity_in_peer_review_case_of_gender HojatGonnellaEtAl_2003_Impartial_Judgment_by_Gatekeepers_of_Science_Fallibility_and_Accountability_in_Peer_Review_Process %}, and to do something while we're educating ourselves on the subject.
+It is a truth universally acknowledged that single-blind peer review is strongly biased towards established authors and famous labs {% cite TomkinsZhangEtAl_2017_Reviewer_bias_in_single-_versus_double-blind_peer_review %}. Nearly 30 years ago {% cite PetersCeci_1982_fate_of_published_articles_submitted_again %} conducted an experiment where they resubmitted 12 articles to reputable psychology journals that already *published* these very same articles - but this time the author names and institutions changed to unknown names. Only 8% of editors and reviewes detected the resubmisson, and 89% recommended rejection, in many cases for 'methodology flaws'! 
 
-Note that the whole point of biases is that they are unconscious: we may be absolutely sure that neither the race of the authors nor the prestige of their institution has anything to do with our opinion of a paper, but our conscious selves are not really trustworthy. So, given our human cognitive limitations, the best thing we can do is to try to have a fully blind peer-review process. 
+Note that this was 30 years ago, before we had Twitter and blogs. The research community has since made a lot of progress in developing 'PR review' techniques: a famous lab can have  a specific preprint widely discussed before it is even sent for review. That creates the impression that the community already accepted and validated this work, and so of course the reviewers should recommend it for acceptance.
 
-Wait, don't we already have double-blind peer review in NLP? Yes and no. *CL conferences officially implement a double-blind peer review process, and require the authors to avoid revealing self-citations. However, there are a few buts.
+But that's not all. It is a truth less universally acknowledged that non-blind peer review, like any other non-blind human interaction, is at risk of being compromised by social biases, such as biases by race, gender, ethnicity, age group. There is more than enough evidence to be concerned {%  cite BornmannMutzEtAl_2007_Gender_differences_in_grant_peer_review_meta-analysis KaatzGutierrezEtAl_2014_Threats_to_objectivity_in_peer_review_case_of_gender HojatGonnellaEtAl_2003_Impartial_Judgment_by_Gatekeepers_of_Science_Fallibility_and_Accountability_in_Peer_Review_Process %}, and to do something while we're educating ourselves on the subject.
 
-## Don't we already have double-blind review?
+Note that the whole point of biases is that they are unconscious: we may be absolutely sure that neither the race of the authors, nor the prestige of their institution has anything to do with our opinion of a paper. But our conscious selves are not really trustworthy. So, given our human cognitive limitations, the best thing we can do is to try to have a fully blind peer-review process. 
+
+## Isn't it double-blind already?
+
+Wait, don't we already have double-blind peer review in NLP? Yes and no. *CL conferences officially implement a double-blind peer review process, and require the authors to avoid revealing self-citations. However...
 
 ### ArXiv and anonymity period
 
@@ -32,9 +36,9 @@ I am not aware of any studies done for *CL conferences (presumably because their
 	<img src="/assets/images/iclr-acceptance.png">
 </figure>
 
-I would speculate that the effect is particularly large for papers by big labs that managed to attract a lot of attention (especially big industry labs with considerable PR resources). Arguably Google AI's BERT {% cite DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding %} entirely circumvented the peer review process because the paper was already famous and widely cited by the time it got to NAACL. There was [no way it could have been reviewed anonymously](https://medium.com/@ryancotterell/we-should-anonymize-model-names-during-peer-review-bcab0cc78946). 
+I would speculate that the effect is particularly large for papers by big labs that managed to attract a lot of attention (especially big industry labs with considerable PR resources). Arguably Google AI's BERT {% cite DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding %} entirely circumvented the peer review process because the paper was already famous and widely cited by the time it got to NAACL. It is [highly unlikely that it could be reviewed anonymously](https://medium.com/@ryancotterell/we-should-anonymize-model-names-during-peer-review-bcab0cc78946). 
 
-Should BERT have gotten the best paper award? I don't know, but perhaps we should think through the whole issue of "peer review" vs "PR review". When something gets so attention, it just seems highly important, and the reviewers can hardly be expected to be immune to that. If we do accept hype as a valid indicator of scientific merit,we should at least recognize that it is distinct from the criteria we apply to all other papers, and therefore they should not compete for conference acceptance and awards.
+Should BERT have gotten the best paper award? Quite possibly, but perhaps we should think through the whole issue of "peer review" vs "PR review". When something gets so much attention, it just seems highly important, and the reviewers can hardly be expected to be immune to that. If we do accept hype as a valid indicator of scientific merit, we should at least recognize that it is distinct from the criteria we apply to all other papers, and therefore they should not compete for conference acceptance and awards.
 
 ### How blind are acceptance decisions?
 
@@ -44,7 +48,7 @@ Let us note that the ACs and SACs are themselves likely to be senior members of 
 
 Finally, consider the conference awards. I have never served on an award committee, but let's take [Yoav Goldberg's word](https://twitter.com/yoavgo/status/1278468990730412033?s=20) that they are not blind either (although the starting point is recommendation by reviewers, who may or may not be blind because of arXiv).
 
-## Should we even bother? Arguments against double-blindness
+## Arguments against double-blindness
 
 So, at the moment *CL reviewing is at best only partially double-blind. But is this necessarily a bad thing? To be fair, let us hear the arguments against double-blindness. 
 
@@ -52,7 +56,7 @@ So, at the moment *CL reviewing is at best only partially double-blind. But is t
 
 This is an argument against trying to correct for bias towards big names. The main point is that the quality of the work could be expected to genuinely correlate with the status of a research group. Say, Stanford remains Stanford because it systematically attracts smarter people who are likely to produce superior output. In that case, since peer review is genuinely noisy and difficult, witholding this information from reviewers means witholding a useful signal {% cite Church_2020_Emerging_trends_Reviewing_reviewers_again %}.
 
-The counter-argument is that the fame of a big lab may have a halo effect on the paper, and is also a function of the resources the lab can spend on promoting their work - which has nothing to do with science. It might be possible for an unknown lab manages to produce a paper of comparable quality with a Google paper, but in terms of PR efforts (and skills) it has no chance. 
+The counter-argument is that the fame of a big lab may also have a halo effect on a mediocre paper. Everything just looks more trustworthy when it comes from e.g. Harvard - especially in comparison to a paper of similar quality, but by unknown authors. Furthermore, it's one thing when the fame of a research group rests primarily on its past achievements and reputation, and another when the group itself is new, but gets more favorable treatment simply due to its affiliation and their PR resources.
 
 Kenneth Church argues that the solution to that is "seniority quotas", where the conference makes a conscious decision to give that much floor to established and up-and-coming labs. My concern here is that we also have the cross-cutting biases for trendy topics, [deep-learning-based methodology](https://hackingsemantics.xyz/2020/reviewing-data/), [SOTA results](https://hackingsemantics.xyz/2020/reviewing-models) and many more. These probably can't be addressed in any other way than by acceptance quotas, while the author fame bias *could* be handled by proper double-blind review. 
 
@@ -62,22 +66,22 @@ The other argument is that it is not clear that double-blind review actually imp
 
 > Obviously, we care about more than just fairness. Experiments supporting double-blind reviewing need to establish that the treatment (double-blind reviewing) is not only more fair than the control (traditional reviewing) but also more effective. Does the treatment accept better papers (with more potential for growth) than the control, or is treatment merely more random than the control? Thus far, most experiments (Tomkins, Zhang, and Heavlin 2017; Stelmakh, Shah, and Singh 2019) have more to say about fairness than effectiveness.
 
-Note that the "better papers" are defined as those "with more potential for growth". However, growth is a process largely influenced not only by conference publication, but also how the community receives the work afterwards... which is in itself does not just depend on the research merit. Consider at least the following factors:
+I fully agree that the overall goal is to find papers with more scientific merit, rather than simply distribute acceptances evenly in the community. However, "potential for growth" means not only that the paper offers room for building on its ideas, but also that the community would do so. And that second part, once again, depends on more than science. Consider at least the following factors:
  
 * The Matthew effect: "enhancement of the position of already eminent scientists who are given disproportionate credit in cases of collaboration or of independent multiple discoveries" {%cite Merton_1968_Matthew_Effect_in_Science_reward_and_communication_systems_of_science_are_considered %};
-* Big labs also get more opportunities for post-publication PR: more resources to write blog posts and travel to give talks, more invitations to participate in panels and give talks;
-* We've still got the same bag of unconscious social biases that travels with us everywhere. Campaigns like <a href="https://twitter.com/intent/tweet?button_hashtag=CiteBlackWomen&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#CiteBlackWomen</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> are a response to a very unfair reality.
+* Post-publication PR, which is also easier for the big labs that have more resources to write blog posts and travel to give talks. They also receive many more  invitations to participate in panels and give talks.
+* How papers are received is still at least partly influenced by the same unconscious biases discussed above. Campaigns like <a href="https://twitter.com/intent/tweet?button_hashtag=CiteBlackWomen&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#CiteBlackWomen</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> are a response to an unfortunate reality.
 
-All of that means that even if a paper from an unknown lab and/or underrepresented community gets published at ACL, it will likely not make such a big splash as one with a similarly good idea, but coming from Stanford -- and that means that fewer people will adopt and build upon its results. Hence the "potential for growth" was never going to be the same. So if we are to optimize for that we should just publish everything by the big labs.
+All of that means that even if a paper from an unknown lab and/or underrepresented community gets published at ACL, it will likely not make such a big splash as one with a similarly good idea, but coming from Stanford -- and that means that fewer people will adopt and build upon its results. Hence the "potential for growth" was never going to be the same. 
 
-Granted, we do not know precisely how the programs would change from double-blindness, but here's what we do know:
+Granted, we do not know exactly how double-blindness would change our conference programs, but here's what we do know:
 
 * When ICLR went double-blind, we had a natural experiment which showed that preprints do make a difference; so we do know for a fact that the content of the program *would* change to some extent {% cite BharadhwajTurpinEtAl_2020_De-anonymization_of_authors_through_arXiv_submissions_during_double-blind_review %}. 
-* The bias against underrepresented communities should be reduced. For instance, there is evidence that female first authors get a better chance {% cite RobertsVerhoef_2016_Double-blind_reviewing_at_EvoLang_11_reveals_gender_bias %}.
+* The bias against underrepresented communities should be reduced. For instance, there is evidence that in double-blind review female first authors get a better chance {% cite RobertsVerhoef_2016_Double-blind_reviewing_at_EvoLang_11_reveals_gender_bias %}.
 * Even if this does increase randomness in peer review, as Kenneth Church predicts, that might actually be a good thing for progress {% cite PluchinoBiondoEtAl_2018_Talent_versus_luck_role_of_randomness_in_success_and_failure %}: among other things, their model suggests that random awards of grant funding would be more effective than preferentially awarding more grants to people who had already received grants in the past.
 * a more inclusive process should be beneficial for geographic diversity, which in case of NLP should propel language inclusivity {% cite JoshiSantyEtAl_2020_State_and_Fate_of_Linguistic_Diversity_and_Inclusion_in_NLP_World %}. Furthermore, this should improve the flow of ideas and collaborations between subcommunities, and "ethnically diverse" papers have a larger impact {% cite AlShebliRahwanEtAl_2018_preeminence_of_ethnic_diversity_in_scientific_collaboration %}.
 
-Judging by the overall direction of ACL 2020, and the presence of diversity&inclusion chairs in the recent conferences, the ACL organization now does aim to improve diversity, and double-blindness would be helpful for that. I hope that as the social movement towards diversity&inclusion grows, the community would also gradually become more receptive towards picking up and developing ideas from less-famous labs.
+Judging by the overall direction of ACL 2020, and the presence of diversity&inclusion chairs in the recent conferences, the ACL organization now does aim to improve diversity, and double-blindness would be helpful for that. I hope that as the social movement towards diversity&inclusion grows, the community would also gradually become more interested in picking up and developing non-mainstream ideas.
 
 ### "Small labs need arXiv"
 
@@ -100,7 +104,7 @@ First of all, this is not a realistic proposal: academic careers depend on the p
 
 Second, that is actually not an argument against double-blindness, but against peer review as such. Having the crowd "voting" on preprints with citations will suffer from the same biases we've already discussed: more famous labs are more likely to have their papers noticed organically and/or have the resources to promote them, which will have an impact on the citation count distribution. "PR review" might completely overtake "peer review". On the other hand, taking double-blindness seriously in peer review and developing a culture of discussing anonymous preprints has a chance of developing a healthier research ecosystem.
 
-## ACL rolling review proposal: how can we ensure double-blindness? 
+## ACL rolling review proposal(s) 
 
 ### Option 1: review, then accept
 
@@ -120,7 +124,7 @@ Can we just hide the identities of the editors, so they don't have to fear retal
  * biases are unconscious and would still be at work, even if the editors are senior enough to not worry about making enemies;
  * being an area chair or an action editor does go on the CV and is important for academic careers.
 
-One more counter-argument I heard is that the current rolling review proposal maintains the status quo wrt double-blindness, and so it is a separate issue to be addressed after the rolling proposal is implemented. I strongly disagree: we know we have a big problem, which has consequences for diversity of viewpoints and author demographics. We also know that we *can't* resolve it within our current system: the pressure to publish quickly is fundamentally at odds with once-a-year conference deadlines, and as long as big players keep getting advantage from preprints, the rest of us can't afford to not do the same. This factor will be exactly the same in the new system. So, why make another system that will be as fundamentally unfixable? True, we can't hope to solve every issue at once, but double-blindness is a really big thorn to miss.
+One more counter-argument I heard is that the current rolling review proposal maintains the status quo with respect to double-blindness, and so it is a separate issue to be addressed after the rolling proposal is implemented. I strongly disagree: we know we have a big problem, which has consequences for diversity of viewpoints and author demographics. We also know that we *can't* resolve it within our current system: the pressure to publish quickly is fundamentally at odds with once-a-year conference deadlines, and as long as big players keep getting advantage from preprints, the rest of us can't afford to not do the same. This factor will be exactly the same in the new system. So, why make another system that will be just as fundamentally unfixable? True, we can't hope to solve every issue at once, but double-blindness is a really big thorn to miss.
 
 ### Option 2: review+accept
 
@@ -137,9 +141,9 @@ Finally, *"review+accept"* is clearly faster than *"review, then accept"*. There
 
 ## Conclusion
 
-This is my case for double-blindness, and for peer review rather than PR review. Since we're reforming the review system anyway, we have a chance to actually have it - and there is a way to do that which combines double-blindness with the benefits of faster turnaround and a culture of discussing anonymous work. 
+This is my case for truly double-blind reviewing, and for peer review rather than PR review. Since we're reforming the review system anyway, we have a chance to actually have it - and there is a way to do that which combines double-blindness with the benefits of faster turnaround and a culture of discussing anonymous work. 
 
-I'm not in any way involved in the decision-making, but ACL review reform committee does listen to and solicit community feedback. I am going to update this post with any necessary clarifications, further suggestions and counter-counter arguments, and to try to pass this on.
+I'm not in any way involved in the decision-making, but ACL review reform committee does listen to and solicit community feedback. I hope this post will generate some further discussion in the community, and I'll update it with any necessary clarifications, further suggestions and counter-counter arguments. And then I'll try to pass this on.
 
 This post is based on many discussion by much wiser people, including (alphabetically) Isabelle Augenstein, Emily Bender, Jason Eisner, Matt Gardner, Yoav Goldberb, Jacob Anna Korhonen, Graham Neubig, Amanda Stent, and many others. Any misinterpretation is on me.
 
