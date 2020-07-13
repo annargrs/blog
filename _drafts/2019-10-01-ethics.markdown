@@ -1,0 +1,38 @@
+layout: single
+title:  "Ethically responsible NLP research"
+date:   2019-10-01 17:00:47 -0400
+categories: squib
+tags: academia ethics
+mathjax: false
+toc: false
+excerpt: "What can you do if you suspect your research could be misused?"
+header:
+    og_image: /assets/images/ostrich.jpg
+---
+
+Among the many recent EMNLP submissions one attracted a lot of attention not for the actual contribution it was making, but for how it could be used:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A paper by Beijing researchers presents a new machine learning technique whose main uses seem to be trolling and disinformation. It&#39;s been accepted for publication at EMLNP, one of the top 3 venues for Natural Language Processing research. Cool Cool Cool<a href="https://t.co/ZOcrhjKiEc">https://t.co/ZOcrhjKiEc</a> <a href="https://t.co/Y8U5AjENrh">pic.twitter.com/Y8U5AjENrh</a></p>&mdash; Arvind Narayanan (@random_walker) <a href="https://twitter.com/random_walker/status/1178663474475483137?ref_src=twsrc%5Etfw">September 30, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+The astonishing thing is that this paper had as its only contribution a system that would be readily exploited by opinion manipulation and advertising entities, but it did not even discuss this possibility. Note that the study was sponsored by two grants from Chinese institutions, and two of the authors are affiliated with Microsoft. 
+
+# Why do misusable research at all?
+
+An obvious question that may arise is 'Why should potentially dangerous research be done at all?' If such papers are never written, everybody would be safer, right?
+
+Well, NLP is not the only area that needs to worry about the potential misuse of its findings. In security research, publishing a new exploit comes with an obvious risk of its being exploited, but it is still done. The reasoning is this: 
+
+* if the published exploit is something that the bad guys already know, at least the good guys will also know it;
+* if the published exploit is something that the bad guys don't know yet, at least all the good guys will see it simultaneously with the bad guys, and will have a chance to counteract. 
+
+The result is a never-ending arms race: both sides are essentially aware of the same technologies at the same time, and the good guys are trying to stay one step ahead of the bad guys. For example, [HackerOne](http://hackerone.com) is a bug bounty and disclosure portal provider that collects reports from ethical hackers. Once a vulnerability is openly known, it is up to the provider of a given system or service to fix it.
+
+In NLP, we also have no shortage of potential misuses outside of academia. In social NLP, we already generation of news stories and comments, bots that spam and help to control agenda, and it is highly likely that unconscientious political players and even whole authoritarian states are already sponsoring research into these applications directly and/or contracting private companies who are working on it. Which means that we are about to enter in a arms race, similar to the one between the hackers and cybersecurity professionals.
+
+So we do need research on the potentially misus-able tasks, but we need it to have the right focus: 
+
+> Assuming the bad guys have this technology, what would they be able to do with it? How could we counter it?
+
+
+
+
