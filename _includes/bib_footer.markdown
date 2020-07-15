@@ -9,7 +9,7 @@
 {% assign num = page.url | size | minus: 1 %}
 {% assign citekey = page.url | replace: "/", "_" | slice: 0, num %}
 
-<div class="bibtex" style="display:none;" id='{{ postCite }}'>
+<div class="bibtex" style="display:none;" id="postCite">
 <pre>
 @misc{Rogers{{ citekey }},
   title = { {{ page.title }}},
