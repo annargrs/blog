@@ -118,7 +118,7 @@ Second, that is actually not an argument against full anonymity, but against pee
 
 ## ACL rolling review proposal(s) 
 
-So, what can we actually do about all this? Luckily, the arbitrariness of peer review in the recent years and the increasing review load has already led the community to believe that *something* should be done, and ACL already came forward with a [long-term review reform proposal](https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal). This post is inspired by numerous conversations around this proposal on Twitter and during ACL 2020. 
+So, what can we actually do about all this? Luckily, the arbitrariness of peer review in the recent years and the increasing review load has already led the community to believe that *something* should be done. ACL already came forward with a [long-term review reform proposal](https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal). This post is inspired by numerous conversations around this proposal on Twitter and during ACL 2020. 
 
 In a nutshell, here is the current version of this proposal.  
 
