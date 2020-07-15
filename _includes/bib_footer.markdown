@@ -1,7 +1,3 @@
-## References
-
-{% bibliography --cited %}
-
 ## Share / cite / discuss this post
 
 {% if page.share %}{% include social-share.html %}{% endif %} 
@@ -22,3 +18,7 @@
 }
 </pre>
 </div>
+
+## References
+
+{% bibliography --cited %}

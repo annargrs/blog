@@ -1,12 +1,12 @@
 ---
 layout: single
-title:  "Peer review or PR review? How ACL reviewing can become fully anonymous."
+title:  "Should the reviewers know who the authors are?"
 date:   2020-07-15 01:00:47 -0400
 categories: squib
 tags: academia peer-review  
 mathjax: false
 toc: true
-excerpt: "Why fully anonymous peer-review is important, and what we can do to achieve that."
+excerpt: "Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform."
 #twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
 header:
     og_image: /assets/images/justice.png
@@ -16,17 +16,19 @@ header:
 	<img src="/assets/images/justice.png">
 </figure>
 
-## Why peer review should be fully anonymous
+> This post is my $0.02 in the ongoing debate about ACL peer review reform. TLDR if you've missed that: ACL is discussing the ways to improve peer review, and released [short-term](https://www.aclweb.org/adminwiki/index.php?title=Short-Term_Reform_Proposals_for_ACL_Reviewing) and [long-term](https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal) review proposals that generated many lively discussions on Twitter and in ACL 2020. The debate is still going on, and ACL actively solicited community feedback. So far the proposals focused on new workflows and efficiency of the process; I'm arguing for broadening the goals so as to also improve author anonymity -- all the way up to the best paper award committees.
+
+## Why peer review needs to be fully anonymous
 
 It is a truth universally acknowledged that when the reviewers aware of the identity of the authors, they are strongly biased towards established authors and famous labs {% cite TomkinsZhangEtAl_2017_Reviewer_bias_in_single-_versus_double-blind_peer_review %}. 
  
 Ok, well, at least it *should* be a truth universally acknowledged. One of the most famous experiments on this was done nearly 30 years ago {% cite PetersCeci_1982_fate_of_published_articles_submitted_again %}. They resubmitted 12 articles to reputable psychology journals that already *published* these very same articles - but they changed the authors' names and institutions changed to unknown names. Only 8% of editors and reviewers noticed the resubmisson, and 89% recommended rejection, in many cases for 'methodology flaws'! 
 
-Note that this was 30 years ago, before we had Twitter and blogs. The research community has since made a lot of progress in developing 'PR review' techniques: a famous lab can have  a specific preprint widely discussed before it is even sent for review. That creates the impression that the community already accepted and validated this work, and so of course the reviewers should recommend it for acceptance.
+Note that this was 30 years ago, before we had Twitter and blogs. The research community has since made a lot of progress in developing 'PR review' techniques: a famous lab can have a specific preprint widely discussed before it is even submitted for review. That wide discussion by itself creates the impression that the community already accepted and validated this work, and so of course the reviewers should recommend it for acceptance.
 
 That's not even the worst part. It is a truth less universally acknowledged that non-anonymous peer review, like any other non-anonymous human interaction, is at risk of being compromised by social biases, such as biases by race, gender, ethnicity, age group. There is more than enough evidence to be concerned {%  cite BornmannMutzEtAl_2007_Gender_differences_in_grant_peer_review_meta-analysis KaatzGutierrezEtAl_2014_Threats_to_objectivity_in_peer_review_case_of_gender HojatGonnellaEtAl_2003_Impartial_Judgment_by_Gatekeepers_of_Science_Fallibility_and_Accountability_in_Peer_Review_Process %}, and to do something while we're educating ourselves on the subject.
 
-A key point here is that this applies even when the biases are unconscious. Say, we may be absolutely sure that neither the race of the authors, nor the prestige of their institution has anything to do with our opinion of a paper. The problem is that our conscious selves are not really trustworthy. So, given the human cognitive limitations, the best thing we can do is a fully anonymous peer-review process.
+A key point here is that this applies even when the biases are unconscious. Say, we may be absolutely sure that neither the race of the authors, nor the prestige of their institution has anything to do with our opinion of a paper. The problem is that our conscious selves are not really trustworthy. So, given human cognitive limitations, the best thing we can do is a fully anonymous peer-review process.
 
 ## Isn't it fully anonymous already?
 
@@ -72,15 +74,15 @@ The other argument is that it is not clear that fully anonymous review actually 
 
 > Obviously, we care about more than just fairness. Experiments supporting double-blind reviewing need to establish that the treatment (double-blind reviewing) is not only more fair than the control (traditional reviewing) but also more effective. Does the treatment accept better papers (with more potential for growth) than the control, or is treatment merely more random than the control? Thus far, most experiments (Tomkins, Zhang, and Heavlin 2017; Stelmakh, Shah, and Singh 2019) have more to say about fairness than effectiveness. {% cite Church_2020_Emerging_trends_Reviewing_reviewers_again %}
 
-I fully agree that the overall goal is to find papers with more scientific merit, rather than simply distribute acceptances evenly. However, if we accept that non-anonymous peer review is compromised by social biases, and different demographic groups have the same distribution of quality papers, then removing those biases would *improve* the overall quality of the program. For instance, if male and female first authors have the same ratio of high-quality papers, but the papers by women get systematically under-sampled - that means accepting more papers by men, even if they are in fact inferior.
+I fully agree that the overall goal is to find papers with more scientific merit - but that is precisely what we would achieve by mitigating social biases. If we accept that different demographic groups have approximately the same distribution of quality papers, then removing those biases would *improve* the overall quality of the program. For instance, if male and female first authors have the same ratio of high-quality papers, but the papers by women get systematically under-sampled - that means accepting more papers by men, even when they are in fact inferior.
 
-Furthermore, "potential for growth" means not only that the paper offers room for building on its ideas, but also that the community would do so. And that second part, once again, depends on more than just science. Consider at least the following factors:
+Furthermore, "potential for growth" means not only that the paper offers room for building on its ideas, but also that the community would do so. And that second part depends on more than just science. Consider at least the following factors:
  
 * The Matthew effect: the already-eminent scientists get disproportionate credit in cases of collaboration, or when the same discovery is made by independent teams {%cite Merton_1968_Matthew_Effect_in_Science_reward_and_communication_systems_of_science_are_considered %};
 * Post-publication PR, which is also easier for the big labs that have more resources to write blog posts and travel to give talks. They also receive many more  invitations to participate in panels and give talks.
 * How papers are received post-publication is still at least partly influenced by the same unconscious biases discussed above. Campaigns like <a href="https://twitter.com/intent/tweet?button_hashtag=CiteBlackWomen&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#CiteBlackWomen</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> are a response to an unfortunate reality. And here's a recent bit of evidence very close to home: preliminary analysis by Yoav Goldberg suggests that the talks by the authors with Chinese-sounding names [were viewed less often](https://twitter.com/yoavgo/status/1282700056211202049?s=20) in the online ACL 2020.
 
-All of that means that even if a paper from an unknown lab and/or underrepresented community gets published at ACL, it will likely not make such a big splash as one with a similarly good idea, but coming from e.g. Stanford -- and that means that fewer people will adopt and build upon its results. Hence the "potential for growth" was never going to be the same. 
+All of that means that even if a great idea from an unknown lab and/or underrepresented community gets published at ACL, it might not make as big a splash as it deserves. That means that fewer people will adopt and build upon its results. Hence the "potential for growth" was never going to be the same.
 
 Granted, we do not know exactly how full anonymity would change our conference programs, but here's what we do know:
 
@@ -159,9 +161,9 @@ Finally, *"review+accept"* is clearly faster than *"review, then accept"*, and t
 
 This is my case for fully anonymous reviewing, and for peer review rather than PR review. Since we're reforming the review system anyway, we have a chance to actually change things - and there is a way to do that which combines full anonymity with the benefits of faster turnaround and a culture of discussing anonymous work. 
 
-I'm not in any way involved in the decision-making, nor am I an authority on any of the above issues. However, the ACL review reform committee does listen to and solicit community feedback. I hope this post will generate further discussion; to that end, I'll update the post with a link to a Twitter thread that you can join, and I would appreciate any pointers to conversations emerging elsewhere. My goal is to listen, learn, and update this write-up with any necessary clarifications, nuances, further suggestions and counter-counter arguments. And then the ACL committee will have a clearer case to consider.
+I'm not in any way involved in the decision-making, nor am I an authority on any of the above issues. However, the ACL review reform committee does solicit community feedback. I hope this post will generate further discussion; to that end, I'll update the post with a link to a Twitter discussion thread, and I would appreciate any pointers to conversations emerging elsewhere. My goal is to listen, learn, and update this write-up with any necessary clarifications, nuances, further suggestions and counter-counter arguments. And then the ACL committee will have a clearer case to consider.
 
-This post is based on many discussion by much wiser people, including (alphabetically) Isabelle Augenstein, Emily M. Bender, Jason Eisner, Matt Gardner, Yoav Goldberb, Jacob Anna Korhonen, Graham Neubig, Amanda Stent, and many others. Any misinterpretation is on me. Separate thanks to Emily M. Bender and Matt Gardner for their comments on this post.
+This post is based on many conversations with much wiser people, including (alphabetically) Isabelle Augenstein, Emily M. Bender, Jason Eisner, Matt Gardner, Yoav Goldberb, Jacob Anna Korhonen, Graham Neubig, Amanda Stent, and many others. Any misinterpretation is my own. Separate thanks to Emily M. Bender and Matt Gardner for their comments on this post.
 
 {% include bib_footer.markdown %}
 
