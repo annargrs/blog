@@ -55,7 +55,7 @@ author:
 #todo add a default 120-x120 image to be used in cards for imageless posts
 #og_image: /assets/images/site-logo.png
 
-#twitter_username: "annargrs"
+twitter_username: "annargrs"
 #github_username:  "annargrs"
 #name: "Anna Rogers"
 logo: "/assets/images/logo-3col.png"

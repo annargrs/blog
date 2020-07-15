@@ -159,7 +159,7 @@ Finally, *"review+accept"* is clearly faster than *"review, then accept"*, and t
 
 This is my case for fully anonymous reviewing, and for peer review rather than PR review. Since we're reforming the review system anyway, we have a chance to actually change things - and there is a way to do that which combines full anonymity with the benefits of faster turnaround and a culture of discussing anonymous work. 
 
-I'm not in any way involved in the decision-making, but ACL review reform committee does listen to and solicit community feedback. I hope this post will generate some further discussion in the community. I'll update it with any necessary clarifications, further suggestions and counter-counter arguments. And then I'll try to pass this on.
+I'm not in any way involved in the decision-making, but the ACL review reform committee does listen to and solicit community feedback. I hope this post will generate some further discussion in the community; I'll update the post with a link to a Twitter thread that you can join, and I would appreciate any pointers to conversations emerging elsewhere. My goal is to listen, learn, and update the post with any necessary clarifications, nuances, further suggestions and counter-counter arguments. And then the ACL committee will have a clearer list of things to consider.
 
 This post is based on many discussion by much wiser people, including (alphabetically) Isabelle Augenstein, Emily M. Bender, Jason Eisner, Matt Gardner, Yoav Goldberb, Jacob Anna Korhonen, Graham Neubig, Amanda Stent, and many others. Any misinterpretation is on me. Separate thanks to Emily M. Bender and Matt Gardner for their comments on this post.
 
