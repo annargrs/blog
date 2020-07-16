@@ -7,7 +7,7 @@ tags: academia peer-review
 mathjax: false
 toc: true
 excerpt: "Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform."
-#twitter_thread: https://twitter.com/annargrs/status/1246491202377089035?s=20
+twitter_thread: https://twitter.com/annargrs/status/1283758686515732480?s=20
 header:
     og_image: /assets/images/justice.png
 ---
@@ -74,7 +74,7 @@ The other argument is that it is not clear that fully anonymous review actually 
 
 > Obviously, we care about more than just fairness. Experiments supporting double-blind reviewing need to establish that the treatment (double-blind reviewing) is not only more fair than the control (traditional reviewing) but also more effective. Does the treatment accept better papers (with more potential for growth) than the control, or is treatment merely more random than the control? Thus far, most experiments (Tomkins, Zhang, and Heavlin 2017; Stelmakh, Shah, and Singh 2019) have more to say about fairness than effectiveness. {% cite Church_2020_Emerging_trends_Reviewing_reviewers_again %}
 
-I fully agree that the overall goal is to find papers with more scientific merit - but we can't really measure that reliably, we seem to only agree on which papers are clearly bad (see the [NIPS experiment](http://blog.mrtz.org/2014/12/15/the-nips-experiment.html). But theoretically, if we accept that different demographic groups have approximately the same distribution of quality papers, then removing those biases would *improve* the overall quality of the program. For instance, if male and female first authors have the same ratio of high-quality papers, but the papers by women get systematically under-sampled - that means accepting more papers by men, even when they are in fact inferior.
+I fully agree that the overall goal is to find papers with more scientific merit - but we can't really measure that reliably, we seem to only agree on which papers are clearly bad (see the [NIPS experiment](http://blog.mrtz.org/2014/12/15/the-nips-experiment.html)). But theoretically, if we accept that different demographic groups have approximately the same distribution of quality papers, then removing those biases would *improve* the overall quality of the program. For instance, if male and female first authors have the same ratio of high-quality papers, but the papers by women get systematically under-sampled - that means accepting more papers by men, even when they are in fact inferior.
 
 Can we just use post-publication citation counts as proxy for paper merit, to prove that anonymity does or does not improve the overall program quality? Not really. For a paper to have high impact and "potential for growth", it needs (a) that there's room for building on its ideas, (b) that the community would do so. And that second part depends on more than just science. Consider at least the following factors:
  
@@ -110,11 +110,11 @@ The biggest issue, of course, is that early-career researchers do depend vitally
 
 ### "ArXiv is all we need"
 
-I have heard this last argument many times over the discussion of rolling review proposals. Yes, peer review by itself is deeply problematic. Again, it fails to detect serious flaws {% cite Smith_2010_Classical_peer_review_empty_gun %}, it is essentially [random for papers that are not obviously bad](http://blog.mrtz.org/2014/12/15/the-nips-experiment.html), and it does not necessarily reward great contributions: a recent NLP example is ELMO, that had unenthusiastic reviews at ICLR and then went to take the best paper award at NAACL. So maybe we don't need to bother with review at all, anonymous or not? Maybe we should just embrace preprints and let citation counts be the indicators of the paper quality?
+I have heard this last argument many times over the discussion of rolling review proposals. Yes, peer review by itself is deeply problematic. Again, it fails to detect serious flaws {% cite Smith_2010_Classical_peer_review_empty_gun %}, it is essentially [random for papers that are not obviously bad](http://blog.mrtz.org/2014/12/15/the-nips-experiment.html), and it does not necessarily reward great contributions: a recent NLP example is ELMO, that had unenthusiastic reviews at ICLR and then went to take the best paper award at NAACL. So... maybe we don't need to bother with review at all, anonymous or not? Shall we just embrace preprints and let citation counts be the indicators of the paper quality?
 
 First of all, this is simply not realistic, because academic careers depend on the prestige of publication venues. This is why top-tier conferences also cannot just start accepting more than 25% of papers. Yes, this is arbitrary and has nothing to do with research, but I have not seen any sufficiently detailed alternative proposals. And even if someone came up with one, it would take many years of lobbying universities and research councils to accept it. And it would have to be done by the senior academics who have many other demands on their time.
 
-Second, that is actually not an argument against full anonymity, but against peer review as such. Having the crowd "voting" on preprints with citations will suffer from the same biases we've already discussed: more famous labs are more likely to have their papers noticed organically and/or have the resources to promote them, which will have an impact on the citation count distribution. "PR review" might completely overtake "peer review". On the other hand, taking full anonymity seriously in peer review and developing a culture of discussing anonymous preprints has a chance of developing a healthier research ecosystem.
+Second, that is actually not an argument against full anonymity, but against peer review as such. As discussed above, having the crowd "vote" on preprints with citations will suffer from all the same biases: less famous labs and/or authors from marginalized communities are less likely to have their papers noticed organically and/or have the resources to promote them, which will have an impact on the citation count distribution. "PR review" might completely overtake "peer review". On the other hand, taking full anonymity seriously in peer review and developing a culture of discussing anonymous preprints has a chance of developing a healthier research ecosystem.
 
 ## ACL rolling review proposal(s) 
 
