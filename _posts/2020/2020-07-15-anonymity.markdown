@@ -167,5 +167,9 @@ I hope this post will generate further discussion; to that end, I'll update the 
 
 This post is based on many conversations with much wiser people, including (alphabetically) Isabelle Augenstein, Emily M. Bender, Jason Eisner, Matt Gardner, Yoav Goldberb, Jacob Anna Korhonen, Graham Neubig, Amanda Stent, and many others. Any misinterpretation is my own. Separate thanks to Emily M. Bender and Matt Gardner for their comments on this post.
 
+*[UPDATE 07.2020]* The post generated [some discussion](https://twitter.com/annargrs/status/1283758686515732480?s=20), people submitted feedback to the ACL reform committee using the [official feedback form](https://forms.office.com/Pages/ResponsePage.aspx?id=9028kaqAQ0OMdrEjlJf7WQiNRJRoOx9OlzQS6C5hck5URVc2MDZPRFBVNDRRRjBaMjBQVk41RVpMOC4u). No response from the committee so far. Fingers crossed.
+
+*[Update 12.2020]* While we're waiting - [NEJLT](https://www.nejlt.org/) is a new journal for computational linguistics research that implements a fully anonymous review process, all the way up to the editors. Check it out!
+
 {% include bib_footer.markdown %}
 
