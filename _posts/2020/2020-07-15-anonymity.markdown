@@ -102,7 +102,7 @@ ArXiv preprints are vigorously defended by Dmytro Mishkin and Amy Tabb in the ["
 
 The latter point could actually be solved within an anonymous preprint system: for example, upon submission of a manuscript people could get receipts acknowledging the submission, and those receipts and/or pdfs stamped with submission record information could be provided as part of the application package. 
 
-As for the former, it is true that scales are tipped in favor of big labs to begin with, but it is hardly a reason to not to try to *reduce* systemic biases. 
+As for the former, it is true that scales are tipped in favor of big labs to begin with. Allen Schmaltz [argues](https://github.com/allenschmaltz/Resolute_Resolutions/blob/master/volume1/volume1.pdf) that even an anonymous author may be at disadvantage not because the reviewers can guess who they are, but rather who they are *not* (a member of an established lab with resources and recognizable research agenda). But it is hardly a reason to not to try to *reduce* systemic biases. 
 
 As a case study, one of the inherent disadvantages for most small labs in the world is that the famous big labs tend to be based in the English-speaking countries. Non-native-sounding English nearly got one of EMNLP PC committees to reject *all* their submissions from Asian and European countries with less than 5 submissions {% cite Church_2020_Emerging_trends_Reviewing_reviewers_again %}! However, this factor is increasingly recognized, and there are initiatives to try to mitigate it. For instance, ACL Student Research Workshop is already running a [mentoring program](https://sites.google.com/view/acl20studentresearchworkshop/mentoring) specifically to improve the quality of writing and presentation. ACL 2020 also had sponsorship from Grammarly to help with proof-reading. [EMNLP 2020 reviewing guidelines](https://2020.emnlp.org/blog/2020-05-17-write-good-reviews/) specifically ask the reviewers to focus on the paper substance, not the writing.
 
@@ -120,7 +120,9 @@ Second, that is actually not an argument against full anonymity, but against pee
 
 So, what can we actually do about all this? Luckily, the arbitrariness of peer review in the recent years and the increasing review load has already led the community to believe that *something* should be done. ACL already came forward with a [long-term review reform proposal](https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal). This post is inspired by numerous conversations around this proposal on Twitter and during ACL 2020. 
 
-In a nutshell, here is the current version of this proposal.  
+The current version of the rolling review proposal maintains the status quo with respect to anonymity, considering it a separate issue to be addressed later. In this post, I argue that we do need to think of it already to make sure that the new system at least can be more fair than what we have. True, we can't hope to solve every issue at once, but this one is really big, especially given the raising awareness of societal biases.
+
+In a nutshell, here is the current version of this proposal.
 
 ### Option 1: review, then accept
 
@@ -129,33 +131,61 @@ To decrease the volume of papers that get (re-)reviewed, ACL is proposing to swi
 * **Stage 1**: papers are submitted to a unified review pool with monthly deadlines, where they undergo fully anonymous peer review. After that is done, the authors have the option to revise-and-resubmit, or they may choose to make their papers public.
 * **Stage 2**: authors of already-reviewed papers may submit their work to conferences/workshops/journals (based on their respective deadlines). The ACs/SACs/PCs make decisions based on the existing reviews, and their own editorial policies. This process may or may not conceal author identity, like it is done today.
 
-I hope I've made the case that stage 2 really has to be fully anonymous. But NLP is moving at breakneck speed, and the authors would shoot themselves in the foot to not "publish" their work as soon as it was reviewed. We could offer the option of anonymous preprints, but if it were optional, most people would not go for it because directly publicizing your work would generate much more attention. And then the acceptance decisions would *not* be made anonymously.
+### Option 2: review+accept
 
-As Yoav Goldberg pointed out, in this proposed scheme the situation would actually be worse than it is now, because the editorial role of ACs/SACs/PCs really puts them in the limelight, and *their* identities will be known to the authors. In other words, the authors will know that it is these specific people that did not want their work in the conference, perhaps despite good reviews. And who wants to make enemies?
+The presentation of the rolling review proposal in ACL 2020 was followed by a very lively RocketChat discussion, in which [Matt Gardner](https://matt-gardner.github.io/) mentioned an alternative proposal that the review committee also considered, but it didn't make it past the brain-storming stage. The idea is basically *"review+accept"*: the journal/conference acceptance decisions would be made inside of the rolling review system, thus maintaining full anonymity. 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">btw, it goes both ways: as a SAC/PC in the new system, the authors will know that *you*, *personally* did not find their paper suitable for ACL 2023. this may cause some tricky situations (and all the more incentives for SAC/PC to get papers from influentials/friends in)</p>&mdash; (((ل()(ل() &#39;yoav)))) (@yoavgo) <a href="https://twitter.com/yoavgo/status/1274673040782233600?ref_src=twsrc%5Etfw">June 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+* **Pros**: not only full anonymity, but also much faster turnaround!
+* **Cons**: So far the acceptance rates were stable at around 25%, but offline conferences have an extra constraint of the venue space. For instance, if next year we still have room for only 800 papers, but receive over 6000 submissions, we will either have to lower the acceptance rate, or have conferences that are 90% posters, or stick to online conferences. This is a separate issue, but if ACL were to decide to address this by lowering the acceptance rates, it would be harder to do in the *review+accept* version because the organizers wouldn't get all the papers at once. Say, a CFP could be announced to run for 4 months, but already in the first month the PCs might accept the maximum number of papers they can for a given physical venue, and stop receiving submissions.
+
+Again, the issue of scaling our conferences is a separate one, and deserves serious consideration. At the moment, it is not clear whether the pros of offline conferences outweigh the environmental and social costs. But if ACL does not opt to cap the total number of accepted papers, *"review+accept"* would deliver acceptance decisions would arrive a month or two faster than in *"review, then accept"*. This is significant in the fast-moving world of current NLP. 
+ 
+ ### Embracing anonymous preprints
+
+In either proposal, the key issue for anonymity is what happens after a paper was reviewed, and before it is submitted for a conference. Suppose the authors aim for ACL, and their paper is submitted for review in August. They have to wait until the ACL CFP is out (or submit to some other venue). Let's say the paper is reviewed in September and the authors are happy with the reviews. 
+
+If they choose to deanonymize, there is the immediate benefit of having a "respectable" peer-reviewed preprint under their names, which is important for those on the job market. But there are two big problems:
+
+* Many papers do not get accepted on the first try. The authors may try a conference and then decide to make changes and go back into the reviewing pool. If they do so, the peer review will no longer be anonymous.
+* The conference acceptance decisions would inherently be partly or fully non-anonymous. As Yoav Goldberg pointed out, in this proposed scheme the situation would actually be worse than it is now, because the editorial role of ACs/SACs/PCs really puts them in the limelight, and *their* identities will be known to the authors. In other words, the authors will know that it is these specific people that did not want their work in the conference, perhaps despite good reviews. And who wants to make enemies?
+ 
+  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">btw, it goes both ways: as a SAC/PC in the new system, the authors will know that *you*, *personally* did not find their paper suitable for ACL 2023. this may cause some tricky situations (and all the more incentives for SAC/PC to get papers from influentials/friends in)</p>&mdash; (((ل()(ل() &#39;yoav)))) (@yoavgo) <a href="https://twitter.com/yoavgo/status/1274673040782233600?ref_src=twsrc%5Etfw">June 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Can we just hide the identities of the editors, so they don't have to fear retaliation? No, because: 
 
  * biases (unconscious or not) would still be at work, even if the editors are senior enough to not worry about making enemies;
  * being an area chair or an action editor does go on the CV and is important for academic careers.
 
-One counter-argument I heard is that the current rolling review proposal simply maintains the status quo with respect to anonymity, and so it is a separate issue to be addressed after the rolling proposal is implemented. I strongly disagree: we know we have a big problem, which has consequences for diversity of viewpoints and author demographics. We also know that we *can't* resolve it within our current system: the pressure to publish quickly is fundamentally at odds with once-a-year conference deadlines, and as long as big players keep getting advantage from preprints, the rest of us can't afford to not do the same. This factor will be exactly the same in the new system. So, why create another system that will be just as fundamentally unfixable? True, we can't hope to solve every issue at once, but author anonymity is a really big thorn to miss, especially given the raising awareness of societal biases.
+But both of these problems can be avoided if we simply embrace the openReview model:
 
-### Option 2: review+accept
+* the papers are made available for all to see as anonymous preprints;
+* the anonymous reviews and decisions are also available for all to see;
+* there are open comments from the public (and the reviewers would be incentivized to write better reviews if they could not see the open comments until they submitted their opinions);
+* the papers would already start collecting citations;
+* the system could be set up to provide some kind of receipts for those who need proof of authorship for job applications;
+* having a public record of community engaging with papers would be helpful for early career researchers, especially when non-experts evaluate their grant proposals and tenure cases. For that same reason, the system should provide an option to hide non-constructive comments. 
 
-The presentation of the rolling review proposal in ACL 2020 was followed by a very lively RocketChat discussion, in which [Matt Gardner](https://matt-gardner.github.io/) mentioned an alternative proposal that the review committee also considered, but it didn't make it past the brain-storming stage. The idea is basically *"review+accept"*: the journal/conference acceptance decisions would be made immediately inside of the rolling review system, thus maintaining full anonymity. 
+Moreover, generally this could be a chance to develop a healthier relationship with preprints in the community: ideally we'd want to look at new work because we want to see the latest results in the area we care about - not because it is something publicized by someone influential. Imagine an openReview-like system equipped with a daily feed of preprints in each subfield. Further imagine that, unlike arXiv, it comes with a dedicated chat/forum, tied to each paper. The RocketChat experience in ACL 2020 made it painfully clear how useful that would be.
 
-* **Pros**: not only full anonymity, but also much faster turnaround!
-* **Cons**: So far the acceptance rates were stable at around 25%, but offline conferences have an extra constraint of the venue space. For instance, if next year we still have room for only 800 papers, but receive over 6000 submissions, we will either have to lower the acceptance rate, or have conferences that are 90% posters, or stick to online conferences. This is a separate issue, but if ACL were to decide to address this by lowering the acceptance rates, it would be harder to do in the *review+accept* version because the organizers wouldn't get all the papers at once. Say, a CFP could be announced to run for 4 months, but already in the first month the PCs might accept the maximum number of papers they can for a given physical venue, and stop receiving submissions.
 
-Again, the issue of scaling our conferences is a separate one, and deserves serious consideration. At the moment, it is not clear whether the pros of offline conferences outweigh the environmental and social costs. But even if ACL were to go down the road of lowering acceptance rates, I'd argue that the cons of fully anonymous peer review are logistic, and the pros are existential. That makes the game very well worth the candle.
+
+arxiv feed
+
+
+In *"review+accept"* all papers will have to be discussed either anonymously or post-acceptance, and the rush to see new ideas should help to develop a culture for looking at the work itself. To make things even more interesting, we could disallow the reviewers to see the public discussions until they submitted their own reviews - which would further incentivize them to write better reviews. For the papers that generated good discussions, the authors might choose to keep such discussions public: 
+
+I hope I've made the case that stage 2 really has to be fully anonymous. But NLP is moving at breakneck speed, and the authors would shoot themselves in the foot to not "publish" their work as soon as it was reviewed. We could offer the option of anonymous preprints, but if it were optional, most people would not go for it because directly publicizing your work would generate much more attention. And then the acceptance decisions would *not* be made anonymously. And should the paper be rejected and opt to return to the reviewing pool, the second round of reviewing will be inherently compromised.
+
+ and that's something that the community would welcome very much. First, for better or worse, we have this huge class of NLP engineering papers where a big part of claim is the SOTA status of the system. Such papers literally cannot afford to not be accepted at once. It is an open question whether we we might want to [consider them a separate paper type that should not compete with "more sciency" papers](https://medium.com/@vered1986/a-potential-approach-to-address-the-explosion-of-nlp-paper-submissions-50afa04bcd4c), but faster turnaround is crucial for other paper types too: longer waits means higher chances of getting scooped, and/or the necessity of update baseline experiments with whatever-became-SOTA-since-submission.
+
+
+But even if ACL were to go down the road of lowering acceptance rates, I'd argue that the cons of fully anonymous peer review are logistic, and the pros are existential. That makes the game very well worth the candle.
 
 One more plus of *"review+accept"* is that we have a better chance to establish the culture of discussing anonymous preprints. In both proposals, there will be a pool of papers under review which could be made open to comments from non-reviewers (as long as there's no COI, and the reviewers do not see those comments until they finish their own). But in *"review, then accept"* there will be papers that were already deanonymized and then open for discussion: that again has potential for heated discussions around work by big names, which by itself would additionally bias the acceptance decisions. In a way, this is what we have already: it is already possible to post an anonymous preprint, but the chances for anonymous work to get any attention in the flood of preprints propelled by the authors are slim.
 
-In *"review+accept"* all papers will have to be discussed either anonymously or post-acceptance, and the rush to see new ideas should help to develop a culture for looking at the work itself. To make things even more interesting, we could disallow the reviewers to see the public discussions until they submitted their own reviews - which would further incentivize them to write better reviews. For the papers that generated good discussions, the authors might choose to keep such discussions public: having a record of research community's engagement with one's ideas could help when their grant proposals and tenure cases are evaluated by non-experts.
 
-Finally, *"review+accept"* is clearly faster than *"review, then accept"*, and that's something that the community would welcome very much. First, for better or worse, we have this huge class of NLP engineering papers where a big part of claim is the SOTA status of the system. Such papers literally cannot afford to not be accepted at once. It is an open question whether we we might want to [consider them a separate paper type that should not compete with "more sciency" papers](https://medium.com/@vered1986/a-potential-approach-to-address-the-explosion-of-nlp-paper-submissions-50afa04bcd4c), but faster turnaround is crucial for other paper types too: longer waits means higher chances of getting scooped, and/or the necessity of update baseline experiments with whatever-became-SOTA-since-submission.
+
+
 
 ## Conclusion
 
