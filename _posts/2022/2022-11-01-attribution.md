@@ -1,17 +1,22 @@
 ---
 layout: single
-title:  "The attribution problem with generative AI"
-date:   2022-11-01 10:00:47 +0200
+title: "The attribution problem with generative AI"
+date: 2022-11-01 10:00:47 +0200
 categories: squib
 tags: ethics debate 
+redirect_from: "/attribution/"
 mathjax: false
 toc: true
-excerpt: "No, AI models that generate text or images are not just "taking inspiration" from their training data similarly to humans. For humans it is both a cognitive and a social activity."
+excerpt: "No, AI models that generate text or images are not just "taking inspiration" from their training data similarly to humans. For the humans it is both a cognitive and a social activity."
 header:
     og_image: /assets/images/atribution-header.png
 ---
 
-Whenever the discussion about large pre-trained generative models hits the question of "what about all this work of artists, programmers and writers that is used in commercial products/models without their knowledge or consent?", one of the arguments for why this is ok is the comparison of such models to search engines. It goes something like this:
+<figure>
+	<img src="/assets/images/atribution-header.png">
+</figure>
+
+When the discussion about large pre-trained generative models hits the question of "what about all this work of artists, programmers and writers that is used in commercial products/models without their knowledge or consent?", one of the arguments for why this is ok is the comparison of such models to search engines. It goes something like this:
 
 > _As a human, you can and do search for inspiration in other people's writing, code snippets and art. A generative model is similar, it just provides a convenient interface for a search over a huge amount of data as you go._
 
@@ -19,7 +24,7 @@ Side note: this is about the "latent search" or "synthesis" of the training data
 
 So what's wrong with the "latent search engine" view of generative models? 
 
-It is obviously true that autoregressive language models do search for the most probable completion based on the prompt. And it is equally true that human art and writing is conditioned on the inputs encountered by the said humans in their lives, as well as relevant inputs that were deliberately sought out in response to a particular challenge. In literary studies and art there is the notion of _[intertextuality](https://en.wikipedia.org/wiki/Intertextuality)_ {% cite Bakhtin_1981_Discourse_in_novel Kristeva_1980_Desire_in_language_semiotic_approach_to_literature_and_art Barthes_1977_Death_of_Author %}, covering a wide range of ways in which different texts/artworks are related (or perceived to be related by the reader), such as allusion, quotation, parody etc.
+It is obviously true that autoregressive language models do search for the most probable completion based on the prompt. And it is equally true that human writing and art is conditioned on the inputs encountered by the said humans in their lives, as well as relevant inputs that were deliberately sought out in response to a particular challenge. In literary studies and art there is the notion of _[intertextuality](https://en.wikipedia.org/wiki/Intertextuality)_ {% cite Bakhtin_1981_Discourse_in_novel Kristeva_1980_Desire_in_language_semiotic_approach_to_literature_and_art Barthes_1977_Death_of_Author %}, covering a wide range of ways in which different texts/artworks are related (or perceived to be related by the reader), such as allusion, quotation, parody etc.
 
 But there are a few important limitations to this analogy, including the fundamental differences in the mechanism behind the generative models and  the human inspiration, the potential scale of societal impact for commercial models, and a very different set of stakeholders and benefactors. This post focuses on one particular point in which the search engine analogy breaks down: the attribution problem.
 
