@@ -2,11 +2,13 @@
 layout: single
 title:  "The attribution problem with generative AI"
 date:   2022-11-01 10:00:47 +0200
-categories: howto
-tags: academia,   
+categories: squib
+tags: ethics debate 
 mathjax: false
 toc: true
 excerpt: "No, AI models that generate text or images are not just "taking inspiration" from their training data similarly to humans. For humans it is both a cognitive and a social activity."
+header:
+    og_image: /assets/images/atribution-header.png
 ---
 
 Whenever the discussion about large pre-trained generative models hits the question of "what about all this work of artists, programmers and writers that is used in commercial products/models without their knowledge or consent?", one of the arguments for why this is ok is the comparison of such models to search engines. It goes something like this:
@@ -65,11 +67,11 @@ Let's say you're writing a deep learning blog post about self-attention in Trans
 
 > _The self-attention mechanism in Transformers is able to compute pair-wise relations between patches globally, consequently achieving feature interactions across a long range. It is… regarded as a mapping of query and key/value pairs to an output, each of which being represented by a vector. A well-known concern with self-attention… is the quadratic time and memory complexity, which can hinder model scalability in many settings._
 
-Augmented with links to source papers, the same paragraph would look like this:
+All of these sentences actually come from different research papers. Augmented with links to those papers, the same paragraph would look like this:
 
 > _The self-attention mechanism in Transformers is able to compute pair-wise relations between patches globally, consequently achieving feature interactions across a long range. [[https://arxiv.org/pdf/2201.00462v2.pdf](https://arxiv.org/pdf/2201.00462v2.pdf)] It is… regarded as a mapping of query and key/value pairs to an output, each of which being represented by a vector [[https://arxiv.org/pdf/1807.03052.pdf](https://arxiv.org/pdf/1807.03052.pdf)]. A well-known concern with self-attention… is the quadratic time and memory complexity, which can hinder model scalability in many settings. [[https://arxiv.org/pdf/2009.06732.pdf](https://arxiv.org/pdf/2009.06732.pdf)]._
 
-The key difference is that the first paragraph _looks_ like something actually "done" by AI, and you might be tempted to actually use it. The references destroy the illusion of the attribution-free text, and then the "writing aid" does not look nearly as appealing. It may be useful as a research tool, if you would choose to rely on GPT-3 for your high-level thinking. But unless you are comfortable simply copying phrases from other people's papers, the "writing aid" illusion falls apart. In this made-up example the ideas in the quoted sentences are all very well-known - but even so, simply pasting them directly into your own article would feel wrong, for the same reason researchers don't just copy introduction and related work sections from other papers, even their own prior work (similar as they often are). Now what if it was anything more original?
+The key difference is that the first paragraph _looks_ like something actually "done" by the model, and you might be tempted to actually use it. The references destroy the illusion of the attribution-free text, and then the "writing aid" does not look nearly as appealing. It may be useful as a research tool, if you would choose to rely on GPT-3 for your high-level thinking. But unless you are comfortable simply copying phrases from other people's work, the "writing aid" illusion falls apart. Admittedly, this example is exaggerated: perhaps only some part of the generated text would be so clearly plagiarized. But you would not know which part it was. 
 
 {% cite ShahBender_2022_Situating_Search %} make the case that the references approach is insufficient even for the "domain expert" QA model envisaged by {% cite MetzlerTayEtAl_2021_Rethinking_search_making_domain_experts_out_of_dilettantes %}: the model may end up being the arbiter of truth for cases that are far from resolved, may present "both sides" on topics like the flat earth theory, and may obscure the real sources of information behind the citation (e.g. something called "XYZ clinic" may actually be a homeopathy provider with no medical credentials). Of course, there are cases in which the answer is straightforward enough to trust the current models with - but unfortunately we can't easily tell which cases are "safe".
 
@@ -79,7 +81,7 @@ The key difference is that the first paragraph _looks_ like something actually "
 
 True, when we write academic articles nowadays, nobody expects you to provide the trail of references all the way down to Aristotle. But few people would say that taking someone's recent NeurIPS paper and republishing it would be ok. Yes, it is a continuum, but it's still real.
 
-What exactly is common knowledge and what deserves a reference at a given point in time depends on your domain knowledge (and your conscience), but everybody still has a fairly clear idea of what their own boundaries are. Would you personally be comfortable with changing some variable names in a StackOverflow snippet and passing it as your own work? Would you tell your child it's ok to copy-paste essay passages from public domain sources - after all, it's not illegal? How about if you hear an apt metaphor in someone's keynote that you haven't heard anywhere else - would you say that it's "just English" and use it as your own? Whatever your answers are to these questions - you have these answers, which means that you have your own attribution norms. They matter to _you_. And part of the reason you have this specific set of norms is that you know that this is what the people around you expect.
+What exactly is common knowledge and what deserves a reference at a given point in time varies by person, depending on their domain knowledge and principles. Still, everybody has a fairly clear idea of what their own boundaries are. Would you personally be comfortable with changing some variable names in a StackOverflow snippet and passing it as your own work? Would you tell your child it's ok to copy-paste essay passages from public domain sources - after all, it's not illegal? How about if you hear an apt metaphor in someone's keynote that you haven't heard anywhere else - would you say that it's "just English" and use it as your own? Whatever your answers are to these questions - you have these answers, which means that you have your own attribution norms. They matter to _you_. And part of the reason you have this specific set of norms is that you know that this is what the people around you expect.
 
 ### "Fair use"
 
