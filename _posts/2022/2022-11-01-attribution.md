@@ -7,13 +7,13 @@ tags: ethics debate
 redirect_from: "/attribution/"
 mathjax: false
 toc: true
-excerpt: "No, generative AI models do not just get 'inspired' by their training data similarly to humans. For the humans it is both a cognitive and a social activity."
+excerpt: "We can't say that any publicly available data is fair game for commercial generative AI, because models just get 'inspired' like humans. That process is both cognitive and social."
 header:
     og_image: /assets/images/attribution-header.png
 ---
 
 <figure>
-	<img src="/assets/images/atribution-header.png">
+	<img src="/assets/images/attribution-header.png">
 </figure>
 
 When the discussion about large pre-trained generative models hits the question of "what about all this work of artists, programmers and writers that is used in commercial products/models without their knowledge or consent?", one of the arguments for why this is ok is the comparison of such models to search engines. It goes something like this:
