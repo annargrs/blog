@@ -7,9 +7,9 @@ tags: ethics debate
 redirect_from: "/attribution/"
 mathjax: false
 toc: true
-excerpt: "No, AI models that generate text or images are not just "taking inspiration" from their training data similarly to humans. For the humans it is both a cognitive and a social activity."
+excerpt: "No, generative AI models do not just get 'inspired' by their training data similarly to humans. For the humans it is both a cognitive and a social activity."
 header:
-    og_image: /assets/images/atribution-header.png
+    og_image: /assets/images/attribution-header.png
 ---
 
 <figure>
