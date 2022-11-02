@@ -3,7 +3,7 @@ layout: single
 title:  "How to Record a Virtual Conference Talk"
 date:   2021-05-08 01:00:47 -0400
 categories: howto
-tags: academia, productivity  
+tags: academia productivity  
 mathjax: false
 toc: true
 excerpt: "Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time."

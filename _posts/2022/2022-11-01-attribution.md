@@ -7,7 +7,8 @@ tags: ethics debate
 redirect_from: "/attribution/"
 mathjax: false
 toc: true
-excerpt: "One frequent argument for why public data is fair game for commercial models is that human-produced text/art also has sources. But unlike models, we know when attribution is due.."
+excerpt: "Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due..."
+twitter_thread: https://twitter.com/annargrs/status/1587765010763108353
 header:
     og_image: /assets/images/attribution-header.png
 ---
