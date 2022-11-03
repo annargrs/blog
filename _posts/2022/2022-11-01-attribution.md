@@ -47,7 +47,7 @@ Any musician has listened to other music that influenced them. Art students go t
 
 Another key difference is that if they aim to be an original artist/musician/writer, while they build on prior work, the point is always to add enough of their own thinking that the next generation has something to similarly learn from _them_ (and not only their 'sources'). It is far from clear that we get that same degree of creativity from generative models.
 
-With regards to AI art in particular: I'm not an artist at all, but it seems that it's actually the style (shapes, color schemes etc) rather than the particular images/artifacts that the artist spends a lifetime developing, and that brings them professional recognition. They seem to very much disagree that it is ok to just appropriate that {% cite Heikkila_2022_This_artist_is_dominating_AI-generated_art_And_hes_not_happy_about_it %}. [Spawning AI](https://spawning.ai/) has built a [tool](https://haveibeentrained.com/) for artists to detect when their work has been part of popular training datasets.
+With regards to AI art in particular: I'm not an artist at all, but it seems that it's actually the style (shapes, color schemes etc) rather than just the particular images/artifacts that the artist spends a lifetime developing, and that also bring them professional recognition. They seem to very much disagree that it is ok to just appropriate that {% cite Heikkila_2022_This_artist_is_dominating_AI-generated_art_And_hes_not_happy_about_it %}. [Spawning AI](https://spawning.ai/) has built a [tool](https://haveibeentrained.com/) for artists to detect when their work has been part of popular training datasets.
 
 In conclusion: no, generative models are _not_ doing the same kind of latent search over the possible things they could "say" as the humans do when they produce texts or art. A key difference is that for humans it is not only a cognitive activity driven by content considerations, but also a social activity. We are acutely aware of when attribution is needed, we provide that attribution, and we expect attribution in return. Granted, different people may have a different sense of when attribution is appropriate (based on their personal experience, familiarity with a subject, the social norms in their environment, etc.) - but that does not make the fundamental principle any less real. 
 
@@ -102,3 +102,9 @@ Maybe the future CoPilot owner works out some licensing scheme which gives you s
 **Acknowledgements**
 
 Many thanks to amazing folks from HuggingFace for feedback & suggestions! In particular, Christopher Akiki, Gérard Dupont, Sasha Luccioni, and Aleksandra Piktus (in alphabetical order).
+
+**Updates**
+
+The text of the post was clarified thanks to feedback in the [Twitter thread](https://twitter.com/annargrs/status/1587765010763108353).
+
+{% include bib_footer.markdown %}
