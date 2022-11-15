@@ -106,7 +106,7 @@ scholar:
   # more options: https://pages.lip6.fr/Pascal.Poizat/blog/posts/2016/02/01/jekyll-and-bibtex/
   style: _bibliography/apa_modified.csl
   sort_by: author, year
-  order: descending
+  order: ascending
   bibliography_template: bib
   use_raw_bibtex_entry: true # to enable {{...}} inside bibtex
 
