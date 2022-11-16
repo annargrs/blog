@@ -1,0 +1,1543 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Should the reviewers know who the authors are? - Hacking semantics</title>
+<meta name="description" content="Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hacking semantics">
+<meta property="og:title" content="Should the reviewers know who the authors are?">
+<meta property="og:url" content="https://hackingsemantics.xyz/2020/anonymity/">
+
+
+  <meta property="og:description" content="Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.">
+
+
+
+  <meta property="og:image" content="https://hackingsemantics.xyz/assets/images/justice.png">
+
+
+
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="Should the reviewers know who the authors are?">
+  <meta name="twitter:description" content="Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.">
+  <meta name="twitter:url" content="https://hackingsemantics.xyz/2020/anonymity/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hackingsemantics.xyz/assets/images/justice.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2020-07-15T01:00:47-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://hackingsemantics.xyz/2020/anonymity/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hacking semantics Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!--bibtex hack-->
+<script>
+function showBibtex(bibDiv) {
+  var x = document.getElementById(bibDiv);
+  if (x.style.display === "none" || x.style.display === '') {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="icon" type="image/png" href="/assets/images/logo-3col.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-3col.png" alt=""></a>
+        
+        <a class="site-title" href="/">Hacking Semantics</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/aro.jpg" alt="Anna Rogers" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Anna Rogers</h3>
+    
+    
+
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="http://sodas.ku.dk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-university" aria-hidden="true"></i> University of Copenhagen</a></li>
+          
+        
+          
+            <li><a href="http://annargrs.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i> Homepage</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar ai" aria-hidden="true"></i> Google Scholar</a></li>
+          
+        
+          
+            <li><a href="https://www.semanticscholar.org/author/Anna-Rogers/145046059" rel="nofollow noopener noreferrer"><i class="ai ai-semantic-scholar ai" aria-hidden="true"></i> Semantic Scholar</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-4845-4023" rel="nofollow noopener noreferrer"><i class="ai ai-orcid ai" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+      
+
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <!--label for="ac-toc">Toggle Menu</label-->
+  <ul class="nav__items">
+    
+  </ul>
+</nav>
+    
+  
+
+
+<!-- stolen from here:
+https://www.gungorbudak.com/blog/2017/12/08/tags-cloud-sorted-by-post-count-for-jekyll-blogs-without-plugins/
+-->
+<!--div class="tag-cloud">
+
+
+
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#academia/" rel="tag">#academia</a> (10)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#methodology/" rel="tag">#methodology</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-3">
+        <a class="tag-link" href="/tags/#peer-review/" rel="tag">#peer-review</a> (3)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#conference/" rel="tag">#conference</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#debate/" rel="tag">#debate</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#ethics/" rel="tag">#ethics</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#negresults/" rel="tag">#negresults</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#organization/" rel="tag">#organization</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#productivity/" rel="tag">#productivity</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#review/" rel="tag">#review</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#socialNLP/" rel="tag">#socialNLP</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#teaching/" rel="tag">#teaching</a> (1)
+    </span>
+
+
+
+
+
+</div-->
+
+
+
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Should the reviewers know who the authors are?">
+    <meta itemprop="description" content="Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.">
+    <meta itemprop="datePublished" content="July 15, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Should the reviewers know who the authors are?
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  23 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
+              <ul class="toc__menu">
+  <li><a href="#why-peer-review-needs-to-be-fully-anonymous">Why peer review needs to be fully anonymous</a></li>
+  <li><a href="#isnt-it-fully-anonymous-already">Isn’t it fully anonymous already?</a>
+    <ul>
+      <li><a href="#arxiv-and-anonymity-period">ArXiv and anonymity period</a></li>
+      <li><a href="#anonymity-and-acceptance-decisions">Anonymity and acceptance decisions</a></li>
+    </ul>
+  </li>
+  <li><a href="#arguments-against-anonymity">Arguments against anonymity</a>
+    <ul>
+      <li><a href="#big-labs-just-do-better-work">“Big labs just do better work”</a></li>
+      <li><a href="#what-difference-will-it-make">“What difference will it make?”</a></li>
+      <li><a href="#small-labs-need-arxiv">“Small labs need arXiv”</a></li>
+      <li><a href="#arxiv-is-all-we-need">“ArXiv is all we need”</a></li>
+    </ul>
+  </li>
+  <li><a href="#acl-rolling-review-proposals">ACL rolling review proposal(s)</a>
+    <ul>
+      <li><a href="#option-1-review-then-accept">Option 1: review, then accept</a></li>
+      <li><a href="#option-2-reviewaccept">Option 2: review+accept</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#share--cite--discuss-this-post">Share / cite / discuss this post</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <figure>
+	<img src="/assets/images/justice.png" />
+</figure>
+
+<blockquote>
+  <p>This post is my $0.02 in the ongoing debate about ACL peer review reform. TLDR if you’ve missed that: ACL is discussing the ways to improve peer review, and released <a href="https://www.aclweb.org/adminwiki/index.php?title=Short-Term_Reform_Proposals_for_ACL_Reviewing">short-term</a> and <a href="https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal">long-term</a> review proposals that generated many lively discussions on Twitter and in ACL 2020. The debate is still going on, and ACL actively solicited community feedback. So far the proposals focused on new workflows and efficiency of the process; I’m arguing for broadening the goals so as to also improve author anonymity – all the way up to the best paper award committees.</p>
+</blockquote>
+
+<h2 id="why-peer-review-needs-to-be-fully-anonymous">Why peer review needs to be fully anonymous</h2>
+
+<p>It is a truth universally acknowledged that when the reviewers aware of the identity of the authors, they are strongly biased towards established authors and famous labs <a class="citation" href="#TomkinsZhangEtAl_2017_Reviewer_bias_in_single-_versus_double-blind_peer_review">(Tomkins, Zhang, &amp; Heavlin, 2017)</a>.</p>
+
+<p>Ok, well, at least it <em>should</em> be a truth universally acknowledged. One of the most famous experiments on this was done nearly 30 years ago <a class="citation" href="#PetersCeci_1982_fate_of_published_articles_submitted_again">(Peters &amp; Ceci, 1982)</a>. They resubmitted 12 articles to reputable psychology journals that already <em>published</em> these very same articles - but they changed the authors’ names and institutions changed to unknown names. Only 8% of editors and reviewers noticed the resubmisson, and 89% recommended rejection, in many cases for ‘methodology flaws’!</p>
+
+<p>Note that this was 30 years ago, before we had Twitter and blogs. The research community has since made a lot of progress in developing ‘PR review’ techniques: a famous lab can have a specific preprint widely discussed before it is even submitted for review. That wide discussion by itself creates the impression that the community already accepted and validated this work, and so of course the reviewers should recommend it for acceptance.</p>
+
+<p>That’s not even the worst part. It is a truth less universally acknowledged that non-anonymous peer review, like any other non-anonymous human interaction, is at risk of being compromised by social biases, such as biases by race, gender, ethnicity, age group. There is more than enough evidence to be concerned <a class="citation" href="#BornmannMutzEtAl_2007_Gender_differences_in_grant_peer_review_meta-analysis">(Bornmann, Mutz, &amp; Daniel, 2007; Kaatz, Gutierrez, &amp; Carnes, 2014; Hojat, Gonnella, &amp; Caelleigh, 2003)</a>, and to do something while we’re educating ourselves on the subject.</p>
+
+<p>A key point here is that this applies even when the biases are unconscious. Say, we may be absolutely sure that neither the race of the authors, nor the prestige of their institution has anything to do with our opinion of a paper. The problem is that our conscious selves are not really trustworthy. So, given human cognitive limitations, the best thing we can do is a fully anonymous peer-review process.</p>
+
+<h2 id="isnt-it-fully-anonymous-already">Isn’t it fully anonymous already?</h2>
+
+<p>Wait, isn’t NLP peer review already fully anonymous? Yes and no. *CL conferences officially implement a fully anonymous peer review process, and require the authors to avoid revealing self-citations. However…</p>
+
+<h3 id="arxiv-and-anonymity-period">ArXiv and anonymity period</h3>
+
+<p>First, there’s this thing called arXiv. The authors are not prohibited from uploading and publicizing their work <a href="https://acl2020.org/calls/papers/#important-anonymity-period">a month before submission deadline</a>; this seems to mostly have the effect of shifting the deadline a month earlier. Note that the big labs with more resources and projects are more likely to have at least some of the drafts relatively finished and arXiv-ed before the anonymity period kicks in, and so they are more likely to have at least some papers accepted each year.</p>
+
+<p>I am not aware of any studies done for *CL conferences (presumably because their peer review data is not available for public analysis) - but ICLR review scores do correlate with arXiv preprint availability <a class="citation" href="#BharadhwajTurpinEtAl_2020_De-anonymization_of_authors_through_arXiv_submissions_during_double-blind_review">(Bharadhwaj, Turpin, Garg, &amp; Anderson, 2020)</a>. The effect is particularly noticeable for less confident reviewers who seem to rely more on author reputation (estimated by Google Scholar citation data):</p>
+
+<figure>
+	<img src="/assets/images/iclr-acceptance.png" />
+</figure>
+
+<p>I would speculate that the effect is particularly large for papers by big labs that managed to attract a lot of attention (especially big industry labs with considerable PR resources). Arguably Google AI’s BERT <a class="citation" href="#DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding">(Devlin, Chang, Lee, &amp; Toutanova, 2019)</a> entirely circumvented the peer review process because the paper was already famous and widely cited by the time it got to NAACL. It is <a href="https://medium.com/@ryancotterell/we-should-anonymize-model-names-during-peer-review-bcab0cc78946">highly unlikely that it could be reviewed anonymously</a>.</p>
+
+<p>Should BERT have gotten the best paper award? Quite possibly, but perhaps we should think through the whole issue of “peer review” vs “PR review”. When something gets so much attention, it just <em>seems</em> highly important, and the reviewers can hardly be expected to be immune to that. If we do accept hype as a valid indicator of scientific merit, we should at least recognize that it is a distinct factor. “PR-reviewed” papers should not compete for conference acceptance and awards with papers that went through peer review anonymously.</p>
+
+<h3 id="anonymity-and-acceptance-decisions">Anonymity and acceptance decisions</h3>
+
+<p>Even if the reviewers have not seen the preprint, they are not the ones who are actually making any acceptance decisions. Area chairs (ACs), senior area chairs (SACs) and program chairs (PCs) <em>may or may not be aware of the identity of the authors</em>; this is up to the conference, and is not announced in capital letters on the conference home page.</p>
+
+<p>Let us note that the ACs and SACs are themselves likely to be senior members of NLP community. As such, they are likely to be well-connected and know much of the work that they evaluate. Even if nobody consciously favors their friends or disfavors any particular social group – the biases are biases precisely because they are unconscious and humans can’t control them very well. Furthermore, speaking for myself, I suspect that when I happen to know the authors and the whole line of work they are pursuing, I may be seeing a bigger pattern than what was clearly spelled out in the paper.</p>
+
+<p>Finally, consider the conference awards. The starting point for those is recommendations by reviewers, who may or may not know who the authors are because of arXiv, but what happens from that point on is equally at the discretion of the conference. COLING 2018 did maintain anonymity even at this stage, but let us take <a href="https://twitter.com/yoavgo/status/1278468990730412033?s=20">Yoav Goldberg’s word</a> that usually this is not the case.</p>
+
+<h2 id="arguments-against-anonymity">Arguments against anonymity</h2>
+
+<p>So, at the moment *CL reviewing is at best only partially anonymous. But is this necessarily a bad thing? To be fair, let us hear the counter-arguments.</p>
+
+<h3 id="big-labs-just-do-better-work">“Big labs just do better work”</h3>
+
+<p>This is an argument against trying to correct for bias towards big names. The main point is that the quality of the work could be expected to genuinely correlate with the status of a research group. Say, Stanford remains Stanford because it systematically attracts smarter people who are likely to produce superior output. In that case, since peer review is genuinely noisy and difficult, witholding this information from reviewers means witholding a useful signal <a class="citation" href="#Church_2020_Emerging_trends_Reviewing_reviewers_again">(Church, 2020)</a>.</p>
+
+<p>The counter-argument is that the fame of a big lab may also have a halo effect on a mediocre paper. Everything just looks more trustworthy when it comes from e.g. Harvard - especially in comparison to a paper of similar quality, but by unknown authors. Furthermore, it’s one thing when the fame of a research group rests primarily on its past achievements and reputation, and another when the group itself is new, but gets more favorable treatment simply due to its affiliation and their PR resources.</p>
+
+<p>Kenneth Church argues that the solution to that is “seniority quotas”, where the conference makes a conscious decision to give that much floor to established and up-and-coming labs. My concern here is that we also have the cross-cutting biases for trendy topics, <a href="https://hackingsemantics.xyz/2020/reviewing-data/">deep-learning-based methodology</a>, <a href="https://hackingsemantics.xyz/2020/reviewing-models">SOTA results</a> and many more. These probably can’t be addressed in any other way than by acceptance quotas, while the author fame bias <em>could</em> be handled by fully anonymous review process.</p>
+
+<h3 id="what-difference-will-it-make">“What difference will it make?”</h3>
+
+<p>The other argument is that it is not clear that fully anonymous review actually improves the quality of the resulting program - but there is plenty of evidence of it failing to weed out bad papers, even in biomedical research where lives literally depend on it <a class="citation" href="#Smith_2010_Classical_peer_review_empty_gun">(Smith, 2010)</a>. So if it doesn’t do what we want it to do, should we even bother? Kenneth Church argues that it is up to the side arguing for anonymity to provide a proof that it increases not only fairness, but also quality:</p>
+
+<blockquote>
+  <p>Obviously, we care about more than just fairness. Experiments supporting double-blind reviewing need to establish that the treatment (double-blind reviewing) is not only more fair than the control (traditional reviewing) but also more effective. Does the treatment accept better papers (with more potential for growth) than the control, or is treatment merely more random than the control? Thus far, most experiments (Tomkins, Zhang, and Heavlin 2017; Stelmakh, Shah, and Singh 2019) have more to say about fairness than effectiveness. <a class="citation" href="#Church_2020_Emerging_trends_Reviewing_reviewers_again">(Church, 2020)</a></p>
+</blockquote>
+
+<p>I fully agree that the overall goal is to find papers with more scientific merit - but we can’t really measure that reliably, we seem to only agree on which papers are clearly bad (see the <a href="http://blog.mrtz.org/2014/12/15/the-nips-experiment.html">NIPS experiment</a>). But theoretically, if we accept that different demographic groups have approximately the same distribution of quality papers, then removing those biases would <em>improve</em> the overall quality of the program. For instance, if male and female first authors have the same ratio of high-quality papers, but the papers by women get systematically under-sampled - that means accepting more papers by men, even when they are in fact inferior.</p>
+
+<p>Can we just use post-publication citation counts as proxy for paper merit, to prove that anonymity does or does not improve the overall program quality? Not really. For a paper to have high impact and “potential for growth”, it needs (a) that there’s room for building on its ideas, (b) that the community would do so. And that second part depends on more than just science. Consider at least the following factors:</p>
+
+<ul>
+  <li>The Matthew effect: the already-eminent scientists get disproportionate credit in cases of collaboration, or when the same discovery is made by independent teams <a class="citation" href="#Merton_1968_Matthew_Effect_in_Science_reward_and_communication_systems_of_science_are_considered">(Merton, 1968)</a>;</li>
+  <li>Post-publication PR, which is also easier for the big labs that have more resources to write blog posts and travel to give talks. They also receive many more  invitations to participate in panels and give talks.</li>
+  <li>How papers are received post-publication is still at least partly influenced by the same unconscious biases discussed above. Campaigns like <a href="https://twitter.com/intent/tweet?button_hashtag=CiteBlackWomen&amp;ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">#CiteBlackWomen</a><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> are a response to an unfortunate reality. And here’s a recent bit of evidence very close to home: preliminary analysis by Yoav Goldberg suggests that the talks by the authors with Chinese-sounding names <a href="https://twitter.com/yoavgo/status/1282700056211202049?s=20">were viewed less often</a> in the online ACL 2020.</li>
+</ul>
+
+<p>All of that means that even if a great idea from an unknown lab and/or underrepresented community gets published at ACL, it might not make as big a splash as it deserves. That means that fewer people will adopt and build upon its results. Hence the “potential for growth” was never going to be the same.</p>
+
+<p>Granted, we do not know exactly how full anonymity would change our conference programs, but here’s what we do know:</p>
+
+<ul>
+  <li>When ICLR went fully anonymous, we had a natural experiment which showed that preprints do make a difference; so we do know for a fact that the content of the program <em>would</em> change to some extent <a class="citation" href="#BharadhwajTurpinEtAl_2020_De-anonymization_of_authors_through_arXiv_submissions_during_double-blind_review">(Bharadhwaj, Turpin, Garg, &amp; Anderson, 2020)</a>.</li>
+  <li>The bias against underrepresented communities should be reduced. For instance, there is evidence that when author identity is concealed female first authors get a better chance <a class="citation" href="#RobertsVerhoef_2016_Double-blind_reviewing_at_EvoLang_11_reveals_gender_bias">(Roberts &amp; Verhoef, 2016)</a>.</li>
+  <li>Even if this does increase randomness in peer review, as Kenneth Church predicts, that might actually be a good thing for progress <a class="citation" href="#PluchinoBiondoEtAl_2018_Talent_versus_luck_role_of_randomness_in_success_and_failure">(Pluchino, Biondo, &amp; Rapisarda, 2018)</a>: among other things, their model suggests that it would be more effective to award some research funding randomly, rather than preferentially targeting established researchers.</li>
+  <li>a more inclusive process should be beneficial for geographic diversity. In case of NLP, that should propel language inclusivity, which is not great at the moment <a class="citation" href="#JoshiSantyEtAl_2020_State_and_Fate_of_Linguistic_Diversity_and_Inclusion_in_NLP_World">(Joshi, Santy, Budhiraja, Bali, &amp; Choudhury, 2020)</a>. Studying “languages” rather than “English” would certainly be helpful for the goal of modeling “language”. Furthermore, this should improve the flow of ideas and collaborations between subcommunities, and there’s evidence that “ethnically diverse” papers have a larger impact <a class="citation" href="#AlShebliRahwanEtAl_2018_preeminence_of_ethnic_diversity_in_scientific_collaboration">(AlShebli, Rahwan, &amp; Woon, 2018)</a>.</li>
+</ul>
+
+<p>Judging by the overall direction of ACL 2020, and the presence of diversity&amp;inclusion chairs in the recent conferences, the ACL organization now does aim to improve diversity, and full anonymity would be helpful for that. I hope that as the social movement towards diversity&amp;inclusion grows, the community would also gradually become more interested in picking up and developing non-mainstream ideas.</p>
+
+<h3 id="small-labs-need-arxiv">“Small labs need arXiv”</h3>
+
+<p>ArXiv preprints are vigorously defended by Dmytro Mishkin and Amy Tabb in the <a href="https://amytabb.com/ts/2020_06_29/">“Hands off ArXiv!”</a>. In particular, they make the following two arguments:</p>
+
+<ul>
+  <li>even without preprints, the big labs will still find it easier to get published than small labs, because they have more resources and more experienced writers. For the small labs arXiv is a lifeline because it enables them to generate <em>some</em> discussion;</li>
+  <li>early career researchers need preprints to have <em>something</em> on their CVs when they apply for jobs.</li>
+</ul>
+
+<p>The latter point could actually be solved within an anonymous preprint system: for example, upon submission of a manuscript people could get receipts acknowledging the submission, and those receipts and/or pdfs stamped with submission record information could be provided as part of the application package.</p>
+
+<p>As for the former, it is true that scales are tipped in favor of big labs to begin with. Allen Schmaltz <a href="https://github.com/allenschmaltz/Resolute_Resolutions/blob/master/volume1/volume1.pdf">argues</a> that even an anonymous author may be at disadvantage not because the reviewers can guess who they are, but rather who they are <em>not</em> (a member of an established lab with resources and recognizable research agenda). But it is hardly a reason to not to try to <em>reduce</em> systemic biases.</p>
+
+<p>As a case study, one of the inherent disadvantages for most small labs in the world is that the famous big labs tend to be based in the English-speaking countries. Non-native-sounding English nearly got one of EMNLP PC committees to reject <em>all</em> their submissions from Asian and European countries with less than 5 submissions <a class="citation" href="#Church_2020_Emerging_trends_Reviewing_reviewers_again">(Church, 2020)</a>! However, this factor is increasingly recognized, and there are initiatives to try to mitigate it. For instance, ACL Student Research Workshop is already running a <a href="https://sites.google.com/view/acl20studentresearchworkshop/mentoring">mentoring program</a> specifically to improve the quality of writing and presentation. ACL 2020 also had sponsorship from Grammarly to help with proof-reading. <a href="https://2020.emnlp.org/blog/2020-05-17-write-good-reviews/">EMNLP 2020 reviewing guidelines</a> specifically ask the reviewers to focus on the paper substance, not the writing.</p>
+
+<p>The biggest issue, of course, is that early-career researchers do depend vitally on their work being openly available and discussed. I fully agree with that. But it is <em>not</em> impossible to combine that with fully anonymous peer review. Specifically, we need to (a) speed up the review process, (b) develop a culture for discussing anonymous work. I will describe a proposal for how both of these goals could be achieved below.</p>
+
+<h3 id="arxiv-is-all-we-need">“ArXiv is all we need”</h3>
+
+<p>I have heard this last argument many times over the discussion of rolling review proposals. Yes, peer review by itself is deeply problematic. Again, it fails to detect serious flaws <a class="citation" href="#Smith_2010_Classical_peer_review_empty_gun">(Smith, 2010)</a>, it is essentially <a href="http://blog.mrtz.org/2014/12/15/the-nips-experiment.html">random for papers that are not obviously bad</a>, and it does not necessarily reward great contributions: a recent NLP example is ELMO, that had unenthusiastic reviews at ICLR and then went to take the best paper award at NAACL. So… maybe we don’t need to bother with review at all, anonymous or not? Shall we just embrace preprints and let citation counts be the indicators of the paper quality?</p>
+
+<p>First of all, this is simply not realistic, because academic careers depend on the prestige of publication venues. This is why top-tier conferences also cannot just start accepting more than 25% of papers. Yes, this is arbitrary and has nothing to do with research, but I have not seen any sufficiently detailed alternative proposals. And even if someone came up with one, it would take many years of lobbying universities and research councils to accept it. And it would have to be done by the senior academics who have many other demands on their time.</p>
+
+<p>Second, that is actually not an argument against full anonymity, but against peer review as such. As discussed above, having the crowd “vote” on preprints with citations will suffer from all the same biases: less famous labs and/or authors from marginalized communities are less likely to have their papers noticed organically and/or have the resources to promote them, which will have an impact on the citation count distribution. “PR review” might completely overtake “peer review”. On the other hand, taking full anonymity seriously in peer review and developing a culture of discussing anonymous preprints has a chance of developing a healthier research ecosystem.</p>
+
+<h2 id="acl-rolling-review-proposals">ACL rolling review proposal(s)</h2>
+
+<p>So, what can we actually do about all this? Luckily, the arbitrariness of peer review in the recent years and the increasing review load has already led the community to believe that <em>something</em> should be done. ACL already came forward with a <a href="https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal">long-term review reform proposal</a>. This post is inspired by numerous conversations around this proposal on Twitter and during ACL 2020.</p>
+
+<p>The current version of the rolling review proposal maintains the status quo with respect to anonymity, considering it a separate issue to be addressed later. In this post, I argue that we do need to think of it already to make sure that the new system at least can be more fair than what we have. True, we can’t hope to solve every issue at once, but this one is really big, especially given the raising awareness of societal biases.</p>
+
+<p>In a nutshell, here is the current version of this proposal.</p>
+
+<h3 id="option-1-review-then-accept">Option 1: review, then accept</h3>
+
+<p>To decrease the volume of papers that get (re-)reviewed, ACL is proposing to switch to a journal-like rolling review process with two stages:</p>
+
+<ul>
+  <li><strong>Stage 1</strong>: papers are submitted to a unified review pool with monthly deadlines, where they undergo fully anonymous peer review. After that is done, the authors have the option to revise-and-resubmit, or they may choose to make their papers public.</li>
+  <li><strong>Stage 2</strong>: authors of already-reviewed papers may submit their work to conferences/workshops/journals (based on their respective deadlines). The ACs/SACs/PCs make decisions based on the existing reviews, and their own editorial policies. This process may or may not conceal author identity, like it is done today.</li>
+</ul>
+
+<h3 id="option-2-reviewaccept">Option 2: review+accept</h3>
+
+<p>The presentation of the rolling review proposal in ACL 2020 was followed by a very lively RocketChat discussion, in which <a href="https://matt-gardner.github.io/">Matt Gardner</a> mentioned an alternative proposal that the review committee also considered, but it didn’t make it past the brain-storming stage. The idea is basically <em>“review+accept”</em>: the journal/conference acceptance decisions would be made inside of the rolling review system, thus maintaining full anonymity.</p>
+
+<ul>
+  <li><strong>Pros</strong>: not only full anonymity, but also much faster turnaround!</li>
+  <li><strong>Cons</strong>: So far the acceptance rates were stable at around 25%, but offline conferences have an extra constraint of the venue space. For instance, if next year we still have room for only 800 papers, but receive over 6000 submissions, we will either have to lower the acceptance rate, or have conferences that are 90% posters, or stick to online conferences. This is a separate issue, but if ACL were to decide to address this by lowering the acceptance rates, it would be harder to do in the <em>review+accept</em> version because the organizers wouldn’t get all the papers at once. Say, a CFP could be announced to run for 4 months, but already in the first month the PCs might accept the maximum number of papers they can for a given physical venue, and stop receiving submissions.</li>
+</ul>
+
+<p>Again, the issue of scaling our conferences is a separate one, and deserves serious consideration. At the moment, it is not clear whether the pros of offline conferences outweigh the environmental and social costs. But if ACL does not opt to cap the total number of accepted papers, <em>“review+accept”</em> would deliver acceptance decisions would arrive a month or two faster than in <em>“review, then accept”</em>. This is significant in the fast-moving world of current NLP.</p>
+
+<p>### Embracing anonymous preprints</p>
+
+<p>In either proposal, the key issue for anonymity is what happens after a paper was reviewed, and before it is submitted for a conference. Suppose the authors aim for ACL, and their paper is submitted for review in August. They have to wait until the ACL CFP is out (or submit to some other venue). Let’s say the paper is reviewed in September and the authors are happy with the reviews.</p>
+
+<p>If they choose to deanonymize, there is the immediate benefit of having a “respectable” peer-reviewed preprint under their names, which is important for those on the job market. But there are two big problems:</p>
+
+<ul>
+  <li>Many papers do not get accepted on the first try. The authors may try a conference and then decide to make changes and go back into the reviewing pool. If they do so, the peer review will no longer be anonymous.</li>
+  <li>
+    <p>The conference acceptance decisions would inherently be partly or fully non-anonymous. As Yoav Goldberg pointed out, in this proposed scheme the situation would actually be worse than it is now, because the editorial role of ACs/SACs/PCs really puts them in the limelight, and <em>their</em> identities will be known to the authors. In other words, the authors will know that it is these specific people that did not want their work in the conference, perhaps despite good reviews. And who wants to make enemies?</p>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">btw, it goes both ways: as a SAC/PC in the new system, the authors will know that *you*, *personally* did not find their paper suitable for ACL 2023. this may cause some tricky situations (and all the more incentives for SAC/PC to get papers from influentials/friends in)</p>&mdash; (((ل()(ل() &#39;yoav)))) (@yoavgo) <a href="https://twitter.com/yoavgo/status/1274673040782233600?ref_src=twsrc%5Etfw">June 21, 2020</a></blockquote>
+    <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+
+<p>Can we just hide the identities of the editors, so they don’t have to fear retaliation? No, because:</p>
+
+<ul>
+  <li>biases (unconscious or not) would still be at work, even if the editors are senior enough to not worry about making enemies;</li>
+  <li>being an area chair or an action editor does go on the CV and is important for academic careers.</li>
+</ul>
+
+<p>But both of these problems can be avoided if we simply embrace the openReview model:</p>
+
+<ul>
+  <li>the papers are made available for all to see as anonymous preprints;</li>
+  <li>the anonymous reviews and decisions are also available for all to see;</li>
+  <li>there are open comments from the public (and the reviewers would be incentivized to write better reviews if they could not see the open comments until they submitted their opinions);</li>
+  <li>the papers would already start collecting citations;</li>
+  <li>the system could be set up to provide some kind of receipts for those who need proof of authorship for job applications;</li>
+  <li>having a public record of community engaging with papers would be helpful for early career researchers, especially when non-experts evaluate their grant proposals and tenure cases. For that same reason, the system should provide an option to hide non-constructive comments.</li>
+</ul>
+
+<p>Moreover, generally this could be a chance to develop a healthier relationship with preprints in the community: ideally we’d want to look at new work because we want to see the latest results in the area we care about - not because it is something publicized by someone influential. Imagine an openReview-like system equipped with a daily feed of preprints in each subfield. Further imagine that, unlike arXiv, it comes with a dedicated chat/forum, tied to each paper. The RocketChat experience in ACL 2020 made it painfully clear how useful that would be.</p>
+
+<p>arxiv feed</p>
+
+<p>In <em>“review+accept”</em> all papers will have to be discussed either anonymously or post-acceptance, and the rush to see new ideas should help to develop a culture for looking at the work itself. To make things even more interesting, we could disallow the reviewers to see the public discussions until they submitted their own reviews - which would further incentivize them to write better reviews. For the papers that generated good discussions, the authors might choose to keep such discussions public:</p>
+
+<p>I hope I’ve made the case that stage 2 really has to be fully anonymous. But NLP is moving at breakneck speed, and the authors would shoot themselves in the foot to not “publish” their work as soon as it was reviewed. We could offer the option of anonymous preprints, but if it were optional, most people would not go for it because directly publicizing your work would generate much more attention. And then the acceptance decisions would <em>not</em> be made anonymously. And should the paper be rejected and opt to return to the reviewing pool, the second round of reviewing will be inherently compromised.</p>
+
+<p>and that’s something that the community would welcome very much. First, for better or worse, we have this huge class of NLP engineering papers where a big part of claim is the SOTA status of the system. Such papers literally cannot afford to not be accepted at once. It is an open question whether we we might want to <a href="https://medium.com/@vered1986/a-potential-approach-to-address-the-explosion-of-nlp-paper-submissions-50afa04bcd4c">consider them a separate paper type that should not compete with “more sciency” papers</a>, but faster turnaround is crucial for other paper types too: longer waits means higher chances of getting scooped, and/or the necessity of update baseline experiments with whatever-became-SOTA-since-submission.</p>
+
+<p>But even if ACL were to go down the road of lowering acceptance rates, I’d argue that the cons of fully anonymous peer review are logistic, and the pros are existential. That makes the game very well worth the candle.</p>
+
+<p>One more plus of <em>“review+accept”</em> is that we have a better chance to establish the culture of discussing anonymous preprints. In both proposals, there will be a pool of papers under review which could be made open to comments from non-reviewers (as long as there’s no COI, and the reviewers do not see those comments until they finish their own). But in <em>“review, then accept”</em> there will be papers that were already deanonymized and then open for discussion: that again has potential for heated discussions around work by big names, which by itself would additionally bias the acceptance decisions. In a way, this is what we have already: it is already possible to post an anonymous preprint, but the chances for anonymous work to get any attention in the flood of preprints propelled by the authors are slim.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This is my case for fully anonymous reviewing, and for peer review rather than PR review. Since we’re reforming the review system anyway, we have a chance to actually change things - and there is a way to do that which combines full anonymity with the benefits of faster turnaround and a culture of discussing anonymous work.</p>
+
+<p>I’m not in any way involved in the decision-making, nor am I an authority on any of the above issues. However, the ACL review reform committee does solicit community feedback, and might reconsider the <em>review+accept</em> option if there is enough community support.</p>
+
+<p>I hope this post will generate further discussion; to that end, I’ll update the post with a link to a Twitter discussion thread, and I would appreciate any pointers to conversations emerging elsewhere. My goal is to listen, learn, and update this write-up with any necessary clarifications, nuances, further suggestions and counter-counter arguments. Then it’d be great to run some polls to see what the community would prefer. And then ACL will have a clearer case to consider.</p>
+
+<p>This post is based on many conversations with much wiser people, including (alphabetically) Isabelle Augenstein, Emily M. Bender, Jason Eisner, Matt Gardner, Yoav Goldberb, Jacob Anna Korhonen, Graham Neubig, Amanda Stent, and many others. Any misinterpretation is my own. Separate thanks to Emily M. Bender and Matt Gardner for their comments on this post.</p>
+
+<p><em>[UPDATE 07.2020]</em> The post generated <a href="https://twitter.com/annargrs/status/1283758686515732480?s=20">some discussion</a>, people submitted feedback to the ACL reform committee using the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=9028kaqAQ0OMdrEjlJf7WQiNRJRoOx9OlzQS6C5hck5URVc2MDZPRFBVNDRRRjBaMjBQVk41RVpMOC4u">official feedback form</a>. No response from the committee so far. Fingers crossed.</p>
+
+<p><em>[Update 12.2020]</em> While we’re waiting - <a href="https://www.nejlt.org/">NEJLT</a> is a new journal for computational linguistics research that implements a fully anonymous review process, all the way up to the editors. Check it out!</p>
+
+<h2 id="share--cite--discuss-this-post">Share / cite / discuss this post</h2>
+
+<div class="page__share">
+
+  
+
+    <a href="https://twitter.com/annargrs/status/1283758686515732480?s=20" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span>Join the discussion on Twitter</span></a>
+
+    <br />
+    <br />
+
+  
+
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Should+the+reviewers+know+who+the+authors+are%3F%20https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Fanonymity%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Share on Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Fanonymity%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Share on Facebook</span></a>
+
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Fanonymity%2F&amp;title=Should the reviewers know who the authors are?" class="btn btn--reddit" title=" Reddit"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i><span>Share on Reddit</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Fanonymity%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> Share on LinkedIn</span></a>
+
+  <button class="btn btn--bibtex" onclick="showBibtex('postCite')"><i class="fas fa-book" aria-hidden="true"></i> BibTex citation</button>
+</div>
+
+<div class="bibtex" style="display:none;" id="postCite">
+<pre>
+@misc{Rogers_2020_anonymity,
+  title = { Should the reviewers know who the authors are?},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2020/anonymity/ },
+  author = {Rogers, Anna},
+  day = { 15 },
+  month = { Jul },
+  year = { 2020 }
+}
+</pre>
+</div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><div class="text-justify">
+    <span id="AlShebliRahwanEtAl_2018_preeminence_of_ethnic_diversity_in_scientific_collaboration">AlShebli, B. K., Rahwan, T., &amp; Woon, W. L. (2018). The Preeminence of Ethnic Diversity in Scientific Collaboration. <i>Nature Communications</i>, <i>9</i>(1), 5163. https://doi.org/10.1038/s41467-018-07634-8</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('AlShebliRahwanEtAl_2018_preeminence_of')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.nature.com/articles/s41467-018-07634-8'">URL</button>
+    
+
+<div class="bibtex" id="AlShebliRahwanEtAl_2018_preeminence_of"><pre>@article{AlShebliRahwanEtAl_2018_preeminence_of_ethnic_diversity_in_scientific_collaboration,
+  title = {The Preeminence of Ethnic Diversity in Scientific Collaboration},
+  author = {AlShebli, Bedoor K. and Rahwan, Talal and Woon, Wei Lee},
+  year = {2018},
+  month = dec,
+  volume = {9},
+  pages = {5163},
+  publisher = {{Nature Publishing Group}},
+  issn = {2041-1723},
+  doi = {10.1038/s41467-018-07634-8},
+  url = {https://www.nature.com/articles/s41467-018-07634-8},
+  urldate = {2020-07-13},
+  copyright = {2018 The Author(s)},
+  journal = {Nature Communications},
+  language = {en},
+  number = {1}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="BharadhwajTurpinEtAl_2020_De-anonymization_of_authors_through_arXiv_submissions_during_double-blind_review">Bharadhwaj, H., Turpin, D., Garg, A., &amp; Anderson, A. (2020). De-Anonymization of Authors through arXiv Submissions during Double-Blind Review. <i>ArXiv:2007.00177 [Cs]</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('BharadhwajTurpinEtAl_2020_De-anonymization_of')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://arxiv.org/abs/2007.00177'">URL</button>
+    
+
+<div class="bibtex" id="BharadhwajTurpinEtAl_2020_De-anonymization_of"><pre>@article{BharadhwajTurpinEtAl_2020_De-anonymization_of_authors_through_arXiv_submissions_during_double-blind_review,
+  title = {De-Anonymization of Authors through {{arXiv}} Submissions during Double-Blind Review},
+  author = {Bharadhwaj, Homanga and Turpin, Dylan and Garg, Animesh and Anderson, Ashton},
+  year = {2020},
+  month = jun,
+  url = {http://arxiv.org/abs/2007.00177},
+  urldate = {2020-07-10},
+  archiveprefix = {arXiv},
+  eprint = {2007.00177},
+  eprinttype = {arxiv},
+  journal = {arXiv:2007.00177 [cs]},
+  primaryclass = {cs}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="BornmannMutzEtAl_2007_Gender_differences_in_grant_peer_review_meta-analysis">Bornmann, L., Mutz, R., &amp; Daniel, H.-D. (2007). Gender Differences in Grant Peer Review: A Meta-Analysis. <i>Journal of Informetrics</i>, <i>1</i>(3), 226–238. https://doi.org/10.1016/j.joi.2007.03.001</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('BornmannMutzEtAl_2007_Gender_differences')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://www.sciencedirect.com/science/article/pii/S1751157707000363'">URL</button>
+    
+
+<div class="bibtex" id="BornmannMutzEtAl_2007_Gender_differences"><pre>@article{BornmannMutzEtAl_2007_Gender_differences_in_grant_peer_review_meta-analysis,
+  title = {Gender Differences in Grant Peer Review: {{A}} Meta-Analysis},
+  shorttitle = {Gender Differences in Grant Peer Review},
+  author = {Bornmann, Lutz and Mutz, R{\"u}diger and Daniel, Hans-Dieter},
+  year = {2007},
+  month = jul,
+  volume = {1},
+  pages = {226--238},
+  issn = {1751-1577},
+  doi = {10.1016/j.joi.2007.03.001},
+  url = {http://www.sciencedirect.com/science/article/pii/S1751157707000363},
+  urldate = {2020-07-13},
+  journal = {Journal of Informetrics},
+  language = {en},
+  number = {3},
+  series = {The {{Hirsch Index}}}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Church_2020_Emerging_trends_Reviewing_reviewers_again">Church, K. W. (2020). Emerging Trends: Reviewing the Reviewers (Again). <i>Natural Language Engineering</i>, <i>26</i>(2), 245–257. https://doi.org/10.1017/S1351324920000030</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Church_2020_Emerging_trends')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.cambridge.org/core/journals/natural-language-engineering/article/emerging-trends-reviewing-the-reviewers-again/10CDC1D71E1AEB21456CFBDA187CBCB6'">URL</button>
+    
+
+<div class="bibtex" id="Church_2020_Emerging_trends"><pre>@article{Church_2020_Emerging_trends_Reviewing_reviewers_again,
+  title = {Emerging Trends: {{Reviewing}} the Reviewers (Again)},
+  shorttitle = {Emerging Trends},
+  author = {Church, Kenneth Ward},
+  year = {2020},
+  month = mar,
+  volume = {26},
+  pages = {245--257},
+  publisher = {{Cambridge University Press}},
+  issn = {1351-3249, 1469-8110},
+  doi = {10.1017/S1351324920000030},
+  url = {https://www.cambridge.org/core/journals/natural-language-engineering/article/emerging-trends-reviewing-the-reviewers-again/10CDC1D71E1AEB21456CFBDA187CBCB6},
+  urldate = {2020-05-12},
+  journal = {Natural Language Engineering},
+  language = {en},
+  number = {2}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding">Devlin, J., Chang, M.-W., Lee, K., &amp; Toutanova, K. (2019). BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding. <i>Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)</i>, 4171–4186.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('DevlinChangEtAl_2019_BERT_Pre-training')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://aclweb.org/anthology/papers/N/N19/N19-1423/'">URL</button>
+    
+
+<div class="bibtex" id="DevlinChangEtAl_2019_BERT_Pre-training"><pre>@inproceedings{DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding,
+  title = {{{BERT}}: {{Pre}}-Training of {{Deep Bidirectional Transformers}} for {{Language Understanding}}},
+  shorttitle = {{{BERT}}},
+  language = {en-us},
+  booktitle = {Proceedings of the 2019 {{Conference}} of the {{North American Chapter}} of the {{Association}} for {{Computational Linguistics}}: {{Human Language Technologies}}, {{Volume}} 1 ({{Long}} and {{Short Papers}})},
+  url = {https://aclweb.org/anthology/papers/N/N19/N19-1423/},
+  author = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  month = jun,
+  year = {2019},
+  pages = {4171-4186}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="HojatGonnellaEtAl_2003_Impartial_Judgment_by_Gatekeepers_of_Science_Fallibility_and_Accountability_in_Peer_Review_Process">Hojat, M., Gonnella, J. S., &amp; Caelleigh, A. S. (2003). Impartial Judgment by the “Gatekeepers” of Science: Fallibility and Accountability in the Peer Review Process. <i>Advances in Health Sciences Education</i>, <i>8</i>(1), 75–96. https://doi.org/10.1023/A:1022670432373</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('HojatGonnellaEtAl_2003_Impartial_Judgment')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://doi.org/10.1023/A:1022670432373'">URL</button>
+    
+
+<div class="bibtex" id="HojatGonnellaEtAl_2003_Impartial_Judgment"><pre>@article{HojatGonnellaEtAl_2003_Impartial_Judgment_by_Gatekeepers_of_Science_Fallibility_and_Accountability_in_Peer_Review_Process,
+  title = {Impartial {{Judgment}} by the ``{{Gatekeepers}}'' of {{Science}}: {{Fallibility}} and {{Accountability}} in the {{Peer Review Process}}},
+  shorttitle = {Impartial {{Judgment}} by the ``{{Gatekeepers}}'' of {{Science}}},
+  author = {Hojat, Mohammadreza and Gonnella, Joseph S. and Caelleigh, Addeane S.},
+  year = {2003},
+  month = mar,
+  volume = {8},
+  pages = {75--96},
+  issn = {1573-1677},
+  doi = {10.1023/A:1022670432373},
+  url = {https://doi.org/10.1023/A:1022670432373},
+  urldate = {2020-07-13},
+  journal = {Advances in Health Sciences Education},
+  language = {en},
+  number = {1}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="JoshiSantyEtAl_2020_State_and_Fate_of_Linguistic_Diversity_and_Inclusion_in_NLP_World">Joshi, P., Santy, S., Budhiraja, A., Bali, K., &amp; Choudhury, M. (2020). The State and Fate of Linguistic Diversity and Inclusion in the NLP World. <i>ArXiv:2004.09095 [Cs]</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('JoshiSantyEtAl_2020_State_and')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://arxiv.org/abs/2004.09095'">URL</button>
+    
+
+<div class="bibtex" id="JoshiSantyEtAl_2020_State_and"><pre>@article{JoshiSantyEtAl_2020_State_and_Fate_of_Linguistic_Diversity_and_Inclusion_in_NLP_World,
+  title = {The {{State}} and {{Fate}} of {{Linguistic Diversity}} and {{Inclusion}} in the {{NLP World}}},
+  author = {Joshi, Pratik and Santy, Sebastin and Budhiraja, Amar and Bali, Kalika and Choudhury, Monojit},
+  year = {2020},
+  month = jun,
+  url = {http://arxiv.org/abs/2004.09095},
+  urldate = {2020-06-04},
+  archiveprefix = {arXiv},
+  eprint = {2004.09095},
+  eprinttype = {arxiv},
+  journal = {arXiv:2004.09095 [cs]},
+  primaryclass = {cs}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="KaatzGutierrezEtAl_2014_Threats_to_objectivity_in_peer_review_case_of_gender">Kaatz, A., Gutierrez, B., &amp; Carnes, M. (2014). Threats to Objectivity in Peer Review: The Case of Gender. <i>Trends in Pharmacological Sciences</i>, <i>35</i>(8), 371–373. https://doi.org/10.1016/j.tips.2014.06.005</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('KaatzGutierrezEtAl_2014_Threats_to')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.cell.com/trends/pharmacological-sciences/abstract/S0165-6147(14)00108-4'">URL</button>
+    
+
+<div class="bibtex" id="KaatzGutierrezEtAl_2014_Threats_to"><pre>@article{KaatzGutierrezEtAl_2014_Threats_to_objectivity_in_peer_review_case_of_gender,
+  title = {Threats to Objectivity in Peer Review: The Case of Gender},
+  shorttitle = {Threats to Objectivity in Peer Review},
+  author = {Kaatz, Anna and Gutierrez, Belinda and Carnes, Molly},
+  year = {2014},
+  month = aug,
+  volume = {35},
+  pages = {371--373},
+  publisher = elsevier,
+  issn = {0165-6147},
+  doi = {10.1016/j.tips.2014.06.005},
+  url = {https://www.cell.com/trends/pharmacological-sciences/abstract/S0165-6147(14)00108-4},
+  urldate = {2020-07-13},
+  journal = {Trends in Pharmacological Sciences},
+  language = {English},
+  number = {8},
+  pmid = {25086743}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Merton_1968_Matthew_Effect_in_Science_reward_and_communication_systems_of_science_are_considered">Merton, R. K. (1968). The Matthew Effect in Science: The Reward and Communication Systems of Science Are Considered. <i>Science</i>, <i>159</i>(3810), 56–63. https://doi.org/10.1126/science.159.3810.56</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Merton_1968_Matthew_Effect')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://science.sciencemag.org/content/159/3810/56'">URL</button>
+    
+
+<div class="bibtex" id="Merton_1968_Matthew_Effect"><pre>@article{Merton_1968_Matthew_Effect_in_Science_reward_and_communication_systems_of_science_are_considered,
+  title = {The {{Matthew Effect}} in {{Science}}: {{The}} Reward and Communication Systems of Science Are Considered},
+  shorttitle = {The {{Matthew Effect}} in {{Science}}},
+  author = {Merton, Robert K.},
+  year = {1968},
+  month = jan,
+  volume = {159},
+  pages = {56--63},
+  publisher = {{American Association for the Advancement of Science}},
+  issn = {0036-8075, 1095-9203},
+  doi = {10.1126/science.159.3810.56},
+  url = {https://science.sciencemag.org/content/159/3810/56},
+  urldate = {2020-07-13},
+  chapter = {Articles},
+  copyright = {\textcopyright{} 1968},
+  journal = science,
+  language = {en},
+  number = {3810},
+  pmid = {5634379}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="PetersCeci_1982_fate_of_published_articles_submitted_again">Peters, D. P., &amp; Ceci, S. J. (1982). The Fate of Published Articles, Submitted Again. <i>Behavioral and Brain Sciences</i>, <i>5</i>(2), 199–199. https://doi.org/10.1017/S0140525X00011213</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('PetersCeci_1982_fate_of')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/fate-of-published-articles-submitted-again/17914E617A57CDF8ABF3D95F9F28E7FE'">URL</button>
+    
+
+<div class="bibtex" id="PetersCeci_1982_fate_of"><pre>@article{PetersCeci_1982_fate_of_published_articles_submitted_again,
+  title = {The Fate of Published Articles, Submitted Again},
+  author = {Peters, Douglas P. and Ceci, Stephen J.},
+  year = {1982},
+  month = jun,
+  volume = {5},
+  pages = {199--199},
+  publisher = {{Cambridge University Press}},
+  issn = {1469-1825, 0140-525X},
+  doi = {10.1017/S0140525X00011213},
+  url = {https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/fate-of-published-articles-submitted-again/17914E617A57CDF8ABF3D95F9F28E7FE},
+  urldate = {2020-05-20},
+  journal = {Behavioral and Brain Sciences},
+  language = {en},
+  number = {2}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="PluchinoBiondoEtAl_2018_Talent_versus_luck_role_of_randomness_in_success_and_failure">Pluchino, A., Biondo, A. E., &amp; Rapisarda, A. (2018). Talent versus Luck: The Role of Randomness in Success and Failure. <i>Advances in Complex Systems</i>, <i>21</i>(03n04), 1850014. https://doi.org/10.1142/S0219525918500145</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('PluchinoBiondoEtAl_2018_Talent_versus')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.worldscientific.com/doi/10.1142/S0219525918500145'">URL</button>
+    
+
+<div class="bibtex" id="PluchinoBiondoEtAl_2018_Talent_versus"><pre>@article{PluchinoBiondoEtAl_2018_Talent_versus_luck_role_of_randomness_in_success_and_failure,
+  title = {Talent versus Luck: The Role of Randomness in Success and Failure},
+  shorttitle = {Talent versus Luck},
+  author = {Pluchino, Alessandro and Biondo, Alessio Emanuele and Rapisarda, Andrea},
+  year = {2018},
+  month = may,
+  volume = {21},
+  pages = {1850014},
+  issn = {0219-5259},
+  doi = {10.1142/S0219525918500145},
+  url = {https://www.worldscientific.com/doi/10.1142/S0219525918500145},
+  urldate = {2019-10-28},
+  journal = {Advances in Complex Systems},
+  number = {03n04}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="RobertsVerhoef_2016_Double-blind_reviewing_at_EvoLang_11_reveals_gender_bias">Roberts, S. G., &amp; Verhoef, T. (2016). Double-Blind Reviewing at EvoLang 11 Reveals Gender Bias. <i>Journal of Language Evolution</i>, <i>1</i>(2), 163–167. https://doi.org/10.1093/jole/lzw009</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('RobertsVerhoef_2016_Double-blind_reviewing')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://academic.oup.com/jole/article/1/2/163/2281905'">URL</button>
+    
+
+<div class="bibtex" id="RobertsVerhoef_2016_Double-blind_reviewing"><pre>@article{RobertsVerhoef_2016_Double-blind_reviewing_at_EvoLang_11_reveals_gender_bias,
+  title = {Double-Blind Reviewing at {{EvoLang}} 11 Reveals Gender Bias},
+  author = {Roberts, Se{\'a}n G. and Verhoef, Tessa},
+  year = {2016},
+  month = jul,
+  volume = {1},
+  pages = {163--167},
+  publisher = {{Oxford Academic}},
+  issn = {2058-4571},
+  doi = {10.1093/jole/lzw009},
+  url = {https://academic.oup.com/jole/article/1/2/163/2281905},
+  urldate = {2020-07-10},
+  journal = {Journal of Language Evolution},
+  language = {en},
+  number = {2}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Smith_2010_Classical_peer_review_empty_gun">Smith, R. (2010). Classical Peer Review: An Empty Gun. <i>Breast Cancer Research</i>, <i>12</i>(4), S13. https://doi.org/10.1186/bcr2742</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Smith_2010_Classical_peer')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://doi.org/10.1186/bcr2742'">URL</button>
+    
+
+<div class="bibtex" id="Smith_2010_Classical_peer"><pre>@article{Smith_2010_Classical_peer_review_empty_gun,
+  title = {Classical Peer Review: An Empty Gun},
+  shorttitle = {Classical Peer Review},
+  author = {Smith, Richard},
+  year = {2010},
+  month = dec,
+  volume = {12},
+  pages = {S13},
+  issn = {1465-542X},
+  doi = {10.1186/bcr2742},
+  url = {https://doi.org/10.1186/bcr2742},
+  urldate = {2020-05-17},
+  journal = {Breast Cancer Research},
+  number = {4}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="TomkinsZhangEtAl_2017_Reviewer_bias_in_single-_versus_double-blind_peer_review">Tomkins, A., Zhang, M., &amp; Heavlin, W. D. (2017). Reviewer Bias in Single- versus Double-Blind Peer Review. <i>Proceedings of the National Academy of Sciences</i>, <i>114</i>(48), 12708–12713. https://doi.org/10.1073/pnas.1707323114</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('TomkinsZhangEtAl_2017_Reviewer_bias')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://www.pnas.org/lookup/doi/10.1073/pnas.1707323114'">URL</button>
+    
+
+<div class="bibtex" id="TomkinsZhangEtAl_2017_Reviewer_bias"><pre>@article{TomkinsZhangEtAl_2017_Reviewer_bias_in_single-_versus_double-blind_peer_review,
+  title = {Reviewer Bias in Single- versus Double-Blind Peer Review},
+  author = {Tomkins, Andrew and Zhang, Min and Heavlin, William D.},
+  year = {2017},
+  month = nov,
+  volume = {114},
+  pages = {12708--12713},
+  issn = {0027-8424, 1091-6490},
+  doi = {10.1073/pnas.1707323114},
+  url = {http://www.pnas.org/lookup/doi/10.1073/pnas.1707323114},
+  urldate = {2020-07-13},
+  journal = {Proceedings of the National Academy of Sciences},
+  language = {en},
+  number = {48}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li></ol>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#academia" class="page__taxonomy-item" rel="tag">academia</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#peer-review" class="page__taxonomy-item" rel="tag">peer-review</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#squib" class="page__taxonomy-item" rel="tag">squib</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-15T01:00:47-04:00">July 15, 2020</time></p>
+        
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/2020/reviewing-data/" class="pagination--pager" title="Peer review in NLP: resource papers
+">Previous</a>
+    
+    
+      <a href="/2021/recording/" class="pagination--pager" title="How to Record a Virtual Conference Talk
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h2 class="page__comments-title">Comments</h2>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/reviewing-data/" rel="permalink">Peer review in NLP: resource papers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  15 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Resource papers strike back! How the authors and the reviewers can stop talking past each other.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/attribution/" rel="permalink">The attribution problem with generative AI
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  15 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know w...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2019/leaderboards/" rel="permalink">How the Transformers broke NLP leaderboards
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  11 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">With the huge Transformer-based models such as BERT, GPT-2, and XLNet, are we losing track of how the state-of-the-art performance is achieved?
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hacking semantics. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br/>
+  <!--a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a-->This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127096214-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127096214-2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'annargrs/blog');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1288 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>The attribution problem with generative AI - Hacking semantics</title>
+<meta name="description" content="Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due…">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hacking semantics">
+<meta property="og:title" content="The attribution problem with generative AI">
+<meta property="og:url" content="https://hackingsemantics.xyz/2022/attribution/">
+
+
+  <meta property="og:description" content="Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due…">
+
+
+
+  <meta property="og:image" content="https://hackingsemantics.xyz/assets/images/attribution-header.png">
+
+
+
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="The attribution problem with generative AI">
+  <meta name="twitter:description" content="Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due…">
+  <meta name="twitter:url" content="https://hackingsemantics.xyz/2022/attribution/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hackingsemantics.xyz/assets/images/attribution-header.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2022-11-01T04:00:47-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://hackingsemantics.xyz/2022/attribution/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hacking semantics Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!--bibtex hack-->
+<script>
+function showBibtex(bibDiv) {
+  var x = document.getElementById(bibDiv);
+  if (x.style.display === "none" || x.style.display === '') {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="icon" type="image/png" href="/assets/images/logo-3col.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-3col.png" alt=""></a>
+        
+        <a class="site-title" href="/">Hacking Semantics</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/aro.jpg" alt="Anna Rogers" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Anna Rogers</h3>
+    
+    
+
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="http://sodas.ku.dk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-university" aria-hidden="true"></i> University of Copenhagen</a></li>
+          
+        
+          
+            <li><a href="http://annargrs.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i> Homepage</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar ai" aria-hidden="true"></i> Google Scholar</a></li>
+          
+        
+          
+            <li><a href="https://www.semanticscholar.org/author/Anna-Rogers/145046059" rel="nofollow noopener noreferrer"><i class="ai ai-semantic-scholar ai" aria-hidden="true"></i> Semantic Scholar</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-4845-4023" rel="nofollow noopener noreferrer"><i class="ai ai-orcid ai" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+      
+
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <!--label for="ac-toc">Toggle Menu</label-->
+  <ul class="nav__items">
+    
+  </ul>
+</nav>
+    
+  
+
+
+<!-- stolen from here:
+https://www.gungorbudak.com/blog/2017/12/08/tags-cloud-sorted-by-post-count-for-jekyll-blogs-without-plugins/
+-->
+<!--div class="tag-cloud">
+
+
+
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#academia/" rel="tag">#academia</a> (10)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#methodology/" rel="tag">#methodology</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-3">
+        <a class="tag-link" href="/tags/#peer-review/" rel="tag">#peer-review</a> (3)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#conference/" rel="tag">#conference</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#debate/" rel="tag">#debate</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#ethics/" rel="tag">#ethics</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#negresults/" rel="tag">#negresults</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#organization/" rel="tag">#organization</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#productivity/" rel="tag">#productivity</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#review/" rel="tag">#review</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#socialNLP/" rel="tag">#socialNLP</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#teaching/" rel="tag">#teaching</a> (1)
+    </span>
+
+
+
+
+
+</div-->
+
+
+
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="The attribution problem with generative AI">
+    <meta itemprop="description" content="Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due…">
+    <meta itemprop="datePublished" content="November 01, 2022">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">The attribution problem with generative AI
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  16 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
+              <ul class="toc__menu">
+  <li><a href="#the-attribution-problem">The attribution problem</a></li>
+  <li><a href="#but-arent-people-doing-the-same-thing">But aren’t people doing the same thing?</a></li>
+  <li><a href="#counter-arguments">Counter-arguments</a>
+    <ul>
+      <li><a href="#generative-models-are-sufficiently-creative">Generative models are sufficiently creative</a></li>
+      <li><a href="#can-we-just-add-references">Can we just add references?</a></li>
+      <li><a href="#if-you-go-deep-enough-everything-has-a-reference">If you go deep enough, everything has a reference.</a></li>
+      <li><a href="#fair-use">“Fair use”</a></li>
+    </ul>
+  </li>
+  <li><a href="#share--cite--discuss-this-post">Share / cite / discuss this post</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <figure>
+	<img src="/assets/images/attribution-header.png" />
+</figure>
+
+<p>When the discussion about large pre-trained generative models hits the question of “what about all this work of artists, programmers and writers that is used in commercial products/models without their knowledge or consent?”, one of the arguments for why this is ok is the comparison of such models to latent search engines. It goes something like this:</p>
+
+<blockquote>
+  <p><em>As a human, you can and do search for inspiration in other people’s writing, code snippets and art. A generative model is similar, it just provides a convenient interface for a search over a huge amount of data as you go.</em></p>
+</blockquote>
+
+<p>Side note: this is about the “latent search” or “synthesis” of the training data that the generative models perform in the process of their regular generation process. There is a related, but separate discussion about using models as a replacement for index-based search engines. For example, <a class="citation" href="#MetzlerTayEtAl_2021_Rethinking_search_making_domain_experts_out_of_dilettantes">(Metzler, Tay, Bahri, &amp; Najork, 2021)</a> sets out a vision of models as “domain experts” generating authoritative answers to any questions that the user might have. <a class="citation" href="#ShahBender_2022_Situating_Search">(Shah &amp; Bender, 2022)</a> challenge this vision by discussing the many kinds of behavior that search users need to undertake which would simply not be supported by a “domain expert” model trying to generate one definitive answer (e.g. learning more before refining their question, considering the list of options, the incentives behind different sources, etc).</p>
+
+<p>So what’s wrong with the “latent search engine” view of generative models?</p>
+
+<p>It is obviously true that autoregressive language models do search for the most probable completion based on the prompt. And it is equally true that human writing and art is conditioned on the inputs encountered by the said humans in their lives, as well as relevant inputs that were deliberately sought out in response to a particular challenge. In literary studies and art there is the notion of <em><a href="https://en.wikipedia.org/wiki/Intertextuality">intertextuality</a></em> <a class="citation" href="#Bakhtin_1981_Discourse_in_novel">(Bakhtin, 1981; Kristeva, 1980; Barthes, 1977)</a>, covering a wide range of ways in which different texts/artworks are related (or perceived to be related by the reader), such as allusion, quotation, parody etc.</p>
+
+<p>But there are a few important limitations to this analogy, including the fundamental differences in the mechanism behind the generative models and  the human inspiration, the potential scale of societal impact for commercial models, and a very different set of stakeholders and benefactors. This post focuses on one particular point in which the search engine analogy breaks down: the attribution problem.</p>
+
+<h2 id="the-attribution-problem">The attribution problem</h2>
+
+<p>When you use a search engine, you find a specific idea, artwork or code snippet for which you clearly see the source. There is a reference (even if the source is only known as stackoverflow user02348). Importantly, there is <em>zero</em> illusion that any thought/artwork/code is just there to be freely appropriated as your own work. If your search space is not the web but your own memory or life experience, you still usually know the sources for things that are citation-worthy (or you go on Twitter asking people “what was that movie/book/project/paper that had/did X?”)</p>
+
+<p>If you are a researcher, you likely have something like  <a href="https://www.zotero.org/">Zotero</a> to track references for you, and a huge database of books and papers. Even if your source by itself was sourced from elsewhere, and even if someone said the same thing without your knowing it – your credibility before your readers (and yourself) requires that you disclose the references that you do know. In the process of doing so, you will necessarily have to make sure that you actually believe the source to be reliable, and that you are aware of its role in your own reasoning.</p>
+
+<p>Note that the attribution problem goes both ways: claiming full credit for the result of your work is possible if and only if you know and cite your sources. This is completely orthogonal to the degree of originality. Let’s say I publish this blog post and then I find that exactly the same text has already been published by someone else: I would still know that what <em>I</em> published was my own work. On the other hand, if instead of writing this blog post I asked GPT-3 to generate it, and even got exactly the same result - I could not claim any contribution at all. In publishing that text as my own, my role would be only to say “I interpret this as coherent text and agree with its content” (that’s what I think Jack Clark did when he <a href="https://twitter.com/jackclarkSF/status/1575525910643474435">used</a> synthetic text as part of his Congress testimony). And what if I used GPT-3 to get “ideas” about what to write next - i.e. generating coherent sections of text that I would then edit - what exactly would I claim then?  Not sure. But the ideas, the style, the amount of background knowledge etc. would all be only partially mine.</p>
+
+<p>There was a recent <a href="https://www.reddit.com/r/OpenAI/comments/xlvygv/artifical_intelligence_allows_me_to_get_straight/">Reddit discussion</a> of how GPT-3 starts to get popular with students aiming to avoid doing their essays. Apart from the students’ completely misunderstanding the point of the exercise, and the waste of the teachers’ time, this discussion highlighted an idea that the AI-assisted writer actually gets the credit not for the writing, but for the “street smarts”: their ability to game the system and get high grades, even if their language skills are not so great. Some might be tempted to say that this is just like using a spellchecker or a service like Grammarly to improve one’s writing, but it seems clear that generating a full or partial draft is qualitatively different: you get help not only with the linguistic form, but also the content.</p>
+
+<h2 id="but-arent-people-doing-the-same-thing">But aren’t people doing the same thing?</h2>
+
+<p>Yes, of course people build on other people’s work all the time. If you want to use something, you can do that - but society has worked out quite a few norms about how much of your own work has to go into the result. And because those norms have evolved over time, we are usually quite aware of our sources. Maybe not all of them, but the important ones for sure.</p>
+
+<p>Any musician has listened to other music that influenced them. Art students go to galleries, and creative writing students read other people’s books. They and/or their teachers may even deliberately curate what they are exposed to, so as to get to a particular result. And all of them can give an interview with some account of their formative influences. That account will be incomplete and not coinciding with what the critics think, but that’s not the point: only that people do generally retain at least some memories of things that ended up very important for them.</p>
+
+<p>Another key difference is that if they aim to be an original artist/musician/writer, while they build on prior work, the point is always to add enough of their own thinking that the next generation has something to similarly learn from <em>them</em> (and not only their ‘sources’). It is far from clear that we get that same degree of creativity from generative models.</p>
+
+<p>With regard to AI art in particular: I’m not an artist at all, but it seems that it’s actually the style (shapes, color schemes etc) rather than just the particular images/artifacts that the artist spends a lifetime developing, and that also brings them professional recognition. They seem to very much disagree that it is ok to just appropriate that <a class="citation" href="#Heikkila_2022_This_artist_is_dominating_AI-generated_art_And_hes_not_happy_about_it">(Heikkilä, 2022)</a>. <a href="https://spawning.ai/">Spawning AI</a> has built a <a href="https://haveibeentrained.com/">tool</a> for artists to detect when their work has been part of popular training datasets.</p>
+
+<p>In conclusion: no, generative models are <em>not</em> doing the same kind of latent search over the possible things they could “say” as the humans do when they produce texts or art. A key difference is that for humans it is not only a cognitive activity driven by content considerations, but also a social activity. We are acutely aware of when attribution is needed, we provide that attribution, and we expect attribution in return. Granted, different people may have a different sense of when attribution is appropriate (based on their personal experience, familiarity with a subject, the social norms in their environment, etc.) - but that does not make the fundamental principle any less real.</p>
+
+<h2 id="counter-arguments">Counter-arguments</h2>
+
+<p>In the spirit of discussion, here are some of the counter-arguments I have seen, and my responses to them.</p>
+
+<h3 id="generative-models-are-sufficiently-creative">Generative models are sufficiently creative</h3>
+
+<p>To claim that a generative model is sufficiently creative to not worry about attribution, we would first need to define “creativity”. Some bring up examples like DALL-E’s <a href="https://openai.com/blog/dall-e/">avocado chairs</a>. To me, the creativity here is exhibited by the human who formulated the crazy prompt, while the model demonstrates compositionality in being able to recombine the visual “concepts” it had learned (in this case it had learned “chair”, “wood”, and “avocado”, as well as the visual schema “chair + material”). Most of us cannot draw well, so pretty much any execution would look impressive. But consider what this compositional skill would look like in the language domain, where we are all proficient enough: the model learned “John had a coffee” and “Mary had a tea”, and it was then able to produce “John had a tea”. Does that look as impressively creative as the avocado chair image?</p>
+
+<p>I also wouldn’t interpret creativity as randomness (e.g. as controlled by the temperature setting of GPT-3). If I were to get the writer’s block and had to resort to random writing prompts to get me unstuck, that would rather be a symptom of a <em>lack</em> of creativity, wouldn’t it? Furthermore, with the current models increasing the randomness of generation is likely to sacrifice the factual correctness of the generated data, as it necessarily moves further away from the training distribution - and there are no mechanisms for conceptual consistency. Creativity/nonsense is not an acceptable trade-off in most scenarios where the generated text is anchored to the real world or some long-form narrative.</p>
+
+<p>Finally, “creativity” may be discussed in publications on AI art or AI-human collaborations as some external characteristic of the generated text/artwork, scored by critics on some aesthetic dimensions, as in <a class="citation" href="#HitsuwariUedaEtAl_2022_Does_human-AI_collaboration_lead_to_more_creative_art">(Hitsuwari, Ueda, Yun, &amp; Nomura, 2022)</a>. I would argue that this is also not the relevant notion of creativity for this discussion. Since we are talking about a machine learning system, evaluation of any aesthetic properties of its output has the same problem as any other benchmarks: unless we know what the system saw in training, we cannot tell whether it actually acquired some ability or just parrots the seen examples. So far I have seen no studies of very large models given all their training data (given that this data is typically not made fully publicly available in a query-able form). Since fundamentally the current models are optimized to produce a statistically likely completion of the current prompt, the burden of proof is on the side that claims creativity.</p>
+
+<p>What we do know from the studies with smaller models is that they can and do reproduce passages of training data verbatim <a class="citation" href="#CarliniTramerEtAl_2021_Extracting_Training_Data_from_Large_Language_Models">(Carlini et al., 2021; Carlini et al., 2022)</a>, inter alia. The capacity for memorization and, hence, plagiarism would increase with size <a class="citation" href="#LeeLeEtAl_2022_Do_Language_Models_Plagiarize">(Lee, Le, Chen, &amp; Lee, 2022)</a>. Given that, I would argue that even if we had some general proof of <em>capacity</em> for generative models to synthesize meaningful and original content, it would not be enough: after all, humans also <em>can</em> be creative, but teachers still suspect student plagiarism on a case by case basis. For a statistical learner, how creative (or trustworthy) a given generation is would likely depend on how much evidence it had, and how similar the different datapoints were. So unless the company selling the model provides some guarantees of originality in specific cases, it simply passes the responsibility for the potential plagiarism on to its unwitting customers.</p>
+
+<h3 id="can-we-just-add-references">Can we just add references?</h3>
+
+<p>When presenting their vision of a “domain expert” end-to-end information retrieval, <a class="citation" href="#MetzlerTayEtAl_2021_Rethinking_search_making_domain_experts_out_of_dilettantes">(Metzler, Tay, Bahri, &amp; Najork, 2021)</a> argue for a model that does add some references, and moreover strives to present “both sides” for controversial topics. Perhaps it would be an easy fix for the attribution problem - if we just added pointers to the training data examples that were the most similar to the generated output?</p>
+
+<p>Let’s say you’re writing a deep learning blog post about self-attention in Transformers. Let’s say that your “writing aid” model would give you the following combination of sentences:</p>
+
+<blockquote>
+  <p><em>The self-attention mechanism in Transformers is able to compute pair-wise relations between patches globally, consequently achieving feature interactions across a long range. It is… regarded as a mapping of query and key/value pairs to an output, each of which being represented by a vector. A well-known concern with self-attention… is the quadratic time and memory complexity, which can hinder model scalability in many settings.</em></p>
+</blockquote>
+
+<p>All of these sentences actually come from different research papers. Augmented with links to those papers, the same paragraph would look like this:</p>
+
+<blockquote>
+  <p><em>The self-attention mechanism in Transformers is able to compute pair-wise relations between patches globally, consequently achieving feature interactions across a long range. [<a href="https://arxiv.org/pdf/2201.00462v2.pdf">https://arxiv.org/pdf/2201.00462v2.pdf</a>] It is… regarded as a mapping of query and key/value pairs to an output, each of which being represented by a vector [<a href="https://arxiv.org/pdf/1807.03052.pdf">https://arxiv.org/pdf/1807.03052.pdf</a>]. A well-known concern with self-attention… is the quadratic time and memory complexity, which can hinder model scalability in many settings. [<a href="https://arxiv.org/pdf/2009.06732.pdf">https://arxiv.org/pdf/2009.06732.pdf</a>].</em></p>
+</blockquote>
+
+<p>The key difference is that the first paragraph <em>looks</em> like something actually “done” by the model, and you might be tempted to actually use it. The references destroy the illusion of the attribution-free text: unless you are comfortable simply copying phrases from other people’s work, the “writing aid” illusion falls apart.</p>
+
+<p>Admittedly, this example is exaggerated: perhaps only some part of the generated text would be so clearly plagiarized. Perhaps it would only happen occasionally. But without these references the attribution norms in scientific community would still be broken. And with them, it would mean that you’re relying on GPT-3 for the high-level thinking behind your research. Which would make sense depending on (a) on the degree to which you believe it capable of such thinking, (b) if so - the degree to which you are comfortable taking credit for thinking that is not your own.</p>
+
+<p><a class="citation" href="#ShahBender_2022_Situating_Search">(Shah &amp; Bender, 2022)</a> make the case that the references approach is insufficient even for the “domain expert” QA model envisaged by <a class="citation" href="#MetzlerTayEtAl_2021_Rethinking_search_making_domain_experts_out_of_dilettantes">(Metzler, Tay, Bahri, &amp; Najork, 2021)</a>: the model may end up being the arbiter of truth for cases that are far from resolved, may present “both sides” on topics like the flat earth theory, and may obscure the real sources of information behind the citation (e.g. something called “XYZ clinic” may actually be a homeopathy provider with no medical credentials). Of course, there are cases in which the answer is straightforward enough to trust the current models with - but unfortunately we can’t easily tell which cases are “safe”.</p>
+
+<h3 id="if-you-go-deep-enough-everything-has-a-reference">If you go deep enough, everything has a reference.</h3>
+
+<blockquote>
+  <p><em>If you go deep enough, everything has a reference. Nobody expects attribution for basic algebra or the English alphabet. Nobody has ethical qualms about writing with Grammarly or spell checkers. Why demand attribution for abstract ideas or artistic styles?</em></p>
+</blockquote>
+
+<p>True, when we write academic articles nowadays, nobody expects you to provide the trail of references all the way down to Aristotle. But few people would say that taking someone’s recent NeurIPS paper and republishing it would be ok. Yes, it is a continuum, but it’s still real.</p>
+
+<p>What exactly is common knowledge and what deserves a reference at a given point in time varies by person, depending on their domain knowledge and principles. Still, everybody has a fairly clear idea of what their own boundaries are. Would you personally be comfortable with changing some variable names in a StackOverflow snippet and passing it as your own work? Would you tell your child it’s ok to copy-paste essay passages from public domain sources - after all, it’s not illegal? How about if you hear an apt metaphor in someone’s keynote that you haven’t heard anywhere else - would you say that it’s “just English” and use it as your own? Whatever your answers are to these questions - you have these answers, which means that you have your own attribution norms. They matter to <em>you</em>. And part of the reason you have this specific set of norms is that you know that this is what the people around you expect.</p>
+
+<h3 id="fair-use">“Fair use”</h3>
+
+<blockquote>
+  <p><em>This is just luddism. The printing press put the calligraphers out of a job, and the world is better off this way. The notions of copyright and intellectual property are obsolete and will soon dissolve in “fair use”. If that puts artists/writers/programmers out of work - so what, society just needs to adapt.</em></p>
+</blockquote>
+
+<p>The printing press wasn’t literally powered by the work of all the calligraphers in the world, taken and used commercially without their knowledge or consent - especially at a time when at least some protection against that already exists in contemporaneous laws. “Fair use” may sound like a reasonable approach for academic research or for individual creators producing AI-assisted content (with proper source attribution), but that’s not what is under discussion - it’s the AI companies’ right to use any data they can get hold of to train <em>commercial</em> models, without sharing any proceeds with the original creators or even letting them know their work was used. That fight is far from over, and the few available court decisions (such as the ongoing <a href="https://www.socialmediatoday.com/news/linkedin-loses-latest-appeal-in-ongoing-data-scraping-case/622333/">LinkedIn case</a>) are on a case-by-case basis rather than something that the companies can already use as a blanket permission. An investigation for an actual lawsuit is underway with respect to GitHub CoPilot <a class="citation" href="#JosephSaveriLawFirmButterick_2022_GitHub_Copilot_investigation">(Joseph Saveri Law Firm &amp; Butterick, 2022)</a>.</p>
+
+<p>I am not sure what kind of adaptations on the part of society are being envisaged. Let us imagine one possible scenario: you are a programmer in a world dominated by a future CoPilot-like system which everybody uses, and which is trained on all public code. Any new public code of yours is fed to that system, and everybody else is instantly able to use it. Since there is no attribution, your public work can no longer help you to build up reputation, community and a professional profile that would be well known outside your current company, which would make it harder to change jobs should anything go wrong. Your employer knows this, and tweaks a few HR policies.</p>
+
+<p>Maybe the future CoPilot owner works out some licensing scheme which gives you some royalties when your code snippets are used? This is where the platform power comes in, and we wish we hadn’t been so enthusiastic about “fair use” for commerce. Fun fact: only 0.96% of the 7 million artists on Spotify made even $5K in 2020 <a class="citation" href="#Smith_2021_13400_Artists_Out_of_7_Million_Earn_$50k_or_More_From_Spotify_Yearly">(Smith, 2021)</a>. Only 0.19% (13,400 artists) out of 7 million artists were popular enough to make $50K a year.</p>
+
+<p><strong>Acknowledgements</strong></p>
+
+<p>Many thanks to amazing folks from HuggingFace for feedback &amp; suggestions! In particular, Christopher Akiki, Gérard Dupont, Sasha Luccioni, and Aleksandra Piktus (in alphabetical order).</p>
+
+<p><strong>Updates</strong></p>
+
+<p>The text of the post was clarified thanks to feedback in the <a href="https://twitter.com/annargrs/status/1587765010763108353">Twitter thread</a>.</p>
+
+<h2 id="share--cite--discuss-this-post">Share / cite / discuss this post</h2>
+
+<div class="page__share">
+
+  
+
+    <a href="https://twitter.com/annargrs/status/1587765010763108353" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span>Join the discussion on Twitter</span></a>
+
+    <br />
+    <br />
+
+  
+
+  
+
+  <a href="https://twitter.com/intent/tweet?text=The+attribution+problem+with+generative+AI%20https%3A%2F%2Fhackingsemantics.xyz%2F2022%2Fattribution%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Share on Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhackingsemantics.xyz%2F2022%2Fattribution%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Share on Facebook</span></a>
+
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fhackingsemantics.xyz%2F2022%2Fattribution%2F&amp;title=The attribution problem with generative AI" class="btn btn--reddit" title=" Reddit"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i><span>Share on Reddit</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fhackingsemantics.xyz%2F2022%2Fattribution%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> Share on LinkedIn</span></a>
+
+  <button class="btn btn--bibtex" onclick="showBibtex('postCite')"><i class="fas fa-book" aria-hidden="true"></i> BibTex citation</button>
+</div>
+
+<div class="bibtex" style="display:none;" id="postCite">
+<pre>
+@misc{Rogers_2022_attribution,
+  title = { The attribution problem with generative AI},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2022/attribution/ },
+  author = {Rogers, Anna},
+  day = { 01 },
+  month = { Nov },
+  year = { 2022 }
+}
+</pre>
+</div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><div class="text-justify">
+    <span id="Bakhtin_1981_Discourse_in_novel">Bakhtin, M. M. (1981). Discourse in the Novel. In M. Holquist (Ed.), <i>The Dialogic Imagination: Four Essays</i>. University of Texas Press.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Bakhtin_1981_Discourse_in')">BibTex</button>
+
+    
+
+<div class="bibtex" id="Bakhtin_1981_Discourse_in"><pre>@incollection{Bakhtin_1981_Discourse_in_novel,
+  title = {Discourse in the Novel},
+  booktitle = {The {{Dialogic}} Imagination: Four Essays},
+  author = {Bakhtin, M. M.},
+  editor = {Holquist, M.},
+  year = {1981},
+  publisher = {{University of Texas Press}},
+  annotation = {Open Library ID: OL20720399M}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Barthes_1977_Death_of_Author">Barthes, R. (1977). The Death of the Author. In S. Heath (Tran.), <i>Image, Music, Text: Essays</i> (Thirteenth, pp. 142–148). London: fontana.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Barthes_1977_Death_of')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://sites.tufts.edu/english292b/files/2012/01/Barthes-The-Death-of-the-Author.pdf'">URL</button>
+    
+
+<div class="bibtex" id="Barthes_1977_Death_of"><pre>@incollection{Barthes_1977_Death_of_Author,
+  title = {The {{Death}} of the {{Author}}},
+  booktitle = {Image, Music, Text: Essays},
+  author = {Barthes, Roland},
+  translator = {Heath, Stephen},
+  year = {1977},
+  edition = {Thirteenth},
+  pages = {142--148},
+  publisher = fontana,
+  address = {{London}},
+  url = {https://sites.tufts.edu/english292b/files/2012/01/Barthes-The-Death-of-the-Author.pdf},
+  isbn = {978-0-00-686135-5},
+  langid = {english}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="CarliniIppolitoEtAl_2022_Quantifying_Memorization_Across_Neural_Language_Models">Carlini, N., Ippolito, D., Jagielski, M., Lee, K., Tramer, F., &amp; Zhang, C. (2022). <i>Quantifying Memorization Across Neural Language Models</i>. https://doi.org/10.48550/arXiv.2202.07646</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('CarliniIppolitoEtAl_2022_Quantifying_Memorization')">BibTex</button>
+
+    
+
+<div class="bibtex" id="CarliniIppolitoEtAl_2022_Quantifying_Memorization"><pre>@misc{CarliniIppolitoEtAl_2022_Quantifying_Memorization_Across_Neural_Language_Models,
+  title = {Quantifying {{Memorization Across Neural Language Models}}},
+  author = {Carlini, Nicholas and Ippolito, Daphne and Jagielski, Matthew and Lee, Katherine and Tramer, Florian and Zhang, Chiyuan},
+  year = {2022},
+  month = feb,
+  number = {arXiv:2202.07646},
+  eprint = {2202.07646},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = arxiv,
+  doi = {10.48550/arXiv.2202.07646},
+  archiveprefix = {arXiv}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="CarliniTramerEtAl_2021_Extracting_Training_Data_from_Large_Language_Models">Carlini, N., Tramèr, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., … Raffel, C. (2021). Extracting Training Data from Large Language Models. <i>30th USENIX Security Symposium (USENIX Security 21)</i>, 2633–2650.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('CarliniTramerEtAl_2021_Extracting_Training')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting'">URL</button>
+    
+
+<div class="bibtex" id="CarliniTramerEtAl_2021_Extracting_Training"><pre>@inproceedings{CarliniTramerEtAl_2021_Extracting_Training_Data_from_Large_Language_Models,
+  title = {Extracting {{Training Data}} from {{Large Language Models}}},
+  booktitle = {30th {{USENIX Security Symposium}} ({{USENIX Security}} 21)},
+  author = {Carlini, Nicholas and Tram{\`e}r, Florian and Wallace, Eric and Jagielski, Matthew and {Herbert-Voss}, Ariel and Lee, Katherine and Roberts, Adam and Brown, Tom and Song, Dawn and Erlingsson, {\'U}lfar and Oprea, Alina and Raffel, Colin},
+  year = {2021},
+  pages = {2633--2650},
+  url = {https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting},
+  urldate = {2022-10-19},
+  isbn = {978-1-939133-24-3},
+  langid = {english}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Heikkila_2022_This_artist_is_dominating_AI-generated_art_And_hes_not_happy_about_it">Heikkilä, M. (2022). This Artist Is Dominating AI-generated Art. And He’s Not Happy about It.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Heikkila_2022_This_artist')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.technologyreview.com/2022/09/16/1059598/this-artist-is-dominating-ai-generated-art-and-hes-not-happy-about-it/'">URL</button>
+    
+
+<div class="bibtex" id="Heikkila_2022_This_artist"><pre>@misc{Heikkila_2022_This_artist_is_dominating_AI-generated_art_And_hes_not_happy_about_it,
+  title = {This Artist Is Dominating {{AI-generated}} Art. {{And}} He's Not Happy about It.},
+  author = {Heikkil{\"a}, Melissa},
+  year = {2022},
+  month = sep,
+  journal = {MIT Technology Review},
+  url = {https://www.technologyreview.com/2022/09/16/1059598/this-artist-is-dominating-ai-generated-art-and-hes-not-happy-about-it/},
+  urldate = {2022-10-18},
+  langid = {english}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="HitsuwariUedaEtAl_2022_Does_human-AI_collaboration_lead_to_more_creative_art">Hitsuwari, J., Ueda, Y., Yun, W., &amp; Nomura, M. (2022). Does Human–AI Collaboration Lead to More Creative Art? Aesthetic Evaluation of Human-Made and AI-generated Haiku Poetry. <i>Computers in Human Behavior</i>, 107502. https://doi.org/10.1016/j.chb.2022.107502</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('HitsuwariUedaEtAl_2022_Does_human-AI')">BibTex</button>
+
+    
+
+<div class="bibtex" id="HitsuwariUedaEtAl_2022_Does_human-AI"><pre>@article{HitsuwariUedaEtAl_2022_Does_human-AI_collaboration_lead_to_more_creative_art,
+  title = {Does Human\textendash{{AI}} Collaboration Lead to More Creative Art? {{Aesthetic}} Evaluation of Human-Made and {{AI-generated}} Haiku Poetry},
+  shorttitle = {Does Human\textendash{{AI}} Collaboration Lead to More Creative Art?},
+  author = {Hitsuwari, Jimpei and Ueda, Yoshiyuki and Yun, Woojin and Nomura, Michio},
+  year = {2022},
+  month = oct,
+  journal = {Computers in Human Behavior},
+  pages = {107502},
+  issn = {0747-5632},
+  doi = {10.1016/j.chb.2022.107502},
+  langid = {english}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Kristeva_1980_Desire_in_language_semiotic_approach_to_literature_and_art">Kristeva, J. (1980). <i>Desire in language: A semiotic approach to literature and art</i>. Columbia University Press.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Kristeva_1980_Desire_in')">BibTex</button>
+
+    
+
+<div class="bibtex" id="Kristeva_1980_Desire_in"><pre>@book{Kristeva_1980_Desire_in_language_semiotic_approach_to_literature_and_art,
+  title = {Desire in language: A semiotic approach to literature and art},
+  author = {Kristeva, Julia},
+  year = {1980},
+  publisher = {Columbia University Press}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="LeeLeEtAl_2022_Do_Language_Models_Plagiarize">Lee, J., Le, T., Chen, J., &amp; Lee, D. (2022). <i>Do Language Models Plagiarize?</i> https://doi.org/10.48550/arXiv.2203.07618</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('LeeLeEtAl_2022_Do_Language')">BibTex</button>
+
+    
+
+<div class="bibtex" id="LeeLeEtAl_2022_Do_Language"><pre>@misc{LeeLeEtAl_2022_Do_Language_Models_Plagiarize,
+  title = {Do {{Language Models Plagiarize}}?},
+  author = {Lee, Jooyoung and Le, Thai and Chen, Jinghui and Lee, Dongwon},
+  year = {2022},
+  month = mar,
+  number = {arXiv:2203.07618},
+  eprint = {2203.07618},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = arxiv,
+  doi = {10.48550/arXiv.2203.07618},
+  archiveprefix = {arXiv}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="MetzlerTayEtAl_2021_Rethinking_search_making_domain_experts_out_of_dilettantes">Metzler, D., Tay, Y., Bahri, D., &amp; Najork, M. (2021). Rethinking Search: Making Domain Experts out of Dilettantes. <i>ACM SIGIR Forum</i>, <i>55</i>(1), 13:1–13:27. https://doi.org/10.1145/3476415.3476428</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('MetzlerTayEtAl_2021_Rethinking_search')">BibTex</button>
+
+    
+
+<div class="bibtex" id="MetzlerTayEtAl_2021_Rethinking_search"><pre>@article{MetzlerTayEtAl_2021_Rethinking_search_making_domain_experts_out_of_dilettantes,
+  title = {Rethinking Search: Making Domain Experts out of Dilettantes},
+  shorttitle = {Rethinking Search},
+  author = {Metzler, Donald and Tay, Yi and Bahri, Dara and Najork, Marc},
+  year = {2021},
+  month = jul,
+  journal = {ACM SIGIR Forum},
+  volume = {55},
+  number = {1},
+  pages = {13:1--13:27},
+  issn = {0163-5840},
+  doi = {10.1145/3476415.3476428}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="ShahBender_2022_Situating_Search">Shah, C., &amp; Bender, E. M. (2022). Situating Search. <i>ACM SIGIR Conference on Human Information Interaction and Retrieval</i>, 221–232. https://doi.org/10.1145/3498366.3505816</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('ShahBender_2022_Situating_Search')">BibTex</button>
+
+    
+
+<div class="bibtex" id="ShahBender_2022_Situating_Search"><pre>@inproceedings{ShahBender_2022_Situating_Search,
+  title = {Situating {{Search}}},
+  booktitle = {{{ACM SIGIR Conference}} on {{Human Information Interaction}} and {{Retrieval}}},
+  author = {Shah, Chirag and Bender, Emily M.},
+  year = {2022},
+  month = mar,
+  series = {{{CHIIR}} '22},
+  pages = {221--232},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/3498366.3505816},
+  isbn = {978-1-4503-9186-3}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="Smith_2021_13400_Artists_Out_of_7_Million_Earn_$50k_or_More_From_Spotify_Yearly">Smith, D. (2021). 13,400 Artists (Out of 7 Million) Earn $50k or More From Spotify Yearly.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Smith_2021_13400_Artists')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.digitalmusicnews.com/2021/03/18/spotify-artist-earnings-figures/'">URL</button>
+    
+
+<div class="bibtex" id="Smith_2021_13400_Artists"><pre>@misc{Smith_2021_13400_Artists_Out_of_7_Million_Earn_$50k_or_More_From_Spotify_Yearly,
+  title = {13,400 {{Artists}} ({{Out}} of 7 {{Million}}) {{Earn}} \$50k or {{More From Spotify Yearly}}},
+  author = {Smith, Dylan},
+  year = {2021},
+  month = mar,
+  journal = {Digital Music News},
+  url = {https://www.digitalmusicnews.com/2021/03/18/spotify-artist-earnings-figures/},
+  urldate = {2022-10-19},
+  langid = {american}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="JosephSaveriLawFirmButterick_2022_GitHub_Copilot_investigation">Joseph Saveri Law Firm, &amp; Butterick, M. (2022). <i>GitHub Copilot Investigation</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('JosephSaveriLawFirmButterick_2022_GitHub_Copilot')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.saverilawfirm.com/our-cases/github-copilot-intellectual-property-litigation'">URL</button>
+    
+
+<div class="bibtex" id="JosephSaveriLawFirmButterick_2022_GitHub_Copilot"><pre>@misc{JosephSaveriLawFirmButterick_2022_GitHub_Copilot_investigation,
+  title = {{{GitHub Copilot}} Investigation},
+  author = {{Joseph Saveri Law Firm} and Butterick, Matthew},
+  year = {2022},
+  url = {https://www.saverilawfirm.com/our-cases/github-copilot-intellectual-property-litigation},
+  urldate = {2022-10-18}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li></ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#debate" class="page__taxonomy-item" rel="tag">debate</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#ethics" class="page__taxonomy-item" rel="tag">ethics</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#squib" class="page__taxonomy-item" rel="tag">squib</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-11-01T04:00:47-04:00">November 01, 2022</time></p>
+        
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/hybrid/" class="pagination--pager" title="Field Notes on Hybrid Conferences (EMNLP 2021)
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h2 class="page__comments-title">Comments</h2>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/anonymity/" rel="permalink">Should the reviewers know who the authors are?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  23 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/reviewing-data/" rel="permalink">Peer review in NLP: resource papers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  15 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Resource papers strike back! How the authors and the reviewers can stop talking past each other.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2019/leaderboards/" rel="permalink">How the Transformers broke NLP leaderboards
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  11 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">With the huge Transformer-based models such as BERT, GPT-2, and XLNet, are we losing track of how the state-of-the-art performance is achieved?
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hacking semantics. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br/>
+  <!--a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a-->This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127096214-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127096214-2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'annargrs/blog');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>

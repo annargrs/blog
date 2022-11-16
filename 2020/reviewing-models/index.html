@@ -1,0 +1,1238 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Peer review in NLP: reject-if-not-SOTA - Hacking semantics</title>
+<meta name="description" content="Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hacking semantics">
+<meta property="og:title" content="Peer review in NLP: reject-if-not-SOTA">
+<meta property="og:url" content="https://hackingsemantics.xyz/2020/reviewing-models/">
+
+
+  <meta property="og:description" content="Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong.">
+
+
+
+  <meta property="og:image" content="https://hackingsemantics.xyz/assets/images/compete.png">
+
+
+
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="Peer review in NLP: reject-if-not-SOTA">
+  <meta name="twitter:description" content="Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong.">
+  <meta name="twitter:url" content="https://hackingsemantics.xyz/2020/reviewing-models/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hackingsemantics.xyz/assets/images/compete.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2020-04-03T09:00:47-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://hackingsemantics.xyz/2020/reviewing-models/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hacking semantics Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!--bibtex hack-->
+<script>
+function showBibtex(bibDiv) {
+  var x = document.getElementById(bibDiv);
+  if (x.style.display === "none" || x.style.display === '') {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="icon" type="image/png" href="/assets/images/logo-3col.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-3col.png" alt=""></a>
+        
+        <a class="site-title" href="/">Hacking Semantics</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/aro.jpg" alt="Anna Rogers" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Anna Rogers</h3>
+    
+    
+
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="http://sodas.ku.dk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-university" aria-hidden="true"></i> University of Copenhagen</a></li>
+          
+        
+          
+            <li><a href="http://annargrs.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i> Homepage</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar ai" aria-hidden="true"></i> Google Scholar</a></li>
+          
+        
+          
+            <li><a href="https://www.semanticscholar.org/author/Anna-Rogers/145046059" rel="nofollow noopener noreferrer"><i class="ai ai-semantic-scholar ai" aria-hidden="true"></i> Semantic Scholar</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-4845-4023" rel="nofollow noopener noreferrer"><i class="ai ai-orcid ai" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+      
+
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <!--label for="ac-toc">Toggle Menu</label-->
+  <ul class="nav__items">
+    
+  </ul>
+</nav>
+    
+  
+
+
+<!-- stolen from here:
+https://www.gungorbudak.com/blog/2017/12/08/tags-cloud-sorted-by-post-count-for-jekyll-blogs-without-plugins/
+-->
+<!--div class="tag-cloud">
+
+
+
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#academia/" rel="tag">#academia</a> (10)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#methodology/" rel="tag">#methodology</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-3">
+        <a class="tag-link" href="/tags/#peer-review/" rel="tag">#peer-review</a> (3)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#conference/" rel="tag">#conference</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#debate/" rel="tag">#debate</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#ethics/" rel="tag">#ethics</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#negresults/" rel="tag">#negresults</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#organization/" rel="tag">#organization</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#productivity/" rel="tag">#productivity</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#review/" rel="tag">#review</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#socialNLP/" rel="tag">#socialNLP</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#teaching/" rel="tag">#teaching</a> (1)
+    </span>
+
+
+
+
+
+</div-->
+
+
+
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Peer review in NLP: reject-if-not-SOTA">
+    <meta itemprop="description" content="Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong.">
+    <meta itemprop="datePublished" content="April 03, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Peer review in NLP: reject-if-not-SOTA
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  11 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
+              <ul class="toc__menu">
+  <li><a href="#everything-wrong-with-reject-if-not-sota">Everything wrong with reject-if-not-SOTA</a></li>
+  <li><a href="#how-did-we-get-here">How did we get here?</a></li>
+  <li><a href="#solution-guidelines-on-what-constitutes-an-acceptable-contribution">Solution: guidelines on what constitutes an acceptable contribution</a></li>
+  <li><a href="#reject-if-not-sota-and-non-modeling-papers">Reject-if-not-SOTA and non-modeling papers</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#2020-events-for-your-sota-free-paper">2020 events for your SOTA-free paper</a></li>
+  <li><a href="#share--cite--discuss-this-post">Share / cite / discuss this post</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <figure>
+	<img src="/assets/images/compete.png" />
+</figure>
+
+<h2 id="everything-wrong-with-reject-if-not-sota">Everything wrong with reject-if-not-SOTA</h2>
+
+<p>After each reviewing round for a major conference, #NLProc Twitter erupts with bitter reports of methods rejected for failing to achieve the state-of-the-art status (SOTA).</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another @emnlp2019 reviewer&#39;s 3-line review concludes: &quot;The main weakness of the paper is the results do not beat the state of the art models.&quot; This is a tired take and a lazy, backwards way to think about research.</p>&mdash; Jesse Thomason (@_jessethomason_) <a href="https://twitter.com/_jessethomason_/status/1147587570634645504?ref_src=twsrc%5Etfw">July 6, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>This kind of attitude gives the impression of a completely broken peer-review system, discouraging new minds from even trying to enter the field. Only last month I gave an invited talk for an advanced NLP class in UMass Lowell, telling the students of <a href="https://text-machine-lab.github.io/blog/2020/quail/">a new QA benchmark</a> that they could try. After the class a few students came up to me and said they were interested, but they were concerned that it would be a priori futile: whatever they did, they probably would not be able to beat the huge models released monthly by the top industry labs. Note that this was a class in a major US university, so the students in less favorable environments probably feel even more discouraged.</p>
+
+<p>Moreover, the coveted SOTA <a href="https://lukeoakdenrayner.wordpress.com/2019/09/19/ai-competitions-dont-produce-useful-models/">does not even necessarily advance the field</a>. Looking at a popular leaderboard like <a href="https://gluebenchmark.com/">GLUE</a>, can we really conclude that the top system has the best <em>architecture</em>? When the test score differences are marginal, any of the following could be in play:</p>
+
+<ul>
+  <li>variation induced by extraneous factors, from linear algebra library version to random initializations <a class="citation" href="#Crane_2018_Questionable_Answers_in_Question_Answering_Research_Reproducibility_and_Variability_of_Published_Results">(Crane, 2018; Dodge et al., 2020)</a>.</li>
+  <li>how well the model is tuned, which depends on how much computation budget the authors had <a class="citation" href="#DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results">(Dodge, Gururangan, Card, Schwartz, &amp; Smith, 2019)</a>. If even BERT <a class="citation" href="#DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding">(Devlin, Chang, Lee, &amp; Toutanova, 2019)</a> was “significantly undertrained” <a class="citation" href="#LiuOttEtAl_2019_RoBERTa_Robustly_Optimized_BERT_Pretraining_Approach">(Liu et al., 2019)</a>, what about work from smaller labs?</li>
+  <li>differences in model size, amount of pre-training data, and pre-training time: increasing any of them could be expected to yield improvements, but <a href="https://hackingsemantics.xyz/2019/leaderboards/">that is not research news</a>.</li>
+  <li>the benchmarks we have are not perfect <a class="citation" href="#McCoyPavlickEtAl_2019_Right_for_Wrong_Reasons_Diagnosing_Syntactic_Heuristics_in_Natural_Language_Inference">(McCoy, Pavlick, &amp; Linzen, 2019; Sugawara, Stenetorp, Inui, &amp; Aizawa, 2020; Jia &amp; Liang, 2017)</a>, and 1% improvement in the range past human performance may indicate the system is actually worse, i.e. it overfits to the dataset at the cost of generalizability.</li>
+</ul>
+
+<p>In addition to all the above issues, the leaderboards put us in a hamster wheel. They are updated so quickly that SOTA claims should really be taken as <a href="https://twitter.com/tallinzen/status/1193904779191365632?s=20">“SOTA at the time of submitting this paper”</a>. If the paper is accepted, it will likely lose the SOTA status even before publication. If it is rejected, the authors <a href="https://twitter.com/nlpmattg/status/1220089814717886464?s=20">have to try their luck at the next conference <em>without</em> being able to claim SOTA anymore</a>.</p>
+
+<p>The SOTA chase takes an absurd twist when a tired reviewer glances at the leaderboard and dislikes the paper for not including the very latest models. For instance, at least two EMNLP 2019 reviewers requested a comparison with XLNet <a class="citation" href="#YangDaiEtAl_2019_XLNet_Generalized_Autoregressive_Pretraining_for_Language_Understanding">(Yang et al., 2019)</a>, which topped the leaderboards <em>after</em> the EMNLP submission deadline:</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">re &quot;Why not consider other models? such as XLNet&quot;: I agree with the reviewer on the importance of time travel research, but it&#39;s slightly out of the scope of this paper.</p>&mdash; Kyunghyun Cho (@kchonyc) <a href="https://twitter.com/kchonyc/status/1149826779999363072?ref_src=twsrc%5Etfw">July 12, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="how-did-we-get-here">How did we get here?</h2>
+
+<p>All of the above makes so much sense that one has to wonder how we even got to reject-if-not-SOTA. Surely, the people who get asked to review for top NLP conferences know all this?</p>
+
+<p>I would conjecture that two factors are in play:</p>
+
+<ul>
+  <li>The fact that we are <em>drowning</em> in papers, and need heuristics to decide what to read/tweet/publish. SOTA is just one such heuristic.</li>
+  <li>Glorification of benchmarks, coupled with the initial trajectory of deep learning community within NLP.</li>
+</ul>
+
+<p>The first factor deserves its own post. The lack of time, the low prestige and lack of career or monetary compensation for reviewing means that people are strongly incentivized to rely on heuristics, of which SOTA is just one example. To combat that, we need deep, systemic changes, which will take a long time to implement.</p>
+
+<p>The second factor is specific to the reject-if-not-SOTA. Ehud Reiter makes a useful <a href="https://ehudreiter.com/2020/03/02/why-use-18-year-old-bleu/">distinction</a> between “evaluation metrics” vs “scoring functions”. Language is complex, and our benchmarks far from perfect, so ideally we would have (1) the introduction of a benchmark, (2) a wave of system papers that hopefully reaches human performance, and then (3) a massive switch to an improved benchmark. Instead, we get stuck in step 2, and the benchmark becomes a scoring function that simply enables the community to publish tons of SOTA-claiming papers.</p>
+
+<p>For example, we now have <a href="https://super.gluebenchmark.com/leaderboard">SuperGLUE</a> and over 80 QA datasets, but new system papers will still mostly evaluate on <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a> and <a href="https://gluebenchmark.com/leaderboard">GLUE</a>, because these are the names that the reviewers most likely know and expect. Since both SQuAD and GLUE are solved well past human baselines, the result is likely an exercise in overfitting.</p>
+
+<p>Additionally, while the benchmark problem is nothing new, the current SOTA chase might have had an extra push from the fact that there was a massive wave of papers with the common trajectory: taking some task/dataset and showing that a neural method could handle it better than was possible before. Many of these papers were written by new authors, and they might still expect the same kind of contributions. But that expectation is outdated. <a href="#everything-wrong-with-reject-if-not-sota">As discussed above,</a> the current leaderboards do not necessarily indicate superiority of the <em>architecture</em>, and the very possibility of using neural nets for different NLP tasks is now taken for granted.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Common misunderstanding about research: a set of routines *that constitute research* at time A may no longer at time B &gt; A. Getting deep nets to work for various tasks *contributed basic knowledge* when the outcome was uncertain (4+ yrs ago). That alone is not research today.</p>&mdash; Zachary Lipton (@zacharylipton) <a href="https://twitter.com/zacharylipton/status/1233348783678873600?ref_src=twsrc%5Etfw">February 28, 2020</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="solution-guidelines-on-what-constitutes-an-acceptable-contribution">Solution: guidelines on what constitutes an acceptable contribution</h2>
+
+<p>Once again, SOTA is just one of the heuristics that the tired and underpaid reviewers are resorting to to cope with the deluge of papers, and in the long run we need to implement systemic changes to the review system. But there is something we could do right now to mitigate this particular heuristic: we could <em>expand</em> it. Performance is just one of many factors that could make a system interesting. What is we had guidelines for authors, reviewers and ACs, which would contain a list of publication-worthy contributions – of which SOTA would be just one? The authors would then have a fighting chance against the SOTA heuristic in the rebuttals, and the reviewers would hopefully be discouraged from using it in the first place.</p>
+
+<p>Now, compiling such guidelines is admittedly not easy: no paper is perfect. The best reviewers are weighing the strengths and the weaknesses of papers on case-by-case basis, necessarily comparing apples to oranges with some degree of subjectivity. Still, for starters, here is a list compiled from many Twitter discussions <a href="#share--cite--discuss-this-post">(suggestions welcome)</a>.</p>
+
+<blockquote>
+  <p>A new system may make be publication-worthy if it has a strong edge over the competition in one or more of the following ways:</p>
+
+  <ul>
+    <li>better performance (significantly and consistently higher than the competition, and surpassing variability due to random initializations);</li>
+    <li>more computation-efficient (less resources to train and/or deploy);</li>
+    <li>more data-efficient (requires less data to train, or less high-quality data);</li>
+    <li>more stable over possible hyperparameters and/or random initializations, easier to tune;</li>
+    <li>better generalizability (less biased, able to avoid learning from data artifacts, better generalizing across datasets and domains, more adversarially robust);</li>
+    <li>having different properties (e.g. different output type, making different kinds of predictions and errors);</li>
+    <li>more interpretable (humans can engage with the output better, easier to understand where it goes wrong and how to fix it);</li>
+    <li>conceptually simpler (this would likely overlap with computation efficiency and stability);</li>
+    <li>more cognitively plausible (more consistent with what is known about human language processing);</li>
+    <li>making unexpected connections between subfields, bringing some technique in a completely new context;</li>
+  </ul>
+</blockquote>
+
+<p>It goes without saying that for any of these criteria <strong>the study should clearly state its hypothesis (doing X as opposed to Y is expected to have the effect Z), and prove/disprove it for the reviewers with appropriate experiments</strong>. If the proposal is only a minor incremental modification of an existing model, and its only hope of publication was beating SOTA, then the authors would be unlikely to be able to claim any of the other factors retroactively.</p>
+
+<p>The above list aims to give a fighting chance to systems that perform well <em>while</em> offering some other kind of advantage, such as generalizability/efficiency etc. But given the history of deep learning, it should not be impossible to publish a valuable idea, even if for some reason it could not be made to perform well yet. However, the idea should be actually novel, rather than “just make it bigger”. A rule-of-thumb criterion for a paper with an interesting idea (attributed to Serge Abiteboul) is that you’d feel tempted to have your students read it.</p>
+
+<h2 id="reject-if-not-sota-and-non-modeling-papers">Reject-if-not-SOTA and non-modeling papers</h2>
+
+<p>It would seem that NLP system papers are the ones the most affected by the reject-if-not-SOTA heuristic, but they are actually the priviledged class because at least they <em>contain</em> the kind of experiments that the reject-if-not-SOTA reviewers expect. All other kinds of papers are just unacceptable by definition:</p>
+
+<ul>
+  <li>systematic parameter and tuning studies;</li>
+  <li>model analysis, representation probing papers, ablation studies;</li>
+  <li>resource papers;</li>
+  <li>surveys;</li>
+  <li>work on ethical considerations in NLP;</li>
+  <li>opinion pieces, especially retrospectives (bridging DL and prior methods), cross-disciplinary contributions, papers connecting subfields that work on the similar phenomenon under different names;</li>
+</ul>
+
+<p>Reviewing all these different kinds of papers properly deserve separate posts, but they are all a legitimate part of *ACL conferences. For resources in particular, consider again that ideally the field should cycle through (1) the introduction of a benchmark, (2) a wave of system papers that hopefully reaches human performance, and then (3) a massive switch to an improved benchmark. If the difficult interdisciplinary work on improving benchmarks is not rewarded on par with system engineering work, who would bother?</p>
+
+<p>Rachel Bawden <a href="https://rbawden.wordpress.com/2019/07/19/one-paper-nine-reviews/">cites</a> an ACL 2019 reviewer who gave the following account of her MT-mediated bilingual dialogue resource:</p>
+
+<blockquote>
+  <p>The paper is mostly a description of the corpus and its collection and contains little scientific contribution.</p>
+</blockquote>
+
+<p>Reviewers with CS backgrounds who are not interested in methodology, theoretical, linguistic, or psychological work should not simply reject these kinds of contributions, recommending that the authors try LREC or workshops. They should <strong>decline the assignment and ask the ACs to find a better match</strong>. NLP is an interdisciplinary field, human language is incredibly complex, and we need all the help we can get.</p>
+
+<p>Update (09.05.2020): Here is a <a href="https://hackingsemantics.xyz/2020/reviewing-data/">post</a> specifically on dos and don’ts in reviewing resource papers.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>SOTA is just one of many other heuristics used by reviewers and everybody else to decide what is worth paying attention to. Heuristics stem from the paper deluge and the difficulties navigating an interdisciplinary field with just one degree. The field is in dire need of systemic changes to make reviewing visible, compensated, and high-prestige work.</p>
+
+<p>But one thing we could realistically do about the SOTA heuristic right now is to at least have clear guidelines for both the authors and reviewers of NLP system papers. These guidelines should emphasize that there are many possible publication-worthy types of contributions: we need breakthroughs in models that are energy- and data-efficient, transparent, cognitively plausible, generalizable etc. Welcoming them would stimulate intellectual diversity of approaches, greener solutions, cross-disciplinary collaboration, and participation by less well-funded labs from all over the world.</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>A lot of amazing #NLProc people contributed to the Twitter discussions on which this post is based. In alphabetical order:</p>
+
+<blockquote>
+  <p>Niranjan Balasubramanian <a href="https://twitter.com/b_niranjan" class="twitter-follow-button" data-show-count="false">Follow Niranjan Balasubramanian</a>, Emily Bender <a href="https://twitter.com/emilymbender" class="twitter-follow-button" data-show-count="false">Follow Emily Bender</a>, Kyunghyun Cho <a href="https://twitter.com/kchonyc" class="twitter-follow-button" data-show-count="false">Follow Kyunghyun Cho</a>, Leshem Choshen <a href="https://twitter.com/LChoshen" class="twitter-follow-button" data-show-count="false">Follow Leshem Choshen</a>, Aleksandr Drozd <a href="https://twitter.com/bkbrd" class="twitter-follow-button" data-show-count="false">Follow Aleksandr Drozd</a>, Gregg Durett <a href="https://twitter.com/gregd_nlp" class="twitter-follow-button" data-show-count="false">Follow Gregg Durett</a>, Matt Gardner <a href="https://twitter.com/nlpmattg" class="twitter-follow-button" data-show-count="false">Follow Matt Gardner</a>, Alvin Grissom II <a href="https://twitter.com/AlvinGrissomII" class="twitter-follow-button" data-show-count="false">Follow Alvin Grissom II</a>, Kristian Kersing <a href="https://twitter.com/kerstingAIML" class="twitter-follow-button" data-show-count="false">Follow Kristian Kersing</a>, Tal Linzen <a href="https://twitter.com/tallinzen" class="twitter-follow-button" data-show-count="false">Follow Tal Linzen</a>, Zachary Lipton <a href="https://twitter.com/zacharylipton" class="twitter-follow-button" data-show-count="false">Follow Zachary Lipton</a>,  Florian Mai <a href="https://twitter.com/_florianmai" class="twitter-follow-button" data-show-count="false">Follow Florian Mai</a>, Marten van Schijndel <a href="https://twitter.com/marty_with_an_e" class="twitter-follow-button" data-show-count="false">Follow Marten van Schijndel</a>, Evpok Padding <a href="https://twitter.com/EvpokPadding" class="twitter-follow-button" data-show-count="false">Follow Evpok Padding</a>, Ehud Reiter <a href="https://twitter.com/EhudReiter" class="twitter-follow-button" data-show-count="false">Follow Ehud Reiter</a>, Stephen Roller <a href="https://twitter.com/stephenroller" class="twitter-follow-button" data-show-count="false">Follow Stephen Roller</a>, Anna Rumshisky <a href="https://twitter.com/arumshisky" class="twitter-follow-button" data-show-count="false">Follow Anna Rumshisky</a>, Jesse Thomason <a href="https://twitter.com/_jessethomason_" class="twitter-follow-button" data-show-count="false">Follow Jesse Thomason</a></p>
+</blockquote>
+
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Myself: <a href="https://twitter.com/annargrs" class="twitter-follow-button" data-show-count="false">Follow Anna Rogers</a></p>
+
+<h2 id="2020-events-for-your-sota-free-paper">2020 events for your SOTA-free paper</h2>
+
+<p>If you’re concerned about the above issues, here are some events and workshops this year that work towards mitigating it:</p>
+
+<ul>
+  <li>Efficient NLP systems: <a href="https://sites.google.com/view/sustainlp2019">SustaiNLP</a> workshop at EMNLP 2020</li>
+  <li><a href="https://insights-workshop.github.io/">Workshop on Insights from Negative Results</a> invites short papers describing failures that we should learn from, rather than ignore;</li>
+  <li><a href="https://nlpevaluation2020.github.io/">Evaluation and Comparison of NLP Systems</a> at EMNLP 2020: designing evaluation metrics, reporting trustworthy results and creating adequate and correct evaluation data.</li>
+</ul>
+
+<p>Note also that <a href="https://2020.emnlp.org/call-for-papers">EMNLP 2020</a> implements a reproducibility checklist based on work by <a href="https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf">Joel Pinneau</a> and <a class="citation" href="#DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results">(Dodge, Gururangan, Card, Schwartz, &amp; Smith, 2019)</a>, which includes the number of hyperparameter search trials and some measure of performance “mean and variance as a function of the number of hyperparameter trials”. Hopefully that by itself should draw some of the reviewers’ attention towards model efficiency.</p>
+
+<h2 id="share--cite--discuss-this-post">Share / cite / discuss this post</h2>
+
+<div class="page__share">
+
+  
+
+    <a href="https://twitter.com/annargrs/status/1246491202377089035?s=20" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span>Join the discussion on Twitter</span></a>
+
+    <br />
+    <br />
+
+  
+
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Peer+review+in+NLP%3A+reject-if-not-SOTA%20https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Freviewing-models%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Share on Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Freviewing-models%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Share on Facebook</span></a>
+
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Freviewing-models%2F&amp;title=Peer review in NLP: reject-if-not-SOTA" class="btn btn--reddit" title=" Reddit"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i><span>Share on Reddit</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fhackingsemantics.xyz%2F2020%2Freviewing-models%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> Share on LinkedIn</span></a>
+
+  <button class="btn btn--bibtex" onclick="showBibtex('postCite')"><i class="fas fa-book" aria-hidden="true"></i> BibTex citation</button>
+</div>
+
+<div class="bibtex" style="display:none;" id="postCite">
+<pre>
+@misc{Rogers_2020_reviewing-models,
+  title = { Peer review in NLP: reject-if-not-SOTA},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2020/reviewing-models/ },
+  author = {Rogers, Anna},
+  day = { 03 },
+  month = { Apr },
+  year = { 2020 }
+}
+</pre>
+</div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><div class="text-justify">
+    <span id="Crane_2018_Questionable_Answers_in_Question_Answering_Research_Reproducibility_and_Variability_of_Published_Results">Crane, M. (2018). Questionable Answers in Question Answering Research: Reproducibility and Variability of Published Results. <i>Transactions of the Association for Computational Linguistics</i>, <i>6</i>, 241–252. https://doi.org/10.1162/tacl_a_00018</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('Crane_2018_Questionable_Answers')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://aclweb.org/anthology/papers/Q/Q18/Q18-1018/'">URL</button>
+    
+
+<div class="bibtex" id="Crane_2018_Questionable_Answers"><pre>@article{Crane_2018_Questionable_Answers_in_Question_Answering_Research_Reproducibility_and_Variability_of_Published_Results,
+  title = {Questionable {{Answers}} in {{Question Answering Research}}: {{Reproducibility}} and {{Variability}} of {{Published Results}}},
+  volume = {6},
+  shorttitle = {Questionable {{Answers}} in {{Question Answering Research}}},
+  language = {en-us},
+  journal = {Transactions of the Association for Computational Linguistics},
+  doi = {10.1162/tacl_a_00018},
+  url = {https://aclweb.org/anthology/papers/Q/Q18/Q18-1018/},
+  author = {Crane, Matt},
+  year = {2018},
+  pages = {241-252}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding">Devlin, J., Chang, M.-W., Lee, K., &amp; Toutanova, K. (2019). BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding. <i>Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)</i>, 4171–4186.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('DevlinChangEtAl_2019_BERT_Pre-training')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://aclweb.org/anthology/papers/N/N19/N19-1423/'">URL</button>
+    
+
+<div class="bibtex" id="DevlinChangEtAl_2019_BERT_Pre-training"><pre>@inproceedings{DevlinChangEtAl_2019_BERT_Pre-training_of_Deep_Bidirectional_Transformers_for_Language_Understanding,
+  title = {{{BERT}}: {{Pre}}-Training of {{Deep Bidirectional Transformers}} for {{Language Understanding}}},
+  shorttitle = {{{BERT}}},
+  language = {en-us},
+  booktitle = {Proceedings of the 2019 {{Conference}} of the {{North American Chapter}} of the {{Association}} for {{Computational Linguistics}}: {{Human Language Technologies}}, {{Volume}} 1 ({{Long}} and {{Short Papers}})},
+  url = {https://aclweb.org/anthology/papers/N/N19/N19-1423/},
+  author = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  month = jun,
+  year = {2019},
+  pages = {4171-4186}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results">Dodge, J., Gururangan, S., Card, D., Schwartz, R., &amp; Smith, N. A. (2019). Show Your Work: Improved Reporting of Experimental Results. <i>Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)</i>, 2185–2194. https://doi.org/10.18653/v1/D19-1224</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('DodgeGururanganEtAl_2019_Show_Your')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.aclweb.org/anthology/D19-1224'">URL</button>
+    
+
+<div class="bibtex" id="DodgeGururanganEtAl_2019_Show_Your"><pre>@inproceedings{DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results,
+  title = {Show {{Your Work}}: {{Improved Reporting}} of {{Experimental Results}}},
+  shorttitle = {Show {{Your Work}}},
+  booktitle = {Proceedings of the 2019 {{Conference}} on {{Empirical Methods}} in {{Natural Language Processing}} and the 9th {{International Joint Conference}} on {{Natural Language Processing}} ({{EMNLP}}-{{IJCNLP}})},
+  author = {Dodge, Jesse and Gururangan, Suchin and Card, Dallas and Schwartz, Roy and Smith, Noah A.},
+  year = {2019},
+  pages = {2185--2194},
+  publisher = {{Association for Computational Linguistics}},
+  address = {{Hong Kong, China}},
+  doi = {10.18653/v1/D19-1224},
+  url = {https://www.aclweb.org/anthology/D19-1224}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="DodgeIlharcoEtAl_2020_Fine-Tuning_Pretrained_Language_Models_Weight_Initializations_Data_Orders_and_Early_Stopping">Dodge, J., Ilharco, G., Schwartz, R., Farhadi, A., Hajishirzi, H., &amp; Smith, N. (2020). Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping. <i>ArXiv:2002.06305 [Cs]</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('DodgeIlharcoEtAl_2020_Fine-Tuning_Pretrained')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://arxiv.org/abs/2002.06305'">URL</button>
+    
+
+<div class="bibtex" id="DodgeIlharcoEtAl_2020_Fine-Tuning_Pretrained"><pre>@article{DodgeIlharcoEtAl_2020_Fine-Tuning_Pretrained_Language_Models_Weight_Initializations_Data_Orders_and_Early_Stopping,
+  title = {Fine-{{Tuning Pretrained Language Models}}: {{Weight Initializations}}, {{Data Orders}}, and {{Early Stopping}}},
+  shorttitle = {Fine-{{Tuning Pretrained Language Models}}},
+  author = {Dodge, Jesse and Ilharco, Gabriel and Schwartz, Roy and Farhadi, Ali and Hajishirzi, Hannaneh and Smith, Noah},
+  year = {2020},
+  url = {http://arxiv.org/abs/2002.06305},
+  archiveprefix = {arXiv},
+  journal = {arXiv:2002.06305 [cs]},
+  primaryclass = {cs}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="JiaLiang_2017_Adversarial_Examples_for_Evaluating_Reading_Comprehension_Systems">Jia, R., &amp; Liang, P. (2017). Adversarial Examples for Evaluating Reading Comprehension Systems. <i>Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing</i>, 2021–2031. https://doi.org/10.18653/v1/D17-1215</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('JiaLiang_2017_Adversarial_Examples')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://aclweb.org/anthology/D17-1215'">URL</button>
+    
+
+<div class="bibtex" id="JiaLiang_2017_Adversarial_Examples"><pre>@inproceedings{JiaLiang_2017_Adversarial_Examples_for_Evaluating_Reading_Comprehension_Systems,
+  title = {Adversarial {{Examples}} for {{Evaluating Reading Comprehension Systems}}},
+  booktitle = {Proceedings of the 2017 {{Conference}} on {{Empirical Methods}} in {{Natural Language Processing}}},
+  author = {Jia, Robin and Liang, Percy},
+  year = {2017},
+  pages = {2021--2031},
+  publisher = {{Association for Computational Linguistics}},
+  address = {{Copenhagen, Denmark}},
+  doi = {10.18653/v1/D17-1215},
+  url = {http://aclweb.org/anthology/D17-1215}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="LiuOttEtAl_2019_RoBERTa_Robustly_Optimized_BERT_Pretraining_Approach">Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., … Stoyanov, V. (2019). RoBERTa: A Robustly Optimized BERT Pretraining Approach. <i>ArXiv:1907.11692 [Cs]</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('LiuOttEtAl_2019_RoBERTa_Robustly')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://arxiv.org/abs/1907.11692'">URL</button>
+    
+
+<div class="bibtex" id="LiuOttEtAl_2019_RoBERTa_Robustly"><pre>@article{LiuOttEtAl_2019_RoBERTa_Robustly_Optimized_BERT_Pretraining_Approach,
+  ids = {LiuOttEtAl\_2019\_RoBERTa\_Robustly\_Optimized\_BERT\_Pretraining\_Approach,LiuOttEtAl\_2019\_RoBERTa\_Robustly\_Optimized\_BERT\_Pretraining\_Approacha},
+  title = {{{RoBERTa}}: {{A Robustly Optimized BERT Pretraining Approach}}},
+  shorttitle = {{{RoBERTa}}},
+  author = {Liu, Yinhan and Ott, Myle and Goyal, Naman and Du, Jingfei and Joshi, Mandar and Chen, Danqi and Levy, Omer and Lewis, Mike and Zettlemoyer, Luke and Stoyanov, Veselin},
+  year = {2019},
+  url = {http://arxiv.org/abs/1907.11692},
+  archiveprefix = {arXiv},
+  journal = {arXiv:1907.11692 [cs]},
+  primaryclass = {cs}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="McCoyPavlickEtAl_2019_Right_for_Wrong_Reasons_Diagnosing_Syntactic_Heuristics_in_Natural_Language_Inference">McCoy, T., Pavlick, E., &amp; Linzen, T. (2019). Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference. <i>Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics</i>, 3428–3448. https://doi.org/10.18653/v1/P19-1334</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('McCoyPavlickEtAl_2019_Right_for')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'https://www.aclweb.org/anthology/P19-1334'">URL</button>
+    
+
+<div class="bibtex" id="McCoyPavlickEtAl_2019_Right_for"><pre>@inproceedings{McCoyPavlickEtAl_2019_Right_for_Wrong_Reasons_Diagnosing_Syntactic_Heuristics_in_Natural_Language_Inference,
+  title = {Right for the {{Wrong Reasons}}: {{Diagnosing Syntactic Heuristics}} in {{Natural Language Inference}}},
+  shorttitle = {Right for the {{Wrong Reasons}}},
+  booktitle = {Proceedings of the 57th {{Annual Meeting}} of the {{Association}} for {{Computational Linguistics}}},
+  author = {McCoy, Tom and Pavlick, Ellie and Linzen, Tal},
+  year = {2019},
+  pages = {3428--3448},
+  publisher = {{Association for Computational Linguistics}},
+  address = {{Florence, Italy}},
+  doi = {10.18653/v1/P19-1334},
+  url = {https://www.aclweb.org/anthology/P19-1334}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="SugawaraStenetorpEtAl_2020_Assessing_Benchmarking_Capacity_of_Machine_Reading_Comprehension_Datasets">Sugawara, S., Stenetorp, P., Inui, K., &amp; Aizawa, A. (2020). Assessing the Benchmarking Capacity of Machine Reading Comprehension Datasets. <i>AAAI</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('SugawaraStenetorpEtAl_2020_Assessing_Benchmarking')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://arxiv.org/abs/1911.09241'">URL</button>
+    
+
+<div class="bibtex" id="SugawaraStenetorpEtAl_2020_Assessing_Benchmarking"><pre>@inproceedings{SugawaraStenetorpEtAl_2020_Assessing_Benchmarking_Capacity_of_Machine_Reading_Comprehension_Datasets,
+  title = {Assessing the {{Benchmarking Capacity}} of {{Machine Reading Comprehension Datasets}}},
+  booktitle = {{{AAAI}}},
+  author = {Sugawara, Saku and Stenetorp, Pontus and Inui, Kentaro and Aizawa, Akiko},
+  year = {2020},
+  url = {http://arxiv.org/abs/1911.09241},
+  archiveprefix = {arXiv}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li>
+<li><div class="text-justify">
+    <span id="YangDaiEtAl_2019_XLNet_Generalized_Autoregressive_Pretraining_for_Language_Understanding">Yang, Z., Dai, Z., Yang, Y., Carbonell, J., Salakhutdinov, R., &amp; Le, Q. V. (2019). XLNet: Generalized Autoregressive Pretraining for Language Understanding. <i>ArXiv:1906.08237 [Cs]</i>.</span>
+
+    
+    
+
+    <button class="btn--info" onclick="showBibtex('YangDaiEtAl_2019_XLNet_Generalized')">BibTex</button>
+
+    
+    <button class="btn--success" onclick="window.location.href = 'http://arxiv.org/abs/1906.08237'">URL</button>
+    
+
+<div class="bibtex" id="YangDaiEtAl_2019_XLNet_Generalized"><pre>@article{YangDaiEtAl_2019_XLNet_Generalized_Autoregressive_Pretraining_for_Language_Understanding,
+  archiveprefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1906.08237},
+  primaryclass = {cs},
+  title = {{{XLNet}}: {{Generalized Autoregressive Pretraining}} for {{Language Understanding}}},
+  shorttitle = {{{XLNet}}},
+  journal = {arXiv:1906.08237 [cs]},
+  url = {http://arxiv.org/abs/1906.08237},
+  author = {Yang, Zhilin and Dai, Zihang and Yang, Yiming and Carbonell, Jaime and Salakhutdinov, Ruslan and Le, Quoc V.},
+  month = jun,
+  year = {2019}
+}
+</pre>
+</div>
+</div>
+
+
+
+<div>
+    
+</div></li></ol>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#academia" class="page__taxonomy-item" rel="tag">academia</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#methodology" class="page__taxonomy-item" rel="tag">methodology</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#peer-review" class="page__taxonomy-item" rel="tag">peer-review</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#squib" class="page__taxonomy-item" rel="tag">squib</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-04-03T09:00:47-04:00">April 03, 2020</time></p>
+        
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/2019/nlp4linguists/" class="pagination--pager" title="How to teach NLP to non-CS-majors in 2 weeks?
+">Previous</a>
+    
+    
+      <a href="/2020/reviewing-data/" class="pagination--pager" title="Peer review in NLP: resource papers
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h2 class="page__comments-title">Comments</h2>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/reviewing-data/" rel="permalink">Peer review in NLP: resource papers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  15 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Resource papers strike back! How the authors and the reviewers can stop talking past each other.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/anonymity/" rel="permalink">Should the reviewers know who the authors are?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  23 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2019/leaderboards/" rel="permalink">How the Transformers broke NLP leaderboards
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  11 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">With the huge Transformer-based models such as BERT, GPT-2, and XLNet, are we losing track of how the state-of-the-art performance is achieved?
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hacking semantics. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br/>
+  <!--a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a-->This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127096214-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127096214-2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'annargrs/blog');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>
