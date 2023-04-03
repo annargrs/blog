@@ -3,7 +3,7 @@ layout: single
 title: "The attribution problem with generative AI"
 date: 2022-11-01 10:00:47 +0200
 categories: squib
-tags: ethics debate 
+tags: ethics debate LLMs
 redirect_from: "/attribution/"
 mathjax: false
 toc: true
