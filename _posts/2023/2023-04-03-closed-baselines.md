@@ -8,7 +8,7 @@ redirect_from: "/baselines/"
 mathjax: false
 toc: true
 excerpt: "Will GPT-4 become a universally expected baseline in NLP research, like BERT in its time? Basic scientific methodology demands otherwise."
-twitter_thread: https://twitter.com/annargrs/status/1587765010763108353
+twitter_thread: https://twitter.com/annargrs/status/1642967275857932293
 header:
     og_image: /assets/images/box.png
 ---
