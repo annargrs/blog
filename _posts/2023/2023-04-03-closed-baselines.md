@@ -54,7 +54,7 @@ The main point we would like to make is that this kind of reasoning simply no lo
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">It is entirely possible that this very problem was entered in ChatGPT (perhaps because of my tweet) and subsequently made its way into the human-rated training set used to fine-tune GPT-4. <a href="https://t.co/YEHgPEquXp">https://t.co/YEHgPEquXp</a></p>&mdash; Yann LeCun (@ylecun) <a href="https://twitter.com/ylecun/status/1639685628722806786?ref_src=twsrc%5Etfw">March 25, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* Both our incoming prompts and outgoing answers may be undergoing unspecified edits via unspecified mechanisms. E.g. chatGPT "self-sensors" with content filters which people have so much fun bypassing, and has proprietary prompt prefixes: 
+* Both our incoming prompts and outgoing answers may be undergoing unspecified edits via unspecified mechanisms. E.g. chatGPT "self-censors" with content filters which people have so much fun bypassing, and has proprietary prompt prefixes: 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One unique thing about ChatGPT is that the content filter is **part of the model itself**, not an external model (and/or ruleset). That means users can interact with it via dialogue, and bypass it or get ChatGPT to turn it off. People have found a growing list of ways to do that. <a href="https://t.co/4s42qRWggV">https://t.co/4s42qRWggV</a></p>&mdash; Arvind Narayanan (@random_walker) <a href="https://twitter.com/random_walker/status/1598731969432780803?ref_src=twsrc%5Etfw">December 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
