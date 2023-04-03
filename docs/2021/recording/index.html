@@ -1,0 +1,915 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How to Record a Virtual Conference Talk - Hacking semantics</title>
+<meta name="description" content="Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hacking semantics">
+<meta property="og:title" content="How to Record a Virtual Conference Talk">
+<meta property="og:url" content="http://localhost:4000/2021/recording/">
+
+
+  <meta property="og:description" content="Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/toolbox.png">
+
+
+
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="How to Record a Virtual Conference Talk">
+  <meta name="twitter:description" content="Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time.">
+  <meta name="twitter:url" content="http://localhost:4000/2021/recording/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/toolbox.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-05-08T01:00:47-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2021/recording/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hacking semantics Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!--bibtex hack-->
+<script>
+function showBibtex(bibDiv) {
+  var x = document.getElementById(bibDiv);
+  if (x.style.display === "none" || x.style.display === '') {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="icon" type="image/png" href="/assets/images/logo-3col.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-3col.png" alt=""></a>
+        
+        <a class="site-title" href="/">Hacking Semantics</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/aro.jpg" alt="Anna Rogers" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Anna Rogers</h3>
+    
+    
+
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="http://sodas.ku.dk/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-university" aria-hidden="true"></i> University of Copenhagen</a></li>
+          
+        
+          
+            <li><a href="http://annargrs.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i> Homepage</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar ai" aria-hidden="true"></i> Google Scholar</a></li>
+          
+        
+          
+            <li><a href="https://www.semanticscholar.org/author/Anna-Rogers/145046059" rel="nofollow noopener noreferrer"><i class="ai ai-semantic-scholar ai" aria-hidden="true"></i> Semantic Scholar</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-4845-4023" rel="nofollow noopener noreferrer"><i class="ai ai-orcid ai" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+      
+
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <!--label for="ac-toc">Toggle Menu</label-->
+  <ul class="nav__items">
+    
+  </ul>
+</nav>
+    
+  
+
+
+<!-- stolen from here:
+https://www.gungorbudak.com/blog/2017/12/08/tags-cloud-sorted-by-post-count-for-jekyll-blogs-without-plugins/
+-->
+<!--div class="tag-cloud">
+
+
+
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#academia/" rel="tag">#academia</a> (11)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#methodology/" rel="tag">#methodology</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#peer-review/" rel="tag">#peer-review</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-2">
+        <a class="tag-link" href="/tags/#LLMs/" rel="tag">#LLMs</a> (2)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-2">
+        <a class="tag-link" href="/tags/#ethics/" rel="tag">#ethics</a> (2)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#conference/" rel="tag">#conference</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#debate/" rel="tag">#debate</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#negresults/" rel="tag">#negresults</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#organization/" rel="tag">#organization</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#productivity/" rel="tag">#productivity</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#review/" rel="tag">#review</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#socialNLP/" rel="tag">#socialNLP</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#teaching/" rel="tag">#teaching</a> (1)
+    </span>
+
+
+
+
+
+</div-->
+
+
+
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How to Record a Virtual Conference Talk">
+    <meta itemprop="description" content="Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time.">
+    <meta itemprop="datePublished" content="May 08, 2021">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">How to Record a Virtual Conference Talk
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  14 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
+              <ul class="toc__menu">
+  <li><a href="#step-0-equipment">Step 0: equipment</a></li>
+  <li><a href="#step-1-recording">Step 1: Recording</a>
+    <ul>
+      <li><a href="#single-screen-recording">Single-screen recording</a></li>
+      <li><a href="#two-screen-recording-for-slideslive">Two-screen recording (for slideslive)</a></li>
+    </ul>
+  </li>
+  <li><a href="#step-2-editing-the-recording">Step 2: Editing the recording</a></li>
+  <li><a href="#step-3-splitting-the-recording-only-for-slideslive">Step 3: Splitting the recording (only for slideslive)</a></li>
+  <li><a href="#step-4-subtitles-optional">Step 4: Subtitles (optional)</a></li>
+  <li><a href="#step-5-thats-it">Step 5: That’s it!</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>Virtual talks have been the bliss and the curse of NLP virtual conferences. Because of the efforts to preserve them and link them up to the paper pages in ACL anthology, they are the bliss for the audience, and greatly improve conference accessibility worldwide. But for the authors they are the curse: because they are pre-recorded, there is an expectation of some degree of polish on the talk, and so the perfectionists may take way more time to prepare and record than just doing the talk live. Also, few of us have a stylish home office to show off, and even fewer majored in film making.</p>
+
+<p>An extra level of complexity is added by the fact that different conferences contract different platforms who host the videos for the duration of the conference, and those platforms may offer more or less convenient recorder software (not to mention the licensing nightmare, which I’ll skip for now). They may also have some format quirks. So far the virtual conferences I attended used either <a href="https://underline.io">Underline</a> or <a href="https://slideslive.com">Slideslive</a>. The former shows regular single-video presentations, while the latter actually has <em>two</em> video streams: the speaker view and the slidesview, the latter usable for navigation.</p>
+
+<p>Each of these platforms has their pros and cons:</p>
+
+<ul>
+  <li>the current slideslive editor lacks basic things like removing, copying and pasting parts of the video. They are going to release a new version soon, which I got to preview, and which is much better - but it is still a browser-based solution, which offers cross-platform accessibility but not well equipped for either video editing or full access to camera/audio settings.</li>
+  <li>Underline offers screen-cast-o-matic recorder and editor. The recorder has a desktop “installer”, but seems to be still fundamentally web-based and not giving you much control over the camera &amp; mike. They also do not support Linux.</li>
+</ul>
+
+<p>These, and any other platform-specific setups also have the inherent disadvantage that their full functionality is only available while the conference is paying. Since we have to learn how to use <em>some</em> recording/editing tools - wouldn’t it be better to learn tools we could use at any time (for an invited talk, a lecture, a podcast, etc.)? Also, maybe we could save some money on the services we have to hire, and make conference registrations cheaper?</p>
+
+<p>So… here’s my DYI setup for recording talks that can be then uploaded to single or double-view players (vimeo, slideslive, underline, younameit). It is possible to get a nice recording entirely with open-source software. It’s not harder than an average PyTorch tutorial, and with addition of some commercial software, you can also get the correct captions <em>at the same time</em>.</p>
+
+<h2 id="step-0-equipment">Step 0: equipment</h2>
+
+<p><strong>Minimal setup:</strong> you need a camera and a microphone, and obviously a computer where the presentation will run. The built-in webcam and microphone <em>might</em> do, depending on what they are and how picky you are. Your headphones might also have a built-in mike (although I was severely disappointed with my Sony WH-1000XM3).</p>
+
+<p><strong>My fancy setup:</strong> I used to be a musician in my previous life, so I’m quite picky about sound. The bottom line with mikes is that you want them to be reasonable quality, in a quiet environment, close to the source of sound (your mouth) and not moving around (as that will create different volume levels). The latter can be achieved either by fixing the mike on yourself (lavalier mikes, headset mikes), or fixing both the mike and yourself (having the mike on the desk or a stand, and not moving).</p>
+
+<p>Caveat: most laptops do <em>not</em> even have a dedicated mike input, even if you have a good mike. In that situation you probably need a USB mike, which essentially works as an external sound card.</p>
+
+<p>In my case, I already was in possession of <a href="https://www.zoom.co.jp/products/handy-recorder/h1-handy-recorder">Zoom H1</a> recorder which does also work as an external sound card. I could use just the mikes on that recorder, but it also has a separate mike input, which I used for my <a href="https://www.rode.com/microphones/lavaliergo">Røde lavalier Go</a> (which I love dearly).</p>
+
+<figure>
+	<img src="/assets/images/recording_equipment.jpg" />
+</figure>
+
+<p>As for the video equipment, I’m really not an expert, but it seems that what matters even more than the camera is the lighting: you need the light on your face to be bright enough and uniform enough, or you’ll get a video that is dark and with unflattering shadows. Depending on your environment, you might be able to just use daylight. The professional setups seem to involve at least two directed lights on both sides of the face.</p>
+
+<p>That is hard on the eyes, so when recording my EACL 2021 tutorial I put the laptop and all the gear on the window sill (with two more windows on either side providing side lighting), so as to face the soft daylight. I had a high-res webcam with autofocus (Logitech HD 1080p), and I thought I could trust it to stay on my face. I was wrong: the light afforded by a cloudy evening in Copenhagen does not suffice. My video ended up quite blurry, and I suspect the autofocus actually made things worse. Proceed with caution.</p>
+
+<p>If you want to remove the background on your speaker view, or replace it with a cool Martian landscape, you will also need something usable as a backdrop: a large piece of solid-colored and smooth fabric (ideally green), and some way to make it hang smoothly behind your chair. Some recorders (such as the one built in Zoom) may have their own filters, which will do a better or worse job of removing your background - but a backdrop will dramatically increase their chances too.</p>
+
+<h2 id="step-1-recording">Step 1: Recording</h2>
+
+<p><strong>Software you’ll need:</strong> <a href="https://obsproject.com/">OBS Studio</a> (Windows, Linux, Mac)</p>
+
+<p>This is a free, open source, and extremely feature-rich recorder which can do a lot more than we need. I feel quite intimidated by all the settings it has, but luckily we don’t need all of them.</p>
+
+<p>Here’s the OBS interface. We need to understand two sections: canvas and sources:</p>
+
+<figure>
+	<img src="/assets/images/obs-annotated2.png" />
+</figure>
+
+<p>When you run OBS Studio for the first time, it may ask you whether you want to optimize for streaming or recording (choose recording), and for the video settings. Choose 30 FPS and 1920x1080 resolution, if available.</p>
+
+<h3 id="single-screen-recording">Single-screen recording</h3>
+
+<p>I’m going to assume that the target resolution requested by the hosting platform is fullHD 1920x1080 (if not, adjust the instructions accordingly).</p>
+
+<ol>
+  <li>Go to Settings &gt; Video and set the base canvas resolution to <strong>1920 x 1080</strong>.</li>
+  <li>In the main window, click on <code class="highlighter-rouge">+</code> button under <code class="highlighter-rouge">Sources</code>. For a screencast recording you will need at least 2 sources: <code class="highlighter-rouge">Audio Input Capture</code> (mike) and <code class="highlighter-rouge">Window Capture</code> (slides). Set your input devices and slides window in the properties for these inputs.</li>
+  <li><em>Optional: add the speaker view.</em> The above screenshot shows the speaker view on the side of the slides. To create that, prepare slides that are <em>not</em> 16:9 aspect (mine were 4:3), and then add one more input source: <code class="highlighter-rouge">Video Input Capture</code> (webcam). Place it within the canvas, to the left/right side of your slides view. <br /><br />
+<em>Optional, advanced: Crop the camera view.</em> Most webcams default to 16:9 aspect ratio, and most of us are not bodybuilders and do not need it to be so wide. So we can crop the webcam view to get it closer to portrait aspect, and have a larger view of the face. Select the webcam view on the canvas, go to <code class="highlighter-rouge">Transform</code> in its context menu, and experiment with how many pixels you want cropped from any side of the camera view. <br /><br />
+<em>Optional, also advanced: remove the view of your bedroom.</em> If you have something usable as solid color backdrop (ideally green), position it behind you and go to the context menu of the webcam input source. Go to the context menu on the webcam input, find <code class="highlighter-rouge">Filters</code>, press the <code class="highlighter-rouge">+</code> button in the bottom left corner. Add the filter called <code class="highlighter-rouge">Chroma key</code>. In its settings, select the key color type of your backdrop and play with the “similarity” slider until it removes the background and nothing else. Then you can even make the speaker view <em>overlay</em> the slides like this:</li>
+</ol>
+<figure>
+	<img src="/assets/images/obs-overlay.png" />
+</figure>
+<p><em>Even more advanced: replace the view of your bedroom.</em> You can add a Martian landscape or whatever as your background. Add one more source of the <code class="highlighter-rouge">Image</code> type. Choose the image you like in the properties of that source. Position it on the canvas so that it is behind your webcam view (Context menu of the object on the canvas &gt; <code class="highlighter-rouge">Order</code> &gt; <code class="highlighter-rouge">Move up/down</code>).</p>
+<ol>
+  <li>Optional: add any other filters on your sources that you like and know how to use (context menu on an input &gt; Filters &gt; “+” button in the bottom left corner). I always use the <code class="highlighter-rouge">Noise suppression</code> filter on the Audio Input (with RNNoise setting): it decreases the background noise caught by the mike from any humming in the room (fridges, computer fans etc.)</li>
+  <li>Check the <code class="highlighter-rouge">Settings</code> &gt; <code class="highlighter-rouge">Hotkeys</code> for the actions of “recording” and “stop recording”. I have them both at <code class="highlighter-rouge">Ctrl+R</code>.</li>
+  <li>Test the whole workflow: start the recording, switch to your slides, do a test slide, stop the recording. OBS Studio simply saves the video file to the location specified in Settings &gt; Output. I save in mp4 format, at “high quality, medium file size” setting.</li>
+  <li>Record the talk.</li>
+</ol>
+
+<h3 id="two-screen-recording-for-slideslive">Two-screen recording (for slideslive)</h3>
+
+<p>Slideslive is great in giving us the separate views of speakers and slides, but the disadvantage is that, obviously, you have to record <em>two</em> videos instead of one, and keep them in sync. Most recorders can’t do that.</p>
+
+<p>The trick to achieve this in OBS Studio is to record a single ultra-wide video that combines both views, and then to split it into two. So the source video would look like this:</p>
+
+<figure>
+	<img src="/assets/images/double-video.png" />
+</figure>
+
+<p>Here’s how to make such a recording:</p>
+
+<ol>
+  <li>Go to Settings &gt; Video and set the base canvas resolution to 3840 x 1080. That will give us room for two 1920x1080 views side-by-side.</li>
+  <li>Create speaker and slides views as described above, with any filters you like. Move and resize the webcam view and slides view on the canvas until they are perfectly side-by-side.</li>
+  <li>Record the talk as described above.</li>
+</ol>
+
+<h2 id="step-2-editing-the-recording">Step 2: Editing the recording</h2>
+
+<p><em>Minimalist setup</em>: All we need is a video editor with three barebone functions: cut, paste, and crop. <a href="https://shotcut.org/download/">Shotcut</a> is open-source and cross-platform (Windows, Linux, Mac). Maybe there are even better options (feel free to add suggestions in the comments).</p>
+
+<p>To edit with Shotcut:</p>
+
+<ol>
+  <li>Import your video file (with <code class="highlighter-rouge">Open File</code> in the panel) and add it to the timeline using the <code class="highlighter-rouge">+</code> button.</li>
+  <li>Do any editing you need, using the timeline for navigation. <code class="highlighter-rouge">Space</code> will play the video, <code class="highlighter-rouge">S</code> or the <code class="highlighter-rouge">][</code> button will create a split point. If there’s a part of video you’d like to remove, create split points in its beginning and its end and remove it from the context menu on the undesirable part of the video (or use  the <code class="highlighter-rouge">X</code> shortcut). You can also cut a part of the video this way and paste it to some other split point.</li>
+</ol>
+
+<p>The editor looks like this:</p>
+
+<figure>
+	<img src="/assets/images/shotcut.png" />
+</figure>
+
+<p><em>Delux setup</em>. I am absolutely in love with <a href="https://descript.com">Descript</a>. It is also a video/audio editor, but it is aimed at people producing podcasts and vlogs, i.e. the use case where the primary concern is not just the visuals, but what is being said. Here’s what it looks like:</p>
+
+<figure>
+	<img src="/assets/images/descript.png" />
+</figure>
+
+<p>What Descript does is magic. It makes a transcription of the talk, and then lets you edit the video based on that transcript. Which means - no more rewinding several times to try to find the exact moment of the split. This is lightning fast. You read the transcript, you see the part you don’t like, you select the text corresponding to that part and you delete it, just like in a text processor. And the video is adjusted and re-synced automatically. It even has the handy feature of automatically detecting and removing all the “uhs”! And it can normalize the volume of the audio, in case it turned out to be uneven.</p>
+
+<p>The con is that it is not free, but (at least in my case) it definitely saves more time then it costs. The mid-tier version costs $12 a month and lets you transcribe 10 hours of video. The $24 top-tier version gives you 30 hours. There is a free tier with 3 hours of transcription, but it caps the resolution at 720p and adds a watermark.</p>
+
+<p>Also, beware that very fine-grained video editing does make the speaker view video look a bit bumpy. If you try to stitch a sentence together using several separate segments – it will probably look unnatural. I think it is a lesser evil than making people listen to something wrong or full of “uhs”, but a simple strategy to avoid too fine-grained editing is to simply do the tricky part again, without breaking your recording. Let’s say you end up with several consecutive takes of a difficult slide, with various degrees of rambling. When you edit in Descript, you see the text you’re saying, so it’s easy to simply pick the better version and delete the others. The longer segments you get without editing, the more natural the video will look.</p>
+
+<p>If you use Descript:</p>
+
+<ol>
+  <li>Create a project</li>
+  <li>Add your video file</li>
+  <li>Auto-transcribe it (will take a couple of minutes)</li>
+  <li>Edit the text as desired. The deleted parts of video will be auto-removed accordingly.</li>
+  <li>Export the video.</li>
+</ol>
+
+<p>Side note: Descript has an interesting security solution. The pro version has the uncanny ability to train a model of your voice, and overdub the parts you wish you said differently (audio only at this point). Which is great for the presenters, but obviously is a security risk, because with enough recordings people could deepfake somebody else’s voice. Well, in Descript they can’t do that: to train the model, you have to record a fairly long specific text, so the victim would have to be tricked into reading it aloud.</p>
+
+<h2 id="step-3-splitting-the-recording-only-for-slideslive">Step 3: Splitting the recording (only for slideslive)</h2>
+
+<p>However you did the editing, the result is a cleaned-up version of the original video file. If you made an ultra-wide video intended for slideslive, we also need to split it into <em>two</em> files that slideslive can import.</p>
+
+<p>Using Shotcut, add a crop filter:</p>
+
+<ol>
+  <li>click on <code class="highlighter-rouge">Filters</code> in the top panel</li>
+  <li>Filter panel will appear on the left. Click <code class="highlighter-rouge">+</code>, open the <code class="highlighter-rouge">Video</code> tab, and select <code class="highlighter-rouge">Crop rectangle</code>.</li>
+  <li>Set the crop filter so as to remove the right part of your video. At this point we have a 3840 x 1080 video, and we need two 1920 x 1080 videos. Set the dimensions of crop for 1920x1080, and the position to 0,0. This will remove the right-hand side of the video.</li>
+  <li>Export the edited video (<code class="highlighter-rouge">File &gt; Export Video</code>).</li>
+  <li>Repeat steps 3 and 4 to export the right-hand side of the video (with the same crop dimensions, but position 1920,0).</li>
+</ol>
+
+<h2 id="step-4-subtitles-optional">Step 4: Subtitles (optional)</h2>
+
+<p>Subtitles are a great way to increase accessibility of our videos, but all the specialized terminology + many non-native speakers = captioning disaster. Which is kinda ironic, given that the field is NLP.</p>
+
+<p>The video recording platforms may offer a subtitle editor, but I haven’t seen anyone singing praise for them so far. The ones I tried are lacking in the keyboard navigation, which makes the process slower. Also the process is inherently frustrating, at least for me: by the time we get to subtitles we’ve already spent too much time trying to record and edit the video, and subtitles are the last hurdle that (a) is a lot of work, (b) not fun, because who likes looking at our own very imperfect videos?</p>
+
+<p>It may be possible to do the subtitles elsewhere and then import them to the platform. Slideslive subtitles editor can import subtitles in <code class="highlighter-rouge">.vtt</code> format: there is no upload link immediately when you upload the videos, but once they generate their own version of the subtitles, they will send you a link to the subtitle editor. There will be an “import” button there.</p>
+
+<p>If you remember your talk well, the fastest, minimal-effort thing is probably to just download the auto-generated subtitle file from the editor, and do the obvious edits in any text editor. If you need the video to help with the editing, try some other subtitles editor that can work with the given format. A quick search for open-source tools locates <a href="https://nikse.dk/SubtitleEdit/">Subtitle Edit</a> (Windows, Linux) and <a href="https://nikse.dk/SubtitleEdit/Online">its online version that works with local video files</a>.</p>
+
+<p>In my case, I gave up and just paid Descript to be able to edit my video based on text, because then I get exportable transcript/subtitles already as a by-product of video editing. Since the whole editing process is based on text, you can not only remove any bits you don’t like, but also fix any auto-transcription errors as you go. And then <em>you get both the video and the subtitles at the same time</em>! So - full accessibility with as little work as I can imagine.</p>
+
+<p>One slideslive-specific caveat is that the file exported by Descript has extra metadata not conforming to the vtt format (lines 3-5). Once those lines are removed, the subtitles can be imported to slideslive. I was told that the editor will be improved to handle this automatically.</p>
+
+<h2 id="step-5-thats-it">Step 5: That’s it!</h2>
+
+<p>Hopefully this worked, and you now have a nice talk recorded in reasonable time. If you have any suggestions for alternatives for the software/hardware I used, or a good lighting solution, or any updates because of changes in any software, please share in the comments!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#academia" class="page__taxonomy-item" rel="tag">academia</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#productivity" class="page__taxonomy-item" rel="tag">productivity</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#howto" class="page__taxonomy-item" rel="tag">howto</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-08T01:00:47-04:00">May 08, 2021</time></p>
+        
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/2020/anonymity/" class="pagination--pager" title="Should the reviewers know who the authors are?
+">Previous</a>
+    
+    
+      <a href="/2021/hybrid/" class="pagination--pager" title="Field Notes on Hybrid Conferences (EMNLP 2021)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/closed-baselines/" rel="permalink">Closed AI Models Make Bad Baselines
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  24 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Will GPT-4 become a universally expected baseline in NLP research, like BERT in its time? Basic scientific methodology demands otherwise.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/anonymity/" rel="permalink">Should the reviewers know who the authors are?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  23 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/attribution/" rel="permalink">The attribution problem with generative AI
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  15 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know w...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Hacking semantics. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br/>
+  <!--a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a-->This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'annargrs/blog');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>
