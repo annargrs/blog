@@ -16,7 +16,7 @@ header:
 > *This post was authored by Anna Rogers, with much invaluable help and feedback from Niranjan Balasubramanian, Leon Derczynski, Jesse Dodge, Alexander Koller, Sasha Luccioni, Maarten Sap, Roy Schwartz, Noah A. Smith, Emma Strubell (listed alphabetically)* <br/>
 > Header image credit: Sasha Luccioni
 
-What comes below is an attempt to bring together some discussions on the state of NLP research post-chatGPT.[^1] We are NLP researchers, and at the absolute minimum our job is to preserve the fundamentals of scientific methodology. This post is primarily addressed to junior NLP researchers, but is also relevant for other members of the community who are wondering how the existence of such models should change their next paper. We make the case that as far as research and scientific publications are concerned, the "closed" models (as defined below) cannot be meaningfully studied, and they should not become a "universal baseline", the way BERT was for some time widely considered to be. The TLDR for this post is a simple proposed rule for reviewers and chairs (akin to the Bender rule that requires naming the studied languages): 
+What comes below is an attempt to bring together some discussions on the state of NLP research post-chatGPT.[^1] We are NLP researchers, and at the absolute minimum our job is to preserve the fundamentals of scientific methodology. This post is primarily addressed to junior NLP researchers, but is also relevant for other members of the community who are wondering how the existence of such models should change their next paper. We make the case that as far as research and scientific publications are concerned, the "closed" models (as defined below) cannot be meaningfully studied, and they should not become a "universal baseline", the way BERT was for some time widely considered to be. The TLDR for this post is a simple proposed rule for reviewers and chairs (akin to the [Bender rule](https://thegradient.pub/the-benderrule-on-naming-the-languages-we-study-and-why-it-matters/) that requires naming the studied languages): 
 
 > **That which is not open and reasonably reproducible cannot be considered a requisite baseline.**
 
@@ -207,7 +207,6 @@ Another question outside of the scope of this post, but that could be brought up
 
 **Our community is at a turning point, and you can help to direct the new community norms to follow science rather than hype – both as an author and as a reviewer**. The more people cite and study the best available open solutions, the more we incentivize open and transparent research, and the more likely it is that the next open solution will be much better. After all, it is our tradition of open research that has made our community so successful. 
 
-
 ---------------------------
 
 
@@ -252,6 +251,28 @@ We tried to reproduce that answer, but accidentally typed "CVR" instead of "VCR"
 What did go without a hitch is the paraphrasing in the King James style. But it's hard to imagine that paraphrasing was not an intended-and-trained-for "capability", or that this style was not well represented in a large web-based corpus - o ye of little faith. 
 
 Does it work well? Yes. Is it a magical “emergent” property? No. Can we develop another paraphrasing system and meaningfully compare it to this one? Also no. And this is where it stops being relevant for NLP research. _That which is not open and reasonably reproducible cannot be considered a requisite baseline._
+
+
+## Share / cite / discuss this post
+
+{% if page.share %}{% include social-share.html %}{% endif %} 
+
+{% assign num = page.url | size | minus: 1 %}
+{% assign citekey = page.url | replace: "/", "_" | slice: 0, num %}
+
+<div class="bibtex" style="display:none;" id="postCite">
+<pre>
+@misc{rogers-etal-2023-closed,
+  title = { {{ page.title }} },
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz{{page.url}} },
+  author = {Rogers, Anna, and Balasubramanian, Niranjan and Derczynski, Leon and Dodge, Jesse and Koller, Alexander and Luccioni, Sasha and Sap, Maarten and Schwartz, Roy and Smith, Noah A. and Strubell, Emma},
+  day = { {{page.date | date: "%d"}} },
+  month = { {{page.date | date: "%b"}} },
+  year = { {{ page.date | date: "%Y" }} }
+}
+</pre>
+</div>
 
 ## Notes
 

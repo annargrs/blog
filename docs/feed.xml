@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-03T13:42:39-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hacking semantics</title><subtitle>A Blog about NLP, Computational Linguistics, Deep Learning, Cognitive Science, and AI.</subtitle><author><name>Anna Rogers</name></author><entry><title type="html">Closed AI Models Make Bad Baselines</title><link href="http://localhost:4000/2023/closed-baselines/" rel="alternate" type="text/html" title="Closed AI Models Make Bad Baselines" /><published>2023-04-03T13:00:00-04:00</published><updated>2023-04-03T13:00:00-04:00</updated><id>http://localhost:4000/2023/closed-baselines</id><content type="html" xml:base="http://localhost:4000/2023/closed-baselines/">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-03T14:18:33-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hacking semantics</title><subtitle>A Blog about NLP, Computational Linguistics, Deep Learning, Cognitive Science, and AI.</subtitle><author><name>Anna Rogers</name></author><entry><title type="html">Closed AI Models Make Bad Baselines</title><link href="http://localhost:4000/2023/closed-baselines/" rel="alternate" type="text/html" title="Closed AI Models Make Bad Baselines" /><published>2023-04-03T13:00:00-04:00</published><updated>2023-04-03T13:00:00-04:00</updated><id>http://localhost:4000/2023/closed-baselines</id><content type="html" xml:base="http://localhost:4000/2023/closed-baselines/">&lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;This post was authored by Anna Rogers, with much invaluable help and feedback from Niranjan Balasubramanian, Leon Derczynski, Jesse Dodge, Alexander Koller, Sasha Luccioni, Maarten Sap, Roy Schwartz, Noah A. Smith, Emma Strubell (listed alphabetically)&lt;/em&gt; &lt;br /&gt;
 Header image credit: Sasha Luccioni&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;What comes below is an attempt to bring together some discussions on the state of NLP research post-chatGPT.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; We are NLP researchers, and at the absolute minimum our job is to preserve the fundamentals of scientific methodology. This post is primarily addressed to junior NLP researchers, but is also relevant for other members of the community who are wondering how the existence of such models should change their next paper. We make the case that as far as research and scientific publications are concerned, the “closed” models (as defined below) cannot be meaningfully studied, and they should not become a “universal baseline”, the way BERT was for some time widely considered to be. The TLDR for this post is a simple proposed rule for reviewers and chairs (akin to the Bender rule that requires naming the studied languages):&lt;/p&gt;
+&lt;p&gt;What comes below is an attempt to bring together some discussions on the state of NLP research post-chatGPT.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; We are NLP researchers, and at the absolute minimum our job is to preserve the fundamentals of scientific methodology. This post is primarily addressed to junior NLP researchers, but is also relevant for other members of the community who are wondering how the existence of such models should change their next paper. We make the case that as far as research and scientific publications are concerned, the “closed” models (as defined below) cannot be meaningfully studied, and they should not become a “universal baseline”, the way BERT was for some time widely considered to be. The TLDR for this post is a simple proposed rule for reviewers and chairs (akin to the &lt;a href=&quot;https://thegradient.pub/the-benderrule-on-naming-the-languages-we-study-and-why-it-matters/&quot;&gt;Bender rule&lt;/a&gt; that requires naming the studied languages):&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;That which is not open and reasonably reproducible cannot be considered a requisite baseline.&lt;/strong&gt;&lt;/p&gt;
@@ -253,6 +253,46 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 
 &lt;p&gt;Does it work well? Yes. Is it a magical “emergent” property? No. Can we develop another paraphrasing system and meaningfully compare it to this one? Also no. And this is where it stops being relevant for NLP research. &lt;em&gt;That which is not open and reasonably reproducible cannot be considered a requisite baseline.&lt;/em&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+    &lt;a href=&quot;https://twitter.com/annargrs/status/1587765010763108353&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
+
+    &lt;br /&gt;
+    &lt;br /&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Closed+AI+Models+Make+Bad+Baselines%20http%3A%2F%2Flocalhost%3A4000%2F2023%2Fclosed-baselines%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2023%2Fclosed-baselines%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2023%2Fclosed-baselines%2F&amp;amp;title=Closed AI Models Make Bad Baselines&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2023%2Fclosed-baselines%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{rogers-etal-2023-closed,
+  title = { Closed AI Models Make Bad Baselines },
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2023/closed-baselines/ },
+  author = {Rogers, Anna, and Balasubramanian, Niranjan and Derczynski, Leon and Dodge, Jesse and Koller, Alexander and Luccioni, Sasha and Sap, Maarten and Schwartz, Roy and Smith, Noah A. and Strubell, Emma},
+  day = { 03 },
+  month = { Apr },
+  year = { 2023 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
@@ -371,46 +411,6 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Updates&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The text of the post was clarified thanks to feedback in the &lt;a href=&quot;https://twitter.com/annargrs/status/1587765010763108353&quot;&gt;Twitter thread&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
-
-&lt;div class=&quot;page__share&quot;&gt;
-
-  
-
-    &lt;a href=&quot;https://twitter.com/annargrs/status/1587765010763108353&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
-
-    &lt;br /&gt;
-    &lt;br /&gt;
-
-  
-
-  
-
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=The+attribution+problem+with+generative+AI%20http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&amp;amp;title=The attribution problem with generative AI&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
-
-  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
-&lt;pre&gt;
-@misc{Rogers_2022_attribution,
-  title = { The attribution problem with generative AI},
-  journal = {Hacking Semantics},
-  url = { https://hackingsemantics.xyz/2022/attribution/ },
-  author = {Rogers, Anna},
-  day = { 01 },
-  month = { Nov },
-  year = { 2022 }
-}
-&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
@@ -782,7 +782,50 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 
 &lt;div&gt;
     
-&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="ethics" /><category term="debate" /><category term="LLMs" /><summary type="html">Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due...</summary></entry><entry><title type="html">Field Notes on Hybrid Conferences (EMNLP 2021)</title><link href="http://localhost:4000/2021/hybrid/" rel="alternate" type="text/html" title="Field Notes on Hybrid Conferences (EMNLP 2021)" /><published>2021-11-17T12:00:47-05:00</published><updated>2021-11-17T12:00:47-05:00</updated><id>http://localhost:4000/2021/hybrid</id><content type="html" xml:base="http://localhost:4000/2021/hybrid/">&lt;p&gt;This is a quick summary of my field notes on the hybrid conferences from EMNLP2021 🌴, as an on-site attendee. I was able to attend thanks to &lt;a href=&quot;http://www.winlp.org/winlp-emnlp-2021/&quot;&gt;WiNLP&lt;/a&gt; travel award, for their panel on the role of peer review in diversifying NLP. &lt;em&gt;This was the first ever *ACL hybrid conference, and the chairs deserve applause for all their hard work.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+    &lt;a href=&quot;https://twitter.com/annargrs/status/1587765010763108353&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
+
+    &lt;br /&gt;
+    &lt;br /&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=The+attribution+problem+with+generative+AI%20http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&amp;amp;title=The attribution problem with generative AI&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2022%2Fattribution%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{Rogers_2022_attribution,
+  title = { The attribution problem with generative AI},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2022/attribution/ },
+  author = {Rogers, Anna},
+  day = { 01 },
+  month = { Nov },
+  year = { 2022 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://utteranc.es/client.js&quot; repo=&quot;[ENTER REPO HERE]&quot; issue-term=&quot;pathname&quot; theme=&quot;github-light&quot; crossorigin=&quot;anonymous&quot; async=&quot;&quot;&gt;
+&lt;/script&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="ethics" /><category term="debate" /><category term="LLMs" /><summary type="html">Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know when attribution is due...</summary></entry><entry><title type="html">Field Notes on Hybrid Conferences (EMNLP 2021)</title><link href="http://localhost:4000/2021/hybrid/" rel="alternate" type="text/html" title="Field Notes on Hybrid Conferences (EMNLP 2021)" /><published>2021-11-17T12:00:47-05:00</published><updated>2021-11-17T12:00:47-05:00</updated><id>http://localhost:4000/2021/hybrid</id><content type="html" xml:base="http://localhost:4000/2021/hybrid/">&lt;p&gt;This is a quick summary of my field notes on the hybrid conferences from EMNLP2021 🌴, as an on-site attendee. I was able to attend thanks to &lt;a href=&quot;http://www.winlp.org/winlp-emnlp-2021/&quot;&gt;WiNLP&lt;/a&gt; travel award, for their panel on the role of peer review in diversifying NLP. &lt;em&gt;This was the first ever *ACL hybrid conference, and the chairs deserve applause for all their hard work.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This post is meant not as a criticism, but rather as a post-mortem that would hopefully be useful for organizers of future events. I can only share my own experience, and would love to hear from others. This post does &lt;em&gt;not&lt;/em&gt; offer a comprehensive solution for to how to do this better - only some thoughts and comments.&lt;/p&gt;
 
@@ -1239,46 +1282,6 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;[UPDATE 07.2020]&lt;/em&gt; The post generated &lt;a href=&quot;https://twitter.com/annargrs/status/1283758686515732480?s=20&quot;&gt;some discussion&lt;/a&gt;, people submitted feedback to the ACL reform committee using the &lt;a href=&quot;https://forms.office.com/Pages/ResponsePage.aspx?id=9028kaqAQ0OMdrEjlJf7WQiNRJRoOx9OlzQS6C5hck5URVc2MDZPRFBVNDRRRjBaMjBQVk41RVpMOC4u&quot;&gt;official feedback form&lt;/a&gt;. No response from the committee so far. Fingers crossed.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;[Update 12.2020]&lt;/em&gt; While we’re waiting - &lt;a href=&quot;https://www.nejlt.org/&quot;&gt;NEJLT&lt;/a&gt; is a new journal for computational linguistics research that implements a fully anonymous review process, all the way up to the editors. Check it out!&lt;/p&gt;
-
-&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
-
-&lt;div class=&quot;page__share&quot;&gt;
-
-  
-
-    &lt;a href=&quot;https://twitter.com/annargrs/status/1283758686515732480?s=20&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
-
-    &lt;br /&gt;
-    &lt;br /&gt;
-
-  
-
-  
-
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Should+the+reviewers+know+who+the+authors+are%3F%20http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&amp;amp;title=Should the reviewers know who the authors are?&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
-
-  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
-&lt;pre&gt;
-@misc{Rogers_2020_anonymity,
-  title = { Should the reviewers know who the authors are?},
-  journal = {Hacking Semantics},
-  url = { https://hackingsemantics.xyz/2020/anonymity/ },
-  author = {Rogers, Anna},
-  day = { 15 },
-  month = { Jul },
-  year = { 2020 }
-}
-&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
@@ -1794,7 +1797,50 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 
 &lt;div&gt;
     
-&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="peer-review" /><summary type="html">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.</summary></entry><entry><title type="html">Peer review in NLP: resource papers</title><link href="http://localhost:4000/2020/reviewing-data/" rel="alternate" type="text/html" title="Peer review in NLP: resource papers" /><published>2020-04-16T09:00:47-04:00</published><updated>2020-04-16T09:00:47-04:00</updated><id>http://localhost:4000/2020/reviewing-data</id><content type="html" xml:base="http://localhost:4000/2020/reviewing-data/">&lt;figure&gt;
+&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+    &lt;a href=&quot;https://twitter.com/annargrs/status/1283758686515732480?s=20&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
+
+    &lt;br /&gt;
+    &lt;br /&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Should+the+reviewers+know+who+the+authors+are%3F%20http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&amp;amp;title=Should the reviewers know who the authors are?&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Fanonymity%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{Rogers_2020_anonymity,
+  title = { Should the reviewers know who the authors are?},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2020/anonymity/ },
+  author = {Rogers, Anna},
+  day = { 15 },
+  month = { Jul },
+  year = { 2020 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://utteranc.es/client.js&quot; repo=&quot;[ENTER REPO HERE]&quot; issue-term=&quot;pathname&quot; theme=&quot;github-light&quot; crossorigin=&quot;anonymous&quot; async=&quot;&quot;&gt;
+&lt;/script&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="peer-review" /><summary type="html">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.</summary></entry><entry><title type="html">Peer review in NLP: resource papers</title><link href="http://localhost:4000/2020/reviewing-data/" rel="alternate" type="text/html" title="Peer review in NLP: resource papers" /><published>2020-04-16T09:00:47-04:00</published><updated>2020-04-16T09:00:47-04:00</updated><id>http://localhost:4000/2020/reviewing-data</id><content type="html" xml:base="http://localhost:4000/2020/reviewing-data/">&lt;figure&gt;
 	&lt;img src=&quot;/assets/images/orange.png&quot; /&gt;
 &lt;/figure&gt;
 
@@ -1985,46 +2031,6 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Myself: &lt;a href=&quot;https://twitter.com/annargrs&quot; class=&quot;twitter-follow-button&quot; data-show-count=&quot;false&quot;&gt;Follow Anna Rogers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
-
-&lt;div class=&quot;page__share&quot;&gt;
-
-  
-
-    &lt;a href=&quot;https://twitter.com/annargrs/status/1246491202377089035?s=20&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
-
-    &lt;br /&gt;
-    &lt;br /&gt;
-
-  
-
-  
-
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Peer+review+in+NLP%3A+resource+papers%20http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&amp;amp;title=Peer review in NLP: resource papers&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
-
-  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
-&lt;pre&gt;
-@misc{Rogers_2020_reviewing-data,
-  title = { Peer review in NLP: resource papers},
-  journal = {Hacking Semantics},
-  url = { https://hackingsemantics.xyz/2020/reviewing-data/ },
-  author = {Rogers, Anna},
-  day = { 16 },
-  month = { Apr },
-  year = { 2020 }
-}
-&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
@@ -2274,6 +2280,49 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
     
 &lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;
 
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+    &lt;a href=&quot;https://twitter.com/annargrs/status/1246491202377089035?s=20&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
+
+    &lt;br /&gt;
+    &lt;br /&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Peer+review+in+NLP%3A+resource+papers%20http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&amp;amp;title=Peer review in NLP: resource papers&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-data%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{Rogers_2020_reviewing-data,
+  title = { Peer review in NLP: resource papers},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2020/reviewing-data/ },
+  author = {Rogers, Anna},
+  day = { 16 },
+  month = { Apr },
+  year = { 2020 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://utteranc.es/client.js&quot; repo=&quot;[ENTER REPO HERE]&quot; issue-term=&quot;pathname&quot; theme=&quot;github-light&quot; crossorigin=&quot;anonymous&quot; async=&quot;&quot;&gt;
+&lt;/script&gt;
+
 &lt;p&gt;Special thanks go to EMNLP 2020 organizers.&lt;/p&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="methodology" /><category term="peer-review" /><summary type="html">Resource papers strike back! How the authors and the reviewers can stop talking past each other.</summary></entry><entry><title type="html">Peer review in NLP: reject-if-not-SOTA</title><link href="http://localhost:4000/2020/reviewing-models/" rel="alternate" type="text/html" title="Peer review in NLP: reject-if-not-SOTA" /><published>2020-04-03T09:00:47-04:00</published><updated>2020-04-03T09:00:47-04:00</updated><id>http://localhost:4000/2020/reviewing-models</id><content type="html" xml:base="http://localhost:4000/2020/reviewing-models/">&lt;figure&gt;
 	&lt;img src=&quot;/assets/images/compete.png&quot; /&gt;
 &lt;/figure&gt;
@@ -2406,46 +2455,6 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Note also that &lt;a href=&quot;https://2020.emnlp.org/call-for-papers&quot;&gt;EMNLP 2020&lt;/a&gt; implements a reproducibility checklist based on work by &lt;a href=&quot;https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf&quot;&gt;Joel Pinneau&lt;/a&gt; and &lt;a class=&quot;citation&quot; href=&quot;#DodgeGururanganEtAl_2019_Show_Your_Work_Improved_Reporting_of_Experimental_Results&quot;&gt;(Dodge, Gururangan, Card, Schwartz, &amp;amp; Smith, 2019)&lt;/a&gt;, which includes the number of hyperparameter search trials and some measure of performance “mean and variance as a function of the number of hyperparameter trials”. Hopefully that by itself should draw some of the reviewers’ attention towards model efficiency.&lt;/p&gt;
-
-&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
-
-&lt;div class=&quot;page__share&quot;&gt;
-
-  
-
-    &lt;a href=&quot;https://twitter.com/annargrs/status/1246491202377089035?s=20&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
-
-    &lt;br /&gt;
-    &lt;br /&gt;
-
-  
-
-  
-
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Peer+review+in+NLP%3A+reject-if-not-SOTA%20http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&amp;amp;title=Peer review in NLP: reject-if-not-SOTA&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
-
-  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
-&lt;pre&gt;
-@misc{Rogers_2020_reviewing-models,
-  title = { Peer review in NLP: reject-if-not-SOTA},
-  journal = {Hacking Semantics},
-  url = { https://hackingsemantics.xyz/2020/reviewing-models/ },
-  author = {Rogers, Anna},
-  day = { 03 },
-  month = { Apr },
-  year = { 2020 }
-}
-&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
@@ -2737,7 +2746,50 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 
 &lt;div&gt;
     
-&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="methodology" /><category term="peer-review" /><summary type="html">Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong.</summary></entry><entry><title type="html">How to teach NLP to non-CS-majors in 2 weeks?</title><link href="http://localhost:4000/2019/nlp4linguists/" rel="alternate" type="text/html" title="How to teach NLP to non-CS-majors in 2 weeks?" /><published>2019-09-02T17:00:47-04:00</published><updated>2019-09-02T17:00:47-04:00</updated><id>http://localhost:4000/2019/nlp4linguists</id><content type="html" xml:base="http://localhost:4000/2019/nlp4linguists/">&lt;p&gt;I strongly believe that getting machines to understand natural language, if at all possible, will require much interdisciplinary collaboration. It’s not clear whether NLP models should be biologically plausible or explicitly encode any linguistic structures – but we do know that language is a very complex thing, and no discipline has been able to solve all the problems on its own.&lt;/p&gt;
+&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+    &lt;a href=&quot;https://twitter.com/annargrs/status/1246491202377089035?s=20&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Join the discussion on Twitter&lt;/span&gt;&lt;/a&gt;
+
+    &lt;br /&gt;
+    &lt;br /&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Peer+review+in+NLP%3A+reject-if-not-SOTA%20http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&amp;amp;title=Peer review in NLP: reject-if-not-SOTA&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2020%2Freviewing-models%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{Rogers_2020_reviewing-models,
+  title = { Peer review in NLP: reject-if-not-SOTA},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2020/reviewing-models/ },
+  author = {Rogers, Anna},
+  day = { 03 },
+  month = { Apr },
+  year = { 2020 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://utteranc.es/client.js&quot; repo=&quot;[ENTER REPO HERE]&quot; issue-term=&quot;pathname&quot; theme=&quot;github-light&quot; crossorigin=&quot;anonymous&quot; async=&quot;&quot;&gt;
+&lt;/script&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="methodology" /><category term="peer-review" /><summary type="html">Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong.</summary></entry><entry><title type="html">How to teach NLP to non-CS-majors in 2 weeks?</title><link href="http://localhost:4000/2019/nlp4linguists/" rel="alternate" type="text/html" title="How to teach NLP to non-CS-majors in 2 weeks?" /><published>2019-09-02T17:00:47-04:00</published><updated>2019-09-02T17:00:47-04:00</updated><id>http://localhost:4000/2019/nlp4linguists</id><content type="html" xml:base="http://localhost:4000/2019/nlp4linguists/">&lt;p&gt;I strongly believe that getting machines to understand natural language, if at all possible, will require much interdisciplinary collaboration. It’s not clear whether NLP models should be biologically plausible or explicitly encode any linguistic structures – but we do know that language is a very complex thing, and no discipline has been able to solve all the problems on its own.&lt;/p&gt;
 
 &lt;p&gt;Don’t take just my word for it. Here’s &lt;a href=&quot;https://allenai.org/ai2-israel/&quot;&gt;Yoav Goldberg’s&lt;/a&gt; slide from his &lt;a href=&quot;https://www.youtube.com/watch?v=e12danHhlic&quot;&gt;SpacyIRL 2019 talk&lt;/a&gt;: the future NLP will require both linguistic and machine learning expertise.&lt;/p&gt;
 
@@ -2956,39 +3008,6 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 
 &lt;h2&gt;***&lt;/h2&gt;
 
-&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
-
-&lt;div class=&quot;page__share&quot;&gt;
-
-  
-
-  
-
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Talking+to+people+outside+your+echo+chamber%3A+SocNLP+challenges%20http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&amp;amp;title=Talking to people outside your echo chamber: SocNLP challenges&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
-
-  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
-&lt;pre&gt;
-@misc{Rogers_2019_conversation,
-  title = { Talking to people outside your echo chamber: SocNLP challenges},
-  journal = {Hacking Semantics},
-  url = { https://hackingsemantics.xyz/2019/conversation/ },
-  author = {Rogers, Anna},
-  day = { 21 },
-  month = { Jul },
-  year = { 2019 }
-}
-&lt;/pre&gt;
-&lt;/div&gt;
-
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;text-justify&quot;&gt;
@@ -3205,6 +3224,42 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
     
 &lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;
 
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Talking+to+people+outside+your+echo+chamber%3A+SocNLP+challenges%20http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&amp;amp;title=Talking to people outside your echo chamber: SocNLP challenges&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fconversation%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{Rogers_2019_conversation,
+  title = { Talking to people outside your echo chamber: SocNLP challenges},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2019/conversation/ },
+  author = {Rogers, Anna},
+  day = { 21 },
+  month = { Jul },
+  year = { 2019 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://utteranc.es/client.js&quot; repo=&quot;[ENTER REPO HERE]&quot; issue-term=&quot;pathname&quot; theme=&quot;github-light&quot; crossorigin=&quot;anonymous&quot; async=&quot;&quot;&gt;
+&lt;/script&gt;
+
 &lt;h2 id=&quot;leave-a-comment-twitter&quot;&gt;Leave a comment (Twitter)&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/annargrs/status/1153027705413296131&quot;&gt;https://twitter.com/annargrs/status/1153027705413296131&lt;/a&gt;&lt;/p&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="socialNLP" /><summary type="html">A post inspired by an Uber ride with a Trump supporter.</summary></entry><entry><title type="html">On word analogies and negative results in NLP</title><link href="http://localhost:4000/2019/analogies/" rel="alternate" type="text/html" title="On word analogies and negative results in NLP" /><published>2019-07-07T12:00:47-04:00</published><updated>2019-07-11T05:00:47-04:00</updated><id>http://localhost:4000/2019/analogies</id><content type="html" xml:base="http://localhost:4000/2019/analogies/">&lt;figure&gt;
@@ -3311,39 +3366,6 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 &lt;p&gt;On the other hand, imagine that such an award existed, and was granted, say, to &lt;a class=&quot;citation&quot; href=&quot;#Yatskar_2019_Qualitative_Comparison_of_CoQA_SQuAD_20_and_QuAC&quot;&gt;(Yatskar, 2019)&lt;/a&gt;. Then everybody in the final session got to hear about the lack of transfer between 3 popular QA datasets. QA is one of the most popular tasks, so wouldn’t it be good for the community to highlight the problem, so that next year more people focus on solving QA rather than particular datasets? Perhaps the impactful-negative-result paper could also be chosen so as to match next year’s theme.&lt;/p&gt;
 
 &lt;h2&gt;***&lt;/h2&gt;
-
-&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
-
-&lt;div class=&quot;page__share&quot;&gt;
-
-  
-
-  
-
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=On+word+analogies+and+negative+results+in+NLP%20http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&amp;amp;title=On word analogies and negative results in NLP&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
-
-  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
-
-  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
-&lt;pre&gt;
-@misc{Rogers_2019_analogies,
-  title = { On word analogies and negative results in NLP},
-  journal = {Hacking Semantics},
-  url = { https://hackingsemantics.xyz/2019/analogies/ },
-  author = {Rogers, Anna},
-  day = { 07 },
-  month = { Jul },
-  year = { 2019 }
-}
-&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
@@ -4162,4 +4184,40 @@ Header image credit: Sasha Luccioni&lt;/p&gt;
 
 &lt;div&gt;
     
-&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="methodology" /><category term="negresults" /><category term="review" /><summary type="html">Negative results are hard to publish, and even harder to make well-known. Even when the disproved result is something as pervasive as Mikolov's word analogies.</summary></entry></feed>
+&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h2 id=&quot;share--cite--discuss-this-post&quot;&gt;Share / cite / discuss this post&lt;/h2&gt;
+
+&lt;div class=&quot;page__share&quot;&gt;
+
+  
+
+  
+
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=On+word+analogies+and+negative+results+in+NLP%20http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&quot; class=&quot;btn btn--twitter&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Twitter&quot;&gt;&lt;i class=&quot;fab fa-fw fa-twitter&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Twitter&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&quot; class=&quot;btn btn--facebook&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on Facebook&quot;&gt;&lt;i class=&quot;fab fa-fw fa-facebook&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on Facebook&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&amp;amp;title=On word analogies and negative results in NLP&quot; class=&quot;btn btn--reddit&quot; title=&quot; Reddit&quot;&gt;&lt;i class=&quot;fab fa-fw fa-reddit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Share on Reddit&lt;/span&gt;&lt;/a&gt;
+
+  &lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Flocalhost%3A4000%2F2019%2Fanalogies%2F&quot; class=&quot;btn btn--linkedin&quot; onclick=&quot;window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-fw fa-linkedin&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt; Share on LinkedIn&lt;/span&gt;&lt;/a&gt;
+
+  &lt;button class=&quot;btn btn--bibtex&quot; onclick=&quot;showBibtex('postCite')&quot;&gt;&lt;i class=&quot;fas fa-book&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; BibTex citation&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;bibtex&quot; style=&quot;display:none;&quot; id=&quot;postCite&quot;&gt;
+&lt;pre&gt;
+@misc{Rogers_2019_analogies,
+  title = { On word analogies and negative results in NLP},
+  journal = {Hacking Semantics},
+  url = { https://hackingsemantics.xyz/2019/analogies/ },
+  author = {Rogers, Anna},
+  day = { 07 },
+  month = { Jul },
+  year = { 2019 }
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://utteranc.es/client.js&quot; repo=&quot;[ENTER REPO HERE]&quot; issue-term=&quot;pathname&quot; theme=&quot;github-light&quot; crossorigin=&quot;anonymous&quot; async=&quot;&quot;&gt;
+&lt;/script&gt;</content><author><name>Anna Rogers</name></author><category term="squib" /><category term="academia" /><category term="methodology" /><category term="negresults" /><category term="review" /><summary type="html">Negative results are hard to publish, and even harder to make well-known. Even when the disproved result is something as pervasive as Mikolov's word analogies.</summary></entry></feed>

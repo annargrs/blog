@@ -1,3 +1,7 @@
+## References
+
+{% bibliography --cited %}
+
 ## Share / cite / discuss this post
 
 {% if page.share %}{% include social-share.html %}{% endif %} 
@@ -19,6 +23,10 @@
 </pre>
 </div>
 
-## References
-
-{% bibliography --cited %}
+<script src="https://utteranc.es/client.js"
+        repo="[ENTER REPO HERE]"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
