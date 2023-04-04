@@ -1,0 +1,893 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Field Notes on Hybrid Conferences (EMNLP 2021) - Hacking semantics</title>
+<meta name="description" content="Field notes from EMNLP 2021, the first hybrid *ACL conference.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hacking semantics">
+<meta property="og:title" content="Field Notes on Hybrid Conferences (EMNLP 2021)">
+<meta property="og:url" content="https://hackingsemantics.xyz/2021/hybrid/">
+
+
+  <meta property="og:description" content="Field notes from EMNLP 2021, the first hybrid *ACL conference.">
+
+
+
+  <meta property="og:image" content="https://hackingsemantics.xyz/assets/images/beach.png">
+
+
+
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="Field Notes on Hybrid Conferences (EMNLP 2021)">
+  <meta name="twitter:description" content="Field notes from EMNLP 2021, the first hybrid *ACL conference.">
+  <meta name="twitter:url" content="https://hackingsemantics.xyz/2021/hybrid/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hackingsemantics.xyz/assets/images/beach.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-11-17T12:00:47-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://hackingsemantics.xyz/2021/hybrid/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hacking semantics Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!--bibtex hack-->
+<script>
+function showBibtex(bibDiv) {
+  var x = document.getElementById(bibDiv);
+  if (x.style.display === "none" || x.style.display === '') {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="icon" type="image/png" href="/assets/images/logo-3col.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-3col.png" alt=""></a>
+        
+        <a class="site-title" href="/">Hacking Semantics</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/aro.jpg" alt="Anna Rogers" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Anna Rogers</h3>
+    
+    
+
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://pure.itu.dk/da/persons/anna-rogers" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-university" aria-hidden="true"></i> IT University of Copenhagen</a></li>
+          
+        
+          
+            <li><a href="http://annargrs.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i> Homepage</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar ai" aria-hidden="true"></i> Google Scholar</a></li>
+          
+        
+          
+            <li><a href="https://www.semanticscholar.org/author/Anna-Rogers/145046059" rel="nofollow noopener noreferrer"><i class="ai ai-semantic-scholar ai" aria-hidden="true"></i> Semantic Scholar</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-4845-4023" rel="nofollow noopener noreferrer"><i class="ai ai-orcid ai" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+      
+
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <!--label for="ac-toc">Toggle Menu</label-->
+  <ul class="nav__items">
+    
+  </ul>
+</nav>
+    
+  
+
+
+<!-- stolen from here:
+https://www.gungorbudak.com/blog/2017/12/08/tags-cloud-sorted-by-post-count-for-jekyll-blogs-without-plugins/
+-->
+<!--div class="tag-cloud">
+
+
+
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#academia/" rel="tag">#academia</a> (11)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#methodology/" rel="tag">#methodology</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#peer-review/" rel="tag">#peer-review</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-2">
+        <a class="tag-link" href="/tags/#LLMs/" rel="tag">#LLMs</a> (2)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-2">
+        <a class="tag-link" href="/tags/#ethics/" rel="tag">#ethics</a> (2)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#conference/" rel="tag">#conference</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#debate/" rel="tag">#debate</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#negresults/" rel="tag">#negresults</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#organization/" rel="tag">#organization</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#productivity/" rel="tag">#productivity</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#review/" rel="tag">#review</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#socialNLP/" rel="tag">#socialNLP</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#teaching/" rel="tag">#teaching</a> (1)
+    </span>
+
+
+
+
+
+</div-->
+
+
+
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Field Notes on Hybrid Conferences (EMNLP 2021)">
+    <meta itemprop="description" content="Field notes from EMNLP 2021, the first hybrid *ACL conference.">
+    <meta itemprop="datePublished" content="November 17, 2021">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Field Notes on Hybrid Conferences (EMNLP 2021)
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  11 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
+              <ul class="toc__menu">
+  <li><a href="#segregation-between-on-site-and-virtual-events">Segregation between on-site and virtual events</a></li>
+  <li><a href="#technical-aspects-of-organization-notes-on-different-types-of-events-from-an-on-site-attendee-perspective">Technical aspects of organization: notes on different types of events from an on-site attendee perspective</a>
+    <ul>
+      <li><a href="#keynotes--invited-talks">Keynotes &amp; invited talks</a></li>
+      <li><a href="#on-site-talks">On-site talks</a></li>
+      <li><a href="#posters">Posters</a></li>
+      <li><a href="#panels">Panels</a></li>
+    </ul>
+  </li>
+  <li><a href="#underline-grievances">Underline grievances</a></li>
+  <li><a href="#location">Location</a></li>
+  <li><a href="#final-thoughts">Final thoughts</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>This is a quick summary of my field notes on the hybrid conferences from EMNLP2021 🌴, as an on-site attendee. I was able to attend thanks to <a href="http://www.winlp.org/winlp-emnlp-2021/">WiNLP</a> travel award, for their panel on the role of peer review in diversifying NLP. <em>This was the first ever *ACL hybrid conference, and the chairs deserve applause for all their hard work.</em></p>
+
+<p>This post is meant not as a criticism, but rather as a post-mortem that would hopefully be useful for organizers of future events. I can only share my own experience, and would love to hear from others. This post does <em>not</em> offer a comprehensive solution for to how to do this better - only some thoughts and comments.</p>
+
+<blockquote>
+  <p>Other shared impressions that I know of:</p>
+  <ul>
+    <li>Jordan Boyd-Graber (as a virtual attendee): <a href="https://youtu.be/3gSgNXGxzQU">Video</a>, <a href="https://docs.google.com/document/d/10M8p4ywvh7TqLhQ1U-BZNJNLTYpMqacyNCFo5m_IEGo/edit">Text</a></li>
+    <li>Sam Bowman (as an on-site attendee): <a href="https://twitter.com/sleepinyourhat/status/1457818202323443713?s=20">Twitter thread</a> <br /></li>
+  </ul>
+
+  <p>(let me know if I’m missing any other posts)</p>
+</blockquote>
+
+<h2 id="segregation-between-on-site-and-virtual-events">Segregation between on-site and virtual events</h2>
+
+<p>The fundamental issue is that the on-site conference experience is complete enough that people who are on-site have more than enough things to do without checking in on the virtual part. There were fewer people on-site than usual, but I think even 50 people would probably just keep chatting to each other full-time (as they did in the early days of ACL). Probably this time it was worse than average because this is the first on-site meeting after a year of lockdowns, and thus it was too much joy to see human faces again to exchange that for zoom. But I don’t think that this factor would ever go away.</p>
+
+<p>Furthermore, if we are on-site it means we are tired from traveling and likely also jetlagged. I knew very well that virtual part was also going on, but I even missed a big chunk of the on-site program, because I just didn’t have the energy physically (and also had non-conference urgent stuff to do for ARR). The result was that I made it to the grand total of 1 virtual poster in the whole week.</p>
+
+<p>A part of the problem is that our conferences are just generally too big. In a regular pre-pandemic on-site conference there were already too many parallel sessions going on, and thus it was already hard enough to pick and choose, and get to the right rooms at the right time. If the hybrid format offers the on-site attendees a subset of that program that is “live”, and the rest of the talks are recorded anyway, I think simply following the on-site part will always be a too-tempting option. If some of the parallel sessions are virtual, the topical division imo wouldn’t offer sufficient incentive to attend them just for their topic, because most of us seem to have many research interests, and will likely always find some exciting work that happens to be presented on-site.</p>
+
+<p>This is why parallel on-site / virtual sessions are problematic. Unfortunately, they are also problematic when they are consecutive, because of the limited working hours in the on-site location. In day 1 there was a 9am invited talk, 4 oral sessions until 18:15, 45 min for dinner break, and then another 2-hour virtual poster session 19:00-21:00. Speaking for myself, I just cannot absorb this much of a conference in a day. I do see that evening/night virtual events make sense to accommodate the presenters who are inevitably going to be in some other time zone than the conference location, but this also inevitably contributes to the segregation.</p>
+
+<p>And this segregation is obviously not great. <strong>The people who can afford to travel to conferences are the ones who have money, visas, health, AND time - and EACH of these criteria cuts off a LOT of people.</strong> Money-wise, the student &amp; diversity travel awards are better than nothing, but not a solution, as there will never be enough awards for all who deserves to come. Personally, I had zero travel support during my PhD, and without a visit to NAACL sponsored by ACL student research workshop I would probably <em>not</em> be here today. I am acutely aware that my getting that funding likely meant that someone else didn’t, and maybe they were/would be a better researcher.</p>
+
+<p>For all of these reasons, not to mention the environment, I have previously advocated for fully switching to virtual conferences. I do see that this would be taking a lot of joy out of science (for people with money, visas, health and time), and so there is little appetite for such extreme measures - especially in that demographic. I am also aware that students need to network with that demographic to find jobs, and those students who do get to conferences get an important competitive advantage, which they will not want to lose. But if the community decides that these two factors outweigh inclusivity and the solution is hybrid conferences - I really don’t think we have a recipe that works for both sides yet.</p>
+
+<h2 id="technical-aspects-of-organization-notes-on-different-types-of-events-from-an-on-site-attendee-perspective">Technical aspects of organization: notes on different types of events from an on-site attendee perspective</h2>
+
+<h3 id="keynotes--invited-talks">Keynotes &amp; invited talks</h3>
+
+<p>Conference keynotes work great in the hybrid format, because only one thing is going on, it’s generally well attended, and everybody is there from both channels.</p>
+
+<p>The same was generally true of invited talks for workshops, even though there were several workshops in parallel, and so more competition for the audience.</p>
+
+<h3 id="on-site-talks">On-site talks</h3>
+
+<p>In the on-site talks the presenter being virtual or on-site didn’t make a lot of difference for me. But with only 5 minutes for questions, having to locate &amp; open the chat on-site often seemed like too much effort. So I ended up mostly not doing it, unless I already had laptop open.</p>
+
+<p>Questions to papers work better as asynchronous chat, but it’d be nice to have some dedicated slots in the conference program to do that. And authors should get notified when there are questions for their papers. I had 2 papers, jetlag, and a workshop to organize, and so definitely did not have the presence of mind to keep checking on those chats.</p>
+
+<p>Even without the hybrid thing, I think poster format for conferences is just inherently better than 15 min talks, and I heard many people say the same. Way more interactivity, can go in-depth and/or chat &amp; brainstorm as needed.</p>
+
+<h3 id="posters">Posters</h3>
+
+<p>Hybrid poster sessions are a challenge. To have virtual attendees in the live poster sessions we’d have to have some kind of conference robots, which is just too expensive. Having separate on-site &amp; virtual sessions deprives the virtual crowd of the former. If we have the on-site presenters also present virtually a second time, they get double exposure, which seems unfair to virtual-only participants.</p>
+
+<p>Shall we just give up on physical posters and switch to gather-town in perpetuity (provided that its infrastructure scales to be fast enough?) Yes, it’s amazing to be able to talk to people live, but see above: it doesn’t seem to be possible to do it in an inclusive way. Plus we have the lovely task, cost and eco footprint of printing &amp; carrying those posters. In EMNLP 2019 I nearly lost my poster in Hong Kong airport, because I was so jetlagged after the flight!</p>
+
+<p>While live interaction with <em>people</em> at the poster feels better (if you’re among the lucky ones to be on-site), I do think it is strictly inferior to gather-town in terms of interaction with the <em>content</em>: it’s a lot easier to take notes, check up any papers mentioned in the discussion, tweet interesting stuff, look up people you ‘run’ into. Have you ever come back from an on-site poster session with a phone full of poster photos that you never touched since? I certainly have.</p>
+
+<h3 id="panels">Panels</h3>
+
+<p>I was an on-site panelist with two virtual panelists at WiNLP. The panel was great, but it presented a challenge I’ve never thought about: camera positioning. The room had the standard setup of a large screen with the projected speaker view for the online participants, and in front of that screen was a chair for the on-site speaker facing the on-site audience.</p>
+
+<p>Since the screen projecting the speaker view was behind me, I couldn’t see who I was talking to, and so had to have a laptop with zoom on a table in front of me. The end result was that the on-site people saw me stare at laptop in front of them, and virtual people saw a side view of me staring at the laptop. I honestly don’t know how this could be resolved. I hope this gets read by an academic whose hobby happens to be videography.</p>
+
+<h2 id="underline-grievances">Underline grievances</h2>
+
+<p>Separate from the hybrid format is the heap of trouble with Underline.io, which EMNLP used for the hybrid part. This time the virtual attendance cost more, but the platform experience did not improve to justify that. As in ACL and NAACL 2021, it was slow, and the linking between papers, videos, live zooms and associated chats added a ton of friction. A one-click feature “add this to my schedule in my time zone” should NOT be so hard. On-site, we had to look for things both on underline, in whova, and in the printed handbook, as they sometimes had different information.</p>
+
+<p>I did <em>not</em> expect that in the closing remarks the speakers had to say “next” for someone to press the button to advance the slides. Definitely didn’t seem like we’re reaching for AGI yet…</p>
+
+<p>But this was the main conference. It was a lot worse for the workshops and tutorials, which did <em>not</em> even have any schedules on the platform - except for their own websites, which would be harder for the attendees to cross-compare and make a composite schedule of.</p>
+
+<p>The on-site problems were so numerous that it’d be funny if it was not borderline disastrous. I heard that the crowdwourcing tutorial was assigned to an empty room without the set-up gear, and they had to run between rooms!</p>
+
+<p>In the <a href="https://insights-workshop.github.io">Insights from Negative Results</a> workshop, we started by losing 20 scheduled minutes because they gave us the same zoom link as another workshop. Then in another talk our on-site mike died and we couldn’t get through to the speaker who went overtime. And then they re-logged in for some reason, and that kicked the organizers out of the zoom altogether. For dessert, my own pre-submitted poster was simply missing in gather.town. They don’t even let people know if there are any problems with uploaded pdfs or videos. The underline team was on-site in sufficient numbers, but I couldn’t help wishing that I did not have to fetch them all the time.</p>
+
+<p>I was part of the team for EMNLP 2020, which seems to have so far have delivered the best virtual conference experience with a combination of miniconf, gather.town and rocketchat. This was a <em>ton</em> of work, and I totally see why subsequent conferences went with underline because it just seems like a one-stop infrastructure solution. But underline truly makes the virtual part way worse than it has to be, and they clearly haven’t adapted their platform based on everything that was said after NAACL and ACL. I doubt they will now. Given that this is a computer science-ish field with tons of money, do we really have to inflict this on ourselves?</p>
+
+<h2 id="location">Location</h2>
+
+<p>A completely orthogonal dimension to the hybrid format and Underline is the location. Which in this case was Punta Cana, Dominican republic. Which looks like this:</p>
+
+<figure>
+	<img src="/assets/images/punta-cana.jpeg" />
+</figure>
+
+<p>Don’t get me wrong: the Caribbean is magical. I would probably never have made it without this conference, I’ll remember it forever, and I’m happy I was able to go. I wish everybody else could have seen the palm trees, the sunrise on the beach, the parrots, and everything else.</p>
+
+<p>At the same time, if I were to design a special hell for an academic - I’d give them a limited time in a tropical beach with turtles to snorkel with, a buffet with infinite supply of mango smoothies… and a deadline to watch a bunch of talks, or write a grant application, or something like that. In this setup you get tortured by FOMO no matter what you choose to do.</p>
+
+<p>You can also try to compromise, which will probably result in doing a bad job of both options. I honestly tried the student solution of just not sleeping. I lived on 6 hours of sleep for a week to go for a swim before the conference - and I normally need 8-9 hours. Result: still foggy and exhausted, 3 days after I’m back. I’m sure the quality of my thinking suffered, and I rambled incoherently to people who deserved better. It also feels profoundly wrong to be at a resort, where everybody relaxes, but you are running between things like it’s the start of the term.</p>
+
+<p>Kudos for an ingenious solution to Marzena Karpinska, who risked her phone and headphones and literally watched the crowdsourcing tutorial <em>in</em> the pool. Wish someone made waterproof laptops.</p>
+
+<p>So… if we do have any more conferences in tropical resorts, I’d suggest to make them at least 2 weeks long, with half a day dedicated to snorkeling, birding, kayaking and everything else that has blissfully nothing to do with research, but is a sin to miss. I can even nominate special chairs for all that!</p>
+
+<p>Another thing I didn’t expect, but totally should have: there were almost no power outlets, and wifi was patchy and unreliable (probably depending on how many tourists were streaming movies at a given time). Kind of duh, this place is emphatically not meant for work!</p>
+
+<h2 id="final-thoughts">Final thoughts</h2>
+
+<p>Once again: EMNLP 2021 was certainly unforgettable, and I’m very happy and priviledged to be able to attend it. And the organizers put an insane amount of volunteer work into getting the first hybrid conference to run as smoothly as possible. There is certainly a lot of valuable experience here for future events, as well as plenty of food for thought.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#academia" class="page__taxonomy-item" rel="tag">academia</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#conference" class="page__taxonomy-item" rel="tag">conference</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#organization" class="page__taxonomy-item" rel="tag">organization</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#howto" class="page__taxonomy-item" rel="tag">howto</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-17T12:00:47-05:00">November 17, 2021</time></p>
+        
+
+      <div>
+        <script src="https://utteranc.es/client.js"
+        repo="annargrs/blog"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+        </script>
+      </div>
+
+      </footer>
+
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/recording/" class="pagination--pager" title="How to Record a Virtual Conference Talk
+">Previous</a>
+    
+    
+      <a href="/2022/attribution/" class="pagination--pager" title="The attribution problem with generative AI
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h2 class="page__comments-title">Comments</h2>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/anonymity/" rel="permalink">Should the reviewers know who the authors are?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  23 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/closed-baselines/" rel="permalink">Closed AI Models Make Bad Baselines
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  24 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Will GPT-4 become a universally expected baseline in NLP research, like BERT in its time? Basic scientific methodology demands otherwise.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/recording/" rel="permalink">How to Record a Virtual Conference Talk
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  14 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Hacking semantics. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br/>
+  <!--a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a-->This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127096214-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127096214-2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'annargrs/blog');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>
