@@ -35,9 +35,9 @@ author:
   github: "annargrs"
 #  vine: "doesn't matter"
   links:
-    - label: "University of Copenhagen"
+    - label: "IT University of Copenhagen"
       icon: "fas fa-fw fa-university"
-      url: "http://sodas.ku.dk/"
+      url: "https://pure.itu.dk/da/persons/anna-rogers"
     - label: "Homepage"
       icon: "fas fa-fw fa-home"
       url: "http://annargrs.github.io/"
