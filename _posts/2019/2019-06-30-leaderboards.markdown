@@ -3,7 +3,7 @@ layout: single
 title:  "How the Transformers broke NLP leaderboards"
 date:   2019-06-30 22:00:47 -0400
 categories: squib
-tags: academia methodology 
+tags: academia methodology transformers 
 mathjax: true
 redirect_from: "/leaderboards/"
 toc: true
