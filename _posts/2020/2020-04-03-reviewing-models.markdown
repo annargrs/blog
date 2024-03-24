@@ -3,7 +3,7 @@ layout: single
 title:  "Peer review in NLP: reject-if-not-SOTA"
 date:   2020-04-03 09:00:47 -0400
 categories: squib
-tags: academia methodology peer-review 
+tags: methodology peer-review 
 mathjax: false
 toc: true
 excerpt: "Many reviewers at major NLP conferences tend to reject models that fail to beat state-of-the-art. It is a heuristic that is simple, convenient, and wrong."

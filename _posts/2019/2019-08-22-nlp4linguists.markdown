@@ -3,7 +3,7 @@ layout: single
 title:  "How to teach NLP to non-CS-majors in 2 weeks?"
 date:   2019-09-02 17:00:47 -0400
 categories: squib
-tags: academia teaching
+tags: teaching
 mathjax: false
 toc: true
 excerpt: "What I learned from organizing an introductory course on NLP for linguists at ESSLLI 2019."

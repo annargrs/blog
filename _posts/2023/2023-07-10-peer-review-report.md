@@ -3,7 +3,7 @@ layout: single
 title: "[ACL 2023] Peer Review Report"
 date: 2023-07-10 19:00:00 +0200
 categories: squib
-tags: peer-review academia  
+tags: peer-review conferences  
 mathjax: false
 toc: false
 ---

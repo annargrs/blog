@@ -3,7 +3,7 @@ layout: single
 title:  "Peer review in NLP: resource papers"
 date:   2020-04-16 09:00:47 -0400
 categories: squib
-tags: academia methodology peer-review 
+tags: methodology peer-review 
 mathjax: false
 toc: true
 excerpt: "Resource papers strike back! How the authors and the reviewers can stop talking past each other."

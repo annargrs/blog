@@ -3,7 +3,7 @@ layout: single
 date:   2019-07-21 11:00:47 -0400
 title:  "Talking to people outside your echo chamber: SocNLP challenges"
 categories: squib
-tags: academia socialNLP
+tags: society
 mathjax: false
 redirect_from: "/conversation/"
 toc: true

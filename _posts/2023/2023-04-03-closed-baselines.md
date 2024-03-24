@@ -3,7 +3,7 @@ layout: single
 title: "Closed AI Models Make Bad Baselines"
 date: 2023-04-03 19:00:00 +0200
 categories: squib
-tags: LLMs ethics peer-review academia 
+tags: LLMs ethics peer-review academia methodology 
 redirect_from: "/baselines/"
 mathjax: false
 toc: true

@@ -4,7 +4,7 @@ title:  "On word analogies and negative results in NLP"
 date:   2019-07-07 16:00:47
 last_modified_at: 2019-07-11 09:00:47 
 categories: squib
-tags: academia methodology negresults review
+tags: methodology negative-results review
 mathjax: true
 toc: true
 redirect_from: "/analogies/"
