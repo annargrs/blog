@@ -6,6 +6,7 @@ categories: squib
 tags: peer-review conferences  
 mathjax: false
 toc: false
+canonical_url: "https://2023.aclweb.org/blog/review-report/"
 ---
 
 This post (at ACL conference website) summarizes the analysis of ACL'23 peer review process: [https://2023.aclweb.org/blog/review-report/](https://2023.aclweb.org/blog/review-report/).

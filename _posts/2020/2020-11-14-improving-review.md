@@ -6,6 +6,7 @@ categories: paper
 tags: peer-review 
 mathjax: false
 toc: false
+canonical_url: "https://thegradient.pub/how-can-we-improve-peer-review-in-nlp/"
 ---
 
 This is a post I wrote for The Gradient: [https://thegradient.pub/how-can-we-improve-peer-review-in-nlp/](https://thegradient.pub/how-can-we-improve-peer-review-in-nlp/). 

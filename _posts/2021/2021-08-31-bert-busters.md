@@ -6,6 +6,7 @@ categories: paper
 tags: transformers 
 mathjax: false
 toc: false
+canonical_url: "https://text-machine-lab.github.io/blog/2021/busters/"
 ---
 
 This is a post I wrote during my time in Text Machine Lab: [https://text-machine-lab.github.io/blog/2021/busters/](https://text-machine-lab.github.io/blog/2021/busters/). It reports on one of the first studies on the phenomenon of outlier dimensions in Transformer-based language models:

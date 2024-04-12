@@ -4,6 +4,7 @@ title: "[Text Machine Lab] BERT Busters: Outlier Dimensions that Disrupt Transfo
 date: 2020-01-07 19:00:00 +0200
 categories: paper
 tags: transformers 
+canonical_url: "https://text-machine-lab.github.io/blog/2020/bert-secrets/"
 mathjax: false
 toc: false
 ---

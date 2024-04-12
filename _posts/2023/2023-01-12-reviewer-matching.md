@@ -6,6 +6,7 @@ categories: squib
 tags: peer-review conferences  
 mathjax: false
 toc: false
+canonical_url: "https://2023.aclweb.org/blog/reviewer-assignment/"
 ---
 
 As a program chair of ACL'23, I was the lead author for this blog post on the conference website that summarized our approach to peer-review matching: [https://2023.aclweb.org/blog/reviewer-assignment/](https://2023.aclweb.org/blog/reviewer-assignment/)
