@@ -90,7 +90,7 @@ In retrospect, "agree/disagree/unsure" is not the best choice of options for thi
 
 The key unresolved question is what kind of interpolation of existing patterns would even count as something new enough to qualify as an 'emergent phenomenon' in the domain of natural language data. This domain is particularly hard, because it mixes different kinds of information (linguistic, social, factual, commonsense), and that information may be present differently (explicit in context, implicit, or requiring reasoning over long contexts). See {% cite RogersGardnerEtAl_2023_QA_Dataset_Explosion_Taxonomy_of_NLP_Resources_for_Question_Answering_and_Reading_Comprehension -l sec. 8.2 %} for a discussion of different skills involved in just the question answering task. 
 
-If you will attend ICML or ACL'24, and would like to chat about this, let me know! Also, I am [recruiting](https://annargrs.github.io/lab/#phd-and-postdoc-positions) (PhD and postdoc level).
+:wave: If you will attend ICML or ACL'24, and would like to chat about this, let me know! Also, I am [recruiting](https://annargrs.github.io/lab/#phd-and-postdoc-positions) (PhD and postdoc level).
 {: .notice}
 
 ---
@@ -110,7 +110,7 @@ url={https://openreview.net/forum?id=M2cwkGleRL}
 
 The paper also discusses **what we even mean by 'large language model'** (as opposed to 'foundation' and 'frontier' models), and several other often-repeated claims that come with a lot of footnotes: **LLMs are robust**, **LLMs are state-of-the-art**, **(LLM) scale is all you need**, **LLMs are general-purpose-technologies**.
 
-Acknowledgements: 
+:pray: Acknowledgements: 
 
 - my brilliant co-author Sasha Luccioni 
 - all the anonymous reviewers of the above paper
