@@ -75,7 +75,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-redirect-from
-#  - jekyll-archives
+  - jemoji
 
 
 # File reading

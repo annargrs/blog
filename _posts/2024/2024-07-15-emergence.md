@@ -86,13 +86,16 @@ The results were striking: while most respondents were sceptical or unsure about
 
 This is in line with several other false sociological beliefs: e.g. most NLP researchers don't think that NLP leaderboards are particularly meaningful, or that scaling will solve everything, but they do think that *other* NLP researchers believe that {% cite MichaelHoltzmanEtAl_2023_What_Do_NLP_Researchers_Believe_Results_of_NLP_Community_Metasurvey %}. In my sample, the idea that LLM have emergent properties is similarly held by a minority of researchers, but it is misperceived to be the majority. And even for that minority the conviction is not very firm. In four of my talks, after presenting the above discussion, I also asked the audience what they thought now. In this sample of 70 responses, 83% of those who originally agreed with the statement "LLMs have emergent properties", changed their belief to either disagreeing (13.9%) or being unsure (69.4%).
 
-In retrospect, "agree/disagree/unsure" is not the best choice of options for this poll. As scientists, we can hardly ever be 100% sure: as Yann LeCun put it in the [Munk debate](https://munkdebates.com/debates/artificial-intelligence/), we cannot even prove that there is no teapot orbiting Jupiter right now. Our job is not to fall into such distracting rabbit holes, but to formulate and test hypotheses that would improve our understanding of the phenomenon we are studying. For 'emergence' in LLMs, I think we are still at the 'formulation' stage -- since even after all the above work with clarifying 'emergence' we still don't have a research question, for which it is clear how to obtain empirical evidence.
+In retrospect, "agree/disagree/unsure" is not the best choice of options for this poll. As scientists, we can hardly ever be 100% sure: as Yann LeCun put it in the [Munk debate](https://munkdebates.com/debates/artificial-intelligence/), we cannot even prove that there is no teapot orbiting Jupiter right now. Our job is not to fall into such distracting rabbit holes, but to formulate and test hypotheses that would advance our understanding of the phenomenon we are studying. For 'emergence' in LLMs, I think we are still at the 'formulation' stage -- since even after all the above work with clarifying 'emergence' we still don't have a research question, for which it is clear how to obtain empirical evidence.
 
 The key unresolved question is what kind of interpolation of existing patterns would even count as something new enough to qualify as an 'emergent phenomenon' in the domain of natural language data. This domain is particularly hard, because it mixes different kinds of information (linguistic, social, factual, commonsense), and that information may be present differently (explicit in context, implicit, or requiring reasoning over long contexts). See {% cite RogersGardnerEtAl_2023_QA_Dataset_Explosion_Taxonomy_of_NLP_Resources_for_Question_Answering_and_Reading_Comprehension -l sec. 8.2 %} for a discussion of different skills involved in just the question answering task. 
 
+If you will attend ICML or ACL'24, and would like to chat about this, let me know! Also, I am [recruiting](https://annargrs.github.io/lab/#phd-and-postdoc-positions) (PhD and postdoc level).
+{: .notice}
+
 ---
 
-This post is based on a part of the ICML 2024 position paper [Key Claims in LLM Research Have a Long Tail of Footnotes](https://openreview.net/forum?id=M2cwkGleRL), by Anna Rogers and Sasha Luccioni. Most of the points in this post can be cited as follows:
+This post is based on a part of the ICML 2024 position paper [Key Claims in LLM Research Have a Long Tail of Footnotes](https://openreview.net/forum?id=M2cwkGleRL), by Anna Rogers and Sasha Luccioni. The poll results are not there, but most of the other points can be cited as follows:
 
 ```
 @inproceedings{
@@ -109,7 +112,7 @@ The paper also discusses **what we even mean by 'large language model'** (as opp
 
 Acknowledgements: 
 
-- my brilliant co-author Sasha Luccioni
+- my brilliant co-author Sasha Luccioni 
 - all the anonymous reviewers of the above paper
 - Rob van der Goot, Christian Hardmeier, Yacine Jernite, Margaret Mitchell, Dennis Ulmer, who read the early versions of the paper and provided feedback 
 - Ryan Cotterell, Ishita Dasgupta, Laura Gwilliams, Julia Haas, Anna Ivanova, Tal Linzen, Ben Lipkin, Asad Sayeed for their insights and discussion
