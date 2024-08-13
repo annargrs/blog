@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://hackingsemantics.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hackingsemantics.xyz/" rel="alternate" type="text/html" /><updated>2024-08-13T01:47:11-04:00</updated><id>https://hackingsemantics.xyz/feed.xml</id><title type="html">Hacking semantics</title><subtitle>A Natural Language Processing blog: research findings, methodology squibs, and thoughts on peer review.</subtitle><author><name>Anna Rogers</name></author><entry><title type="html">A Sanity Check on ‘Emergent Properties’ in Large Language Models</title><link href="https://hackingsemantics.xyz/2024/emergence/" rel="alternate" type="text/html" title="A Sanity Check on ‘Emergent Properties’ in Large Language Models" /><published>2024-07-15T13:00:00-04:00</published><updated>2024-07-15T13:00:00-04:00</updated><id>https://hackingsemantics.xyz/2024/emergence</id><content type="html" xml:base="https://hackingsemantics.xyz/2024/emergence/"><![CDATA[<p>One of the often-repeated claims about Large Language Models (LLMs), discussed in our <a href="https://openreview.net/forum?id=M2cwkGleRL">ICML’24 position paper</a>, is that they have ‘emergent properties’. Unfortunately, in most cases the speaker/writer does not clarify what they mean by ‘emergence’. But misunderstandings on this issue can have big implications for the research agenda, as well as public policy.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://hackingsemantics.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hackingsemantics.xyz/" rel="alternate" type="text/html" /><updated>2024-08-13T02:05:41-04:00</updated><id>https://hackingsemantics.xyz/feed.xml</id><title type="html">Hacking semantics</title><subtitle>A Natural Language Processing blog: research findings, methodology squibs, and thoughts on peer review.</subtitle><author><name>Anna Rogers</name></author><entry><title type="html">AI ‘News’ Content Farms Are Easy to Make and Hard to Detect</title><link href="https://hackingsemantics.xyz/2024/ai-news/" rel="alternate" type="text/html" title="AI ‘News’ Content Farms Are Easy to Make and Hard to Detect" /><published>2024-08-12T18:00:00-04:00</published><updated>2024-08-12T18:00:00-04:00</updated><id>https://hackingsemantics.xyz/2024/ai-news</id><content type="html" xml:base="https://hackingsemantics.xyz/2024/ai-news/"><![CDATA[<h2 id="how-bad-is-the-synthetic-news-problem">How bad is the synthetic news problem?</h2>
+
+<p>Do you feel like most sources of information that you used to rely on, have gotten worse? You’re right: <a href="https://www.businessinsider.com/ai-spam-google-ruin-internet-search-scams-chatgpt-2024-1">Internet is already flooded with AI-generated content</a>. I’m a NLP researcher, so I’m mostly monitoring the cases involving text, but here are just a few examples within that domain:</p>
+
+<ul>
+  <li>Amazon is filled with <a href="https://www.wired.com/story/scammy-ai-generated-books-flooding-amazon">scammy AI-generated summaries of real books</a> as well as garbage ‘books’ with advice in high-risk areas, e.g. on <a href="https://www.vox.com/24141648/ai-ebook-grift-mushroom-foraging-mycological-society">mushroom foraging</a> . As a mitigation policy, they currently <a href="https://www.pcmag.com/news/amazon-limits-authors-to-self-publishing-3-books-per-day-amid-flood-of">limit the number of self-published book that an author can upload in a day to three</a> (yes, you read that right!)</li>
+  <li><a href="https://www.vice.com/en/article/5d9bvn/ai-spam-is-already-flooding-the-internet-and-it-has-an-obvious-tell">fake consumer reviews and social media posts</a></li>
+  <li>changing policies on community-moderated websites: e.g. both <a href="https://slate.com/technology/2024/02/quora-what-happened-ai-decline.html">Quora</a> and <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/stack-overflow-bans-users-en-masse-for-rebelling-against-openai-partnership-users-banned-for-deleting-answers-to-prevent-them-being-used-to-train-chatgpt">StackOverflow</a>, which initially prided themselves on authentic content and moderation, are now welcoming AI-generated ‘content’</li>
+  <li><a href="https://www.theverge.com/2023/12/19/24007759/inside-an-ai-powered-seo-heist-that">SEO heists</a>: websites explicitly generated to resemble a known high-quality competitor website, and drive the internet traffic away from it</li>
+  <li>old high-reputation sites <a href="https://mashable.com/article/apple-blogs-ai-fake">resurrected as AI zombies</a></li>
+  <li><a href="https://edition.cnn.com/2024/03/19/us/fake-obituary-scams-ai-cec/index.html">‘obituary pirate’ industry</a>:  fake reports of someone’s death (real or not), to capitalize on spike in search phrases from people trying to figure out what actually happened</li>
+</ul>
+
+<p>To be clear, the above problems are not new: review farms, SEO ‘content’ etc have existed before LLMs went mainstream. E.g. here’s a <a href="https://www.news.com.au/technology/online/security/the-potential-of-ai-generated-crowdturfing-could-undermine-online-reviews-and-dramatically-erode-public-trust/news-story/e1c84ad909b586f8a08238d5f80b6982">2017 discussion</a> of the problem with fake reviews on customer review websites like Yelp. But the scale of the problem has changed, as generating such ‘content’ today now does not even require  technical knowledge.</p>
+
+<p>This year I contributed to a <a href="https://arxiv.org/abs/2406.12128">study published at ACL 2024</a>, led by <a href="https://scholar.google.com/citations?user=djwq5cwAAAAJ&amp;hl=en&amp;oi=ao">Giovanni Puccetti from CNRS Pisa</a>. This study focused on the specific problem of synthetic ‘news’: websites generated to resemble legitimate news outlets, but entirely filled with synthetic text without any clear traces of human editors involved. Here is a screenshot of such a website:</p>
+
+<figure>
+	<img src="/assets/images/20240319223701.png" />
+	<figcaption>Example of a website filled with synthetic text, but formatted and presented as a legitimate news website </figcaption>
+</figure>
+
+<p>This particular example appears to be aimed simply at serving ads, to people who visit because they think it’s a legitimate information source. Here the model that was used to generate the content is clearly bad enough that the synthetic nature of the text is obvious - and still this site must have been making its owners enough money, since it’s been up for at least a year. The main harms are waste of user time and resources, and potentially also misinformation (if the reader does not realize that this source is a scam, and comes away misinformed). There are also websites that <a href="https://www.newsweek.com/how-copycat-sites-use-ai-plagiarize-news-articles-1835212">paraphrase &amp; republish content of real news sites</a>. The main victim in this case is to the original outlet, from which the content is stolen, and the reader may also come away with mis/disinformation. Finally, <a href="https://www.washingtonpost.com/technology/2023/12/17/ai-fake-news-misinformation/">synthetic ‘news’ may disseminate propaganda narratives</a>, potentially harming not just the individual reader, but the society overall. The disinformation campaigns are trying to mix such narratives with real stories, so that they are perceived as more credible.</p>
+
+<p>At present, the only organization I’m aware of that tries to estimate the prevalence of such ‘news’ is <a href="https://www.newsguardtech.com/">NewsGuard</a>, a for-profit organization that also provides ‘reputation management’ services. Newsguard provides as a service their ratings of various news outlets, including their list of unreliable websites manually identified by their team. In April 2023 they <a href="https://www.newsguardtech.com/special-reports/newsbots-ai-generated-news-websites-proliferating/">reported</a> 49 such websites. In August 2024, the latest <a href="https://www.newsguardtech.com/special-reports/ai-tracking-center/">count is 1,021</a>.  At present this is the only tracker I’m aware of, and Newsguard list is not public (it is a for-profit company that sells access to that list through a browser extension). So it is hard to tell how accurate this is as an estimate of the size of the problem, but the examples I could find check out. Their criteria for identifying such sites are quite narrow (e.g. AI-generated website with minimal human editing would not count), and so there probably are a lot more spammy sites that are just masking it better.</p>
+
+<p>Importantly, the issue already went far beyond English. At present, Newsguard <a href="https://www.newsguardtech.com/special-reports/ai-tracking-center/">reports</a> that they identified such websites in 16 languages: Arabic, Chinese, Czech, Dutch, English, French, German, Indonesian, Italian, Korean, Portuguese, Russian, Spanish, Tagalog, Thai, Turkish. A separate, though related, issue is the use of audio/image/video deep fakes to provide seeming legitimacy to fake stories: e.g. in a recent Slovakia elections fake audio recordings went viral two days before elections, damaging the progressive candidate who then lost to a populist with a pro-Russian policy on Ukraine <a class="citation" href="#Meaker_Slovakia_Election_Deepfakes_Show_AI_Is_Danger_to_Democracy">(Meaker, n.d.)</a>).</p>
+
+<p>At present, there is little recourse. Even when spammy sites are identified and called out as such, this does not automatically damage their standing in search engine results, which is what they’re after. Voice of America attempted to reach out to owners of several such websites, but received either no or uninformative responses <a class="citation" href="#Guess_2024_Analysts_Warn_of_Spread_of_AI-Generated_News_Sites">(Guess, 2024)</a>. They conclude that ‘part of the problem in accountability is the difficulty in tracing the owners or producers of the sites’.</p>
+
+<p>According to Newsguard, 90% of ads supporting these websites are through the Google ad services. In response to request from Voice of America <a class="citation" href="#Guess_2024_Analysts_Warn_of_Spread_of_AI-Generated_News_Sites">(Guess, 2024)</a>, Google said that they could not verify that since Newsguard does not share their list of sites (which of course it would not share, since it is their main business asset). But if their list can be considered as an independent test for whatever strategies Google itself is employing to detect spammy websites - these strategies do not appear to work well at present.</p>
+
+<h2 id="plausible-synthetic-news-is-too-easy-to-generate-even-beyond-english">Plausible synthetic ‘news’ is (too) easy to generate, even beyond English</h2>
+
+<p>For our study, we used a relatively old LLM - the first generation Llama (7B and 65B parameters) <a class="citation" href="#TouvronLavrilEtAl_2023_LLaMA_Open_and_Efficient_Foundation_Language_Models">(Touvron et al., 2023)</a>. It is a ‘mostly-English’ model: we know it was not trained to be multilingual, but its training data included Italian Wikipedia (about 500K articles). It could have also seen some other Italian web texts, but there were deliberate efforts to exclude non-English sources. We further used 40K Italian news articles from an open dataset CHANGE-it <a class="citation" href="#changeit_2020">(Mattei, Cafagna, Dell’Orletta, Nissim, &amp; Gatt, 2020)</a>. We fed the model the first thirty tokens of real news articles as a prompt, and generated its continuation. Then we recruited 93 native speakers of Italian to determine whether the text is synthetic or not. They were shown either the original news articles, or their versions with synthetic endings. For the best model (fine-tuned 65B Llama), the accuracy of our native speakers was only 64% (vs 50% random chance).</p>
+
+<p>This result is in line with the experiments OpenAI did to show that already GPT-3 could generate news articles in English that could not be easily detected by humans <a class="citation" href="#BrownMannEtAl_2020_Language_Models_are_Few-Shot_Learners">(Brown et al., 2020)</a>. The new aspect of our work is showing that the problem goes beyond English. We are not claiming that any language + model combination would be equally successful, but the later models (especially multilingual ones) could be expected to do even better than the old Llama we used.</p>
+
+<p>We note that creating a model that could power a scammy news-like website now comes with very few technical or financial difficulties, which could be expected increase the number of bad actors – and would be in line with the proliferation of such websites discussed above. Renting GPUs on cloud providers such as Amazon is now relatively cheap, and it would require as little as 100$ to replicate one of our LLM training sessions and data generation. The technical barrier to fine-tuning LLMs is also low now, thanks to tools like Huggingface’s <a href="https://huggingface.co/autotrain">Autotrain</a>. We do not criticize open-sourcing such tools, but we hope that our results would highlight the problem with detecting synthetic text, and necessity of more research on synthetic text detection.</p>
+
+<h2 id="synthetic-news-is-currently-nearly-impossible-to-detect-in-the-wild">Synthetic ‘news’ is currently nearly-impossible to detect ‘in the wild’</h2>
+
+<h3 id="supervised-detection">Supervised detection.</h3>
+
+<p><strong>Methodology.</strong> The core idea behind this approach is to train a binary classifier on a collection of human-written and synthetic texts. The core problem is that one needs to collect such a dataset, ideally balanced, and that this dataset should represent the distribution of all possible human- and machine-written texts. This seems conceptually non-feasible, even within a given domain such as news. We experimented with training datasets of various sizes (2K, 4K and 8K) and with various distributions of human-written texts:</p>
+<ul>
+  <li><em>in-domain</em>: all human samples come from one dataset (CHANGE-it <a class="citation" href="#changeit_2020">(Mattei, Cafagna, Dell’Orletta, Nissim, &amp; Gatt, 2020)</a>)</li>
+  <li><em>mixed</em>: 50% human samples come from CHANGE-it, and 50% from DICE, a different Italian news dataset <a class="citation" href="#bonisoli2023">(Bonisoli, di Buono, Po, &amp; Rollo, 2023)</a>
+This allows us to see whether the task becomes more difficult for classifier when it has to represent a more complex distribution of human-authored texts. 
+We also experimented with 3 models used for the machine-generated text: llama2-7b, llama2-13b, and mistral-7b. The classifier was based on xlm-roberta-large.</li>
+</ul>
+
+<p><strong>What we found:</strong> for all generator models, the classifier trained on <em>mixed</em> distribution gets consistently worse performance than <em>in-domain</em> (and our mix of just two datasets is a lot simpler than the real distribution of human-authored news). Also, at least 4K samples are needed to get accuracy in the range of 80%.</p>
+
+<figure>
+	<img src="/assets/images/xlm-roberta-large_accuracy.png" />
+	<figcaption>Accuracy of a classifier based on xlm-RoBERTa-large for human/synthetic text classification task, for synthetic texts generated by three LLMs that were fine-tuned on CHANGE-it.</figcaption>
+</figure>
+
+<p><strong>Verdict:</strong> not a practical solution. In reality, the distribution of all possible human-authored texts (even just for Italian news) is much more complex than our settings with 1-2 datasets for Italian. Perhaps this could be the core reason for why OpenAI <a href="https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/">pulled its own classifier</a> ‘due to low accuracy’.  And also we need to collect at least 4K samples of scam texts. That takes time and effort, and ideally we would like to take action on the scammers before they publish that much.</p>
+
+<h3 id="approaches-based-on-token-likelihoods">Approaches based on token likelihoods</h3>
+
+<p><strong>Methodology.</strong> The methods based on token likelihoods assume that we have access to the token likelihood information from the model. We experimented with log-likelihood and DetectGPT <a class="citation" href="#mitchell_detectgpt_2023">(Mitchell, Lee, Khazatsky, Manning, &amp; Finn, 2023)</a> approaches (DetectGPT normalizes the log-likelihood score based on sentence modifications generated by another model, IT5-large <a class="citation" href="#sarti2022it5">(Sarti &amp; Nissim, 2022)</a> in our case). The task is to determine whether a given text came from our llama1, either original version or after fine-tuning on CHANGE-IT news dataset.</p>
+
+<p><strong>What we found.</strong> The simple log-likelihood does not seem to react to fine-tuning at all: the ROC curve is about the same for pre-trained and fine-tuned models. Detect-GPT has a consistently higher ROC curve than log-likelihood, and does rise 5-6 points for fine-tuning. This is counter-intuitive, because fine-tuning should have made the task <em>more</em> rather than less difficult: by qualitative analysis we found that without Italian fine-tuning the original llama tends to switch to English in the middle of the text, which is highly unnatural and was noticed by our human raters.</p>
+
+<figure>
+	<img src="/assets/images/auroc-detectgpt.png" />
+	<figcaption>ROC curve for DetectGPT and log-likelihood. In
+    (a) for Llama 65B measured over 100 sentences from the CHANGE-it data-set (Italian), in (b) the same measure for Llama 65B model after 20,000 fine tuning steps on CHANGE-it training set and in (c) after 60,000 fine-tuning steps.</figcaption>
+</figure>
+
+<p>We also experimented with using token likelihood information from other models to detect an unknown model. The good news is that even a little fine-tuning data on a doman similar to the one used by the scammers is enough. The bad news is that this only seems to work well when the models used for detection and generation are the same. See the paper for details.</p>
+
+<p><strong>Verdict:</strong> not a practical solution. If we are trying to detect whether a given suspicious text was written by a model, we do not have access to the token likelihoods in the first place. And there are already too many ‘open’ models to check them all – not to mention the commercial models provided via API without access to token likelihodd information, or custom non-public models.</p>
+
+<h3 id="what-about-watermarking">What about watermarking?</h3>
+
+<p>Watermarking assumes that the scammers used a model that comes with a watermark. If the watermark is applied at generation time to an ‘open’ model, such as red-green watermarking <a class="citation" href="#KirchenbauerGeipingEtAl_2023_Watermark_for_Large_Language_Models">(Kirchenbauer et al., 2023)</a>,  it is safe to assume that they would try to remove it. If it is embedded in model weights, it is also relatively simple to remove it by fine-tuning (which they would likely do anyway) or even just retokenization. If the scammers used a commercially available model, tampering at the source could be ruled out, but the many current commercially available models do not appear to be watermarked <a class="citation" href="#GloaguenJovanovicEtAl_2024_Black-Box_Detection_of_Language_Model_Watermarks">(Gloaguen, Jovanović, Staab, &amp; Vechev, 2024)</a>. And finally, even if the text was originally watermarked, the watermark could be weakened and even removed by further manipulating the text by a non-watermarked model, e.g. paraphrasing or human editing <a class="citation" href="#KirchenbauerGeipingEtAl_2023_On_Reliability_of_Watermarks_for_Large_Language_Models">(Kirchenbauer et al., 2023)</a>.</p>
+
+<p>Moreover, even if we assume that the watermark is intact (i.e. if the scammers were too lazy to remove it), we have the same problem as with approaches based on token likelihoods: simply too many models to test. For watermarking solutions to be practical, there would have to be a centralized repository of all known watermarks, where one could submit a text sample to check against them all in one step. At present, there do not seem to be any efforts in that direction.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Where do we go from here? The methods relying on token probability distributions currently seem to be the best bet for synthetic text detection methods - but even among the open source models there are already too many options to check, given a suspicious text sample.</p>
+
+<p>This does <em>not</em> entail that open source models should be banned, but we do need to consider ways forward that encourage their development that is responsible by design. Ideally watermarking would be built into model weights, so that it would be at least difficult to remove, and there would ideally be a centralized service enabling anybody to check whether a given text contains any of the known watermarks. For ‘closed’ models watermarking should be even easier, since they control the generation process and ensure that the watermark is applied.</p>
+
+<p>Should we bother at all though, if none of the strategies is likely to be fully successful? Any watermark can probably be removed, if you try hard enough, and the most villainous agents (e.g. content farms acting on behalf of hostile governments) are likely to be sufficiently well-funded to develop their own models if they need to. That is all true, but I will borrow an analogy from Prof. <a href="http://farid.berkeley.edu/">Hany Farid</a> (UCB): we do lock our doors, although we know that there are people who can unlock most common household locks. But since we know that it is a relatively rare skill, it is still rational to use household locks as defense. Similarly, measures that significantly raise the barrier for scammers should at least lower the volume of scammy websites.</p>
+
+<p>Assuming that the research community does mananage to develop better measures for identifying spammy websites - there should be a clear, transparent, and public-accessible way to trigger action on scammy websites. Their owners are now hard to track, and the sites are hard to take down, and it is hard to change any of that without changing Internet in a way that would also endanger people who need the protection of anonymity (e.g. activists in authoritarian regime countries). But at least for the scammy websites that only try to serve ads by misrepresenting their content as human-authored - perhaps there should be a process to at least report them and cut off their monetization. This is their raison d’être.</p>]]></content><author><name>Anna Rogers</name></author><category term="paper" /><category term="LLMs" /><category term="ethics" /><category term="society" /><summary type="html"><![CDATA[AI 'news' produced by LLM-powered content farms are flooding the web. They are currently very cheap and easy to produce, even beyond English, and currently we have no technical means for detecting them 'in the wild'.]]></summary></entry><entry><title type="html">A Sanity Check on ‘Emergent Properties’ in Large Language Models</title><link href="https://hackingsemantics.xyz/2024/emergence/" rel="alternate" type="text/html" title="A Sanity Check on ‘Emergent Properties’ in Large Language Models" /><published>2024-07-15T13:00:00-04:00</published><updated>2024-07-15T13:00:00-04:00</updated><id>https://hackingsemantics.xyz/2024/emergence</id><content type="html" xml:base="https://hackingsemantics.xyz/2024/emergence/"><![CDATA[<p>One of the often-repeated claims about Large Language Models (LLMs), discussed in our <a href="https://openreview.net/forum?id=M2cwkGleRL">ICML’24 position paper</a>, is that they have ‘emergent properties’. Unfortunately, in most cases the speaker/writer does not clarify what they mean by ‘emergence’. But misunderstandings on this issue can have big implications for the research agenda, as well as public policy.</p>
 
 <p>From what I’ve seen in academic papers, there are at least 4 senses in which NLP researchers use this term:</p>
 
@@ -1752,164 +1843,4 @@ I was its lead author.</p>]]></content><author><name>Anna Rogers</name></author>
 
 <blockquote>
   <p>Giovanni Puccetti, Anna Rogers, Aleksandr Drozd, and Felice Dell’Orletta. 2022. Outlier Dimensions that Disrupt Transformers are Driven by Frequency. In Findings of the Association for Computational Linguistics: EMNLP 2022, pages 1286–1304, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics. <a href="https://aclanthology.org/2022.findings-emnlp.93/">https://aclanthology.org/2022.findings-emnlp.93/</a></p>
-</blockquote>]]></content><author><name>Anna Rogers</name></author><category term="paper" /><category term="transformers" /><summary type="html"><![CDATA[This is a post I wrote during my time in Text Machine Lab: https://text-machine-lab.github.io/blog/2021/busters/. It reports on one of the first studies on the phenomenon of outlier dimensions in Transformer-based language models:]]></summary></entry><entry><title type="html">How to Record a Virtual Conference Talk</title><link href="https://hackingsemantics.xyz/2021/recording/" rel="alternate" type="text/html" title="How to Record a Virtual Conference Talk" /><published>2021-05-08T01:00:47-04:00</published><updated>2021-05-08T01:00:47-04:00</updated><id>https://hackingsemantics.xyz/2021/recording</id><content type="html" xml:base="https://hackingsemantics.xyz/2021/recording/"><![CDATA[<p>Virtual talks have been the bliss and the curse of NLP virtual conferences. Because of the efforts to preserve them and link them up to the paper pages in ACL anthology, they are the bliss for the audience, and greatly improve conference accessibility worldwide. But for the authors they are the curse: because they are pre-recorded, there is an expectation of some degree of polish on the talk, and so the perfectionists may take way more time to prepare and record than just doing the talk live. Also, few of us have a stylish home office to show off, and even fewer majored in film making.</p>
-
-<p>An extra level of complexity is added by the fact that different conferences contract different platforms who host the videos for the duration of the conference, and those platforms may offer more or less convenient recorder software (not to mention the licensing nightmare, which I’ll skip for now). They may also have some format quirks. So far the virtual conferences I attended used either <a href="https://underline.io">Underline</a> or <a href="https://slideslive.com">Slideslive</a>. The former shows regular single-video presentations, while the latter actually has <em>two</em> video streams: the speaker view and the slidesview, the latter usable for navigation.</p>
-
-<p>Each of these platforms has their pros and cons:</p>
-
-<ul>
-  <li>the current slideslive editor lacks basic things like removing, copying and pasting parts of the video. They are going to release a new version soon, which I got to preview, and which is much better - but it is still a browser-based solution, which offers cross-platform accessibility but not well equipped for either video editing or full access to camera/audio settings.</li>
-  <li>Underline offers screen-cast-o-matic recorder and editor. The recorder has a desktop “installer”, but seems to be still fundamentally web-based and not giving you much control over the camera &amp; mike. They also do not support Linux.</li>
-</ul>
-
-<p>These, and any other platform-specific setups also have the inherent disadvantage that their full functionality is only available while the conference is paying. Since we have to learn how to use <em>some</em> recording/editing tools - wouldn’t it be better to learn tools we could use at any time (for an invited talk, a lecture, a podcast, etc.)? Also, maybe we could save some money on the services we have to hire, and make conference registrations cheaper?</p>
-
-<p>So… here’s my DYI setup for recording talks that can be then uploaded to single or double-view players (vimeo, slideslive, underline, younameit). It is possible to get a nice recording entirely with open-source software. It’s not harder than an average PyTorch tutorial, and with addition of some commercial software, you can also get the correct captions <em>at the same time</em>.</p>
-
-<h2 id="step-0-equipment">Step 0: equipment</h2>
-
-<p><strong>Minimal setup:</strong> you need a camera and a microphone, and obviously a computer where the presentation will run. The built-in webcam and microphone <em>might</em> do, depending on what they are and how picky you are. Your headphones might also have a built-in mike (although I was severely disappointed with my Sony WH-1000XM3).</p>
-
-<p><strong>My fancy setup:</strong> I used to be a musician in my previous life, so I’m quite picky about sound. The bottom line with mikes is that you want them to be reasonable quality, in a quiet environment, close to the source of sound (your mouth) and not moving around (as that will create different volume levels). The latter can be achieved either by fixing the mike on yourself (lavalier mikes, headset mikes), or fixing both the mike and yourself (having the mike on the desk or a stand, and not moving).</p>
-
-<p>Caveat: most laptops do <em>not</em> even have a dedicated mike input, even if you have a good mike. In that situation you probably need a USB mike, which essentially works as an external sound card.</p>
-
-<p>In my case, I already was in possession of <a href="https://www.zoom.co.jp/products/handy-recorder/h1-handy-recorder">Zoom H1</a> recorder which does also work as an external sound card. I could use just the mikes on that recorder, but it also has a separate mike input, which I used for my <a href="https://www.rode.com/microphones/lavaliergo">Røde lavalier Go</a> (which I love dearly).</p>
-
-<figure>
-	<img src="/assets/images/recording_equipment.jpg" />
-</figure>
-
-<p>As for the video equipment, I’m really not an expert, but it seems that what matters even more than the camera is the lighting: you need the light on your face to be bright enough and uniform enough, or you’ll get a video that is dark and with unflattering shadows. Depending on your environment, you might be able to just use daylight. The professional setups seem to involve at least two directed lights on both sides of the face.</p>
-
-<p>That is hard on the eyes, so when recording my EACL 2021 tutorial I put the laptop and all the gear on the window sill (with two more windows on either side providing side lighting), so as to face the soft daylight. I had a high-res webcam with autofocus (Logitech HD 1080p), and I thought I could trust it to stay on my face. I was wrong: the light afforded by a cloudy evening in Copenhagen does not suffice. My video ended up quite blurry, and I suspect the autofocus actually made things worse. Proceed with caution.</p>
-
-<p>If you want to remove the background on your speaker view, or replace it with a cool Martian landscape, you will also need something usable as a backdrop: a large piece of solid-colored and smooth fabric (ideally green), and some way to make it hang smoothly behind your chair. Some recorders (such as the one built in Zoom) may have their own filters, which will do a better or worse job of removing your background - but a backdrop will dramatically increase their chances too.</p>
-
-<h2 id="step-1-recording">Step 1: Recording</h2>
-
-<p><strong>Software you’ll need:</strong> <a href="https://obsproject.com/">OBS Studio</a> (Windows, Linux, Mac)</p>
-
-<p>This is a free, open source, and extremely feature-rich recorder which can do a lot more than we need. I feel quite intimidated by all the settings it has, but luckily we don’t need all of them.</p>
-
-<p>Here’s the OBS interface. We need to understand two sections: canvas and sources:</p>
-
-<figure>
-	<img src="/assets/images/obs-annotated2.png" />
-</figure>
-
-<p>When you run OBS Studio for the first time, it may ask you whether you want to optimize for streaming or recording (choose recording), and for the video settings. Choose 30 FPS and 1920x1080 resolution, if available.</p>
-
-<h3 id="single-screen-recording">Single-screen recording</h3>
-
-<p>I’m going to assume that the target resolution requested by the hosting platform is fullHD 1920x1080 (if not, adjust the instructions accordingly).</p>
-
-<ol>
-  <li>Go to Settings &gt; Video and set the base canvas resolution to <strong>1920 x 1080</strong>.</li>
-  <li>In the main window, click on <code class="language-plaintext highlighter-rouge">+</code> button under <code class="language-plaintext highlighter-rouge">Sources</code>. For a screencast recording you will need at least 2 sources: <code class="language-plaintext highlighter-rouge">Audio Input Capture</code> (mike) and <code class="language-plaintext highlighter-rouge">Window Capture</code> (slides). Set your input devices and slides window in the properties for these inputs.</li>
-  <li><em>Optional: add the speaker view.</em> The above screenshot shows the speaker view on the side of the slides. To create that, prepare slides that are <em>not</em> 16:9 aspect (mine were 4:3), and then add one more input source: <code class="language-plaintext highlighter-rouge">Video Input Capture</code> (webcam). Place it within the canvas, to the left/right side of your slides view. <br /><br />
-<em>Optional, advanced: Crop the camera view.</em> Most webcams default to 16:9 aspect ratio, and most of us are not bodybuilders and do not need it to be so wide. So we can crop the webcam view to get it closer to portrait aspect, and have a larger view of the face. Select the webcam view on the canvas, go to <code class="language-plaintext highlighter-rouge">Transform</code> in its context menu, and experiment with how many pixels you want cropped from any side of the camera view. <br /><br />
-<em>Optional, also advanced: remove the view of your bedroom.</em> If you have something usable as solid color backdrop (ideally green), position it behind you and go to the context menu of the webcam input source. Go to the context menu on the webcam input, find <code class="language-plaintext highlighter-rouge">Filters</code>, press the <code class="language-plaintext highlighter-rouge">+</code> button in the bottom left corner. Add the filter called <code class="language-plaintext highlighter-rouge">Chroma key</code>. In its settings, select the key color type of your backdrop and play with the “similarity” slider until it removes the background and nothing else. Then you can even make the speaker view <em>overlay</em> the slides like this:</li>
-</ol>
-<figure>
-	<img src="/assets/images/obs-overlay.png" />
-</figure>
-<p><em>Even more advanced: replace the view of your bedroom.</em> You can add a Martian landscape or whatever as your background. Add one more source of the <code class="language-plaintext highlighter-rouge">Image</code> type. Choose the image you like in the properties of that source. Position it on the canvas so that it is behind your webcam view (Context menu of the object on the canvas &gt; <code class="language-plaintext highlighter-rouge">Order</code> &gt; <code class="language-plaintext highlighter-rouge">Move up/down</code>).</p>
-<ol>
-  <li>Optional: add any other filters on your sources that you like and know how to use (context menu on an input &gt; Filters &gt; “+” button in the bottom left corner). I always use the <code class="language-plaintext highlighter-rouge">Noise suppression</code> filter on the Audio Input (with RNNoise setting): it decreases the background noise caught by the mike from any humming in the room (fridges, computer fans etc.)</li>
-  <li>Check the <code class="language-plaintext highlighter-rouge">Settings</code> &gt; <code class="language-plaintext highlighter-rouge">Hotkeys</code> for the actions of “recording” and “stop recording”. I have them both at <code class="language-plaintext highlighter-rouge">Ctrl+R</code>.</li>
-  <li>Test the whole workflow: start the recording, switch to your slides, do a test slide, stop the recording. OBS Studio simply saves the video file to the location specified in Settings &gt; Output. I save in mp4 format, at “high quality, medium file size” setting.</li>
-  <li>Record the talk.</li>
-</ol>
-
-<h3 id="two-screen-recording-for-slideslive">Two-screen recording (for slideslive)</h3>
-
-<p>Slideslive is great in giving us the separate views of speakers and slides, but the disadvantage is that, obviously, you have to record <em>two</em> videos instead of one, and keep them in sync. Most recorders can’t do that.</p>
-
-<p>The trick to achieve this in OBS Studio is to record a single ultra-wide video that combines both views, and then to split it into two. So the source video would look like this:</p>
-
-<figure>
-	<img src="/assets/images/double-video.png" />
-</figure>
-
-<p>Here’s how to make such a recording:</p>
-
-<ol>
-  <li>Go to Settings &gt; Video and set the base canvas resolution to 3840 x 1080. That will give us room for two 1920x1080 views side-by-side.</li>
-  <li>Create speaker and slides views as described above, with any filters you like. Move and resize the webcam view and slides view on the canvas until they are perfectly side-by-side.</li>
-  <li>Record the talk as described above.</li>
-</ol>
-
-<h2 id="step-2-editing-the-recording">Step 2: Editing the recording</h2>
-
-<p><em>Minimalist setup</em>: All we need is a video editor with three barebone functions: cut, paste, and crop. <a href="https://shotcut.org/download/">Shotcut</a> is open-source and cross-platform (Windows, Linux, Mac). Maybe there are even better options (feel free to add suggestions in the comments).</p>
-
-<p>To edit with Shotcut:</p>
-
-<ol>
-  <li>Import your video file (with <code class="language-plaintext highlighter-rouge">Open File</code> in the panel) and add it to the timeline using the <code class="language-plaintext highlighter-rouge">+</code> button.</li>
-  <li>Do any editing you need, using the timeline for navigation. <code class="language-plaintext highlighter-rouge">Space</code> will play the video, <code class="language-plaintext highlighter-rouge">S</code> or the <code class="language-plaintext highlighter-rouge">][</code> button will create a split point. If there’s a part of video you’d like to remove, create split points in its beginning and its end and remove it from the context menu on the undesirable part of the video (or use  the <code class="language-plaintext highlighter-rouge">X</code> shortcut). You can also cut a part of the video this way and paste it to some other split point.</li>
-</ol>
-
-<p>The editor looks like this:</p>
-
-<figure>
-	<img src="/assets/images/shotcut.png" />
-</figure>
-
-<p><em>Delux setup</em>. I am absolutely in love with <a href="https://descript.com">Descript</a>. It is also a video/audio editor, but it is aimed at people producing podcasts and vlogs, i.e. the use case where the primary concern is not just the visuals, but what is being said. Here’s what it looks like:</p>
-
-<figure>
-	<img src="/assets/images/descript.png" />
-</figure>
-
-<p>What Descript does is magic. It makes a transcription of the talk, and then lets you edit the video based on that transcript. Which means - no more rewinding several times to try to find the exact moment of the split. This is lightning fast. You read the transcript, you see the part you don’t like, you select the text corresponding to that part and you delete it, just like in a text processor. And the video is adjusted and re-synced automatically. It even has the handy feature of automatically detecting and removing all the “uhs”! And it can normalize the volume of the audio, in case it turned out to be uneven.</p>
-
-<p>The con is that it is not free, but (at least in my case) it definitely saves more time then it costs. The mid-tier version costs $12 a month and lets you transcribe 10 hours of video. The $24 top-tier version gives you 30 hours. There is a free tier with 3 hours of transcription, but it caps the resolution at 720p and adds a watermark.</p>
-
-<p>Also, beware that very fine-grained video editing does make the speaker view video look a bit bumpy. If you try to stitch a sentence together using several separate segments – it will probably look unnatural. I think it is a lesser evil than making people listen to something wrong or full of “uhs”, but a simple strategy to avoid too fine-grained editing is to simply do the tricky part again, without breaking your recording. Let’s say you end up with several consecutive takes of a difficult slide, with various degrees of rambling. When you edit in Descript, you see the text you’re saying, so it’s easy to simply pick the better version and delete the others. The longer segments you get without editing, the more natural the video will look.</p>
-
-<p>If you use Descript:</p>
-
-<ol>
-  <li>Create a project</li>
-  <li>Add your video file</li>
-  <li>Auto-transcribe it (will take a couple of minutes)</li>
-  <li>Edit the text as desired. The deleted parts of video will be auto-removed accordingly.</li>
-  <li>Export the video.</li>
-</ol>
-
-<p>Side note: Descript has an interesting security solution. The pro version has the uncanny ability to train a model of your voice, and overdub the parts you wish you said differently (audio only at this point). Which is great for the presenters, but obviously is a security risk, because with enough recordings people could deepfake somebody else’s voice. Well, in Descript they can’t do that: to train the model, you have to record a fairly long specific text, so the victim would have to be tricked into reading it aloud.</p>
-
-<h2 id="step-3-splitting-the-recording-only-for-slideslive">Step 3: Splitting the recording (only for slideslive)</h2>
-
-<p>However you did the editing, the result is a cleaned-up version of the original video file. If you made an ultra-wide video intended for slideslive, we also need to split it into <em>two</em> files that slideslive can import.</p>
-
-<p>Using Shotcut, add a crop filter:</p>
-
-<ol>
-  <li>click on <code class="language-plaintext highlighter-rouge">Filters</code> in the top panel</li>
-  <li>Filter panel will appear on the left. Click <code class="language-plaintext highlighter-rouge">+</code>, open the <code class="language-plaintext highlighter-rouge">Video</code> tab, and select <code class="language-plaintext highlighter-rouge">Crop rectangle</code>.</li>
-  <li>Set the crop filter so as to remove the right part of your video. At this point we have a 3840 x 1080 video, and we need two 1920 x 1080 videos. Set the dimensions of crop for 1920x1080, and the position to 0,0. This will remove the right-hand side of the video.</li>
-  <li>Export the edited video (<code class="language-plaintext highlighter-rouge">File &gt; Export Video</code>).</li>
-  <li>Repeat steps 3 and 4 to export the right-hand side of the video (with the same crop dimensions, but position 1920,0).</li>
-</ol>
-
-<h2 id="step-4-subtitles-optional">Step 4: Subtitles (optional)</h2>
-
-<p>Subtitles are a great way to increase accessibility of our videos, but all the specialized terminology + many non-native speakers = captioning disaster. Which is kinda ironic, given that the field is NLP.</p>
-
-<p>The video recording platforms may offer a subtitle editor, but I haven’t seen anyone singing praise for them so far. The ones I tried are lacking in the keyboard navigation, which makes the process slower. Also the process is inherently frustrating, at least for me: by the time we get to subtitles we’ve already spent too much time trying to record and edit the video, and subtitles are the last hurdle that (a) is a lot of work, (b) not fun, because who likes looking at our own very imperfect videos?</p>
-
-<p>It may be possible to do the subtitles elsewhere and then import them to the platform. Slideslive subtitles editor can import subtitles in <code class="language-plaintext highlighter-rouge">.vtt</code> format: there is no upload link immediately when you upload the videos, but once they generate their own version of the subtitles, they will send you a link to the subtitle editor. There will be an “import” button there.</p>
-
-<p>If you remember your talk well, the fastest, minimal-effort thing is probably to just download the auto-generated subtitle file from the editor, and do the obvious edits in any text editor. If you need the video to help with the editing, try some other subtitles editor that can work with the given format. A quick search for open-source tools locates <a href="https://nikse.dk/SubtitleEdit/">Subtitle Edit</a> (Windows, Linux) and <a href="https://nikse.dk/SubtitleEdit/Online">its online version that works with local video files</a>.</p>
-
-<p>In my case, I gave up and just paid Descript to be able to edit my video based on text, because then I get exportable transcript/subtitles already as a by-product of video editing. Since the whole editing process is based on text, you can not only remove any bits you don’t like, but also fix any auto-transcription errors as you go. And then <em>you get both the video and the subtitles at the same time</em>! So - full accessibility with as little work as I can imagine.</p>
-
-<p>One slideslive-specific caveat is that the file exported by Descript has extra metadata not conforming to the vtt format (lines 3-5). Once those lines are removed, the subtitles can be imported to slideslive. I was told that the editor will be improved to handle this automatically.</p>
-
-<h2 id="step-5-thats-it">Step 5: That’s it!</h2>
-
-<p>Hopefully this worked, and you now have a nice talk recorded in reasonable time. If you have any suggestions for alternatives for the software/hardware I used, or a good lighting solution, or any updates because of changes in any software, please share in the comments!</p>]]></content><author><name>Anna Rogers</name></author><category term="howto" /><category term="productivity" /><summary type="html"><![CDATA[Yes, it is possible to record and edit a conference talk at home, with open-source tools in reasonable time.]]></summary></entry></feed>
+</blockquote>]]></content><author><name>Anna Rogers</name></author><category term="paper" /><category term="transformers" /><summary type="html"><![CDATA[This is a post I wrote during my time in Text Machine Lab: https://text-machine-lab.github.io/blog/2021/busters/. It reports on one of the first studies on the phenomenon of outlier dimensions in Transformer-based language models:]]></summary></entry></feed>

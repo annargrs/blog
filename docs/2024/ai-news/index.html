@@ -1,0 +1,852 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AI ‘News’ Content Farms Are Easy to Make and Hard to Detect - Hacking semantics</title>
+<meta name="description" content="AI ‘news’ produced by LLM-powered content farms are flooding the web. They are currently very cheap and easy to produce, even beyond English, and currently we have no technical means for detecting them ‘in the wild’.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hacking semantics">
+<meta property="og:title" content="AI ‘News’ Content Farms Are Easy to Make and Hard to Detect">
+<meta property="og:url" content="https://hackingsemantics.xyz/2024/ai-news/">
+
+
+  <meta property="og:description" content="AI ‘news’ produced by LLM-powered content farms are flooding the web. They are currently very cheap and easy to produce, even beyond English, and currently we have no technical means for detecting them ‘in the wild’.">
+
+
+
+  <meta property="og:image" content="https://hackingsemantics.xyz/assets/images/llama_on_ita_graphical.png">
+
+
+
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="AI ‘News’ Content Farms Are Easy to Make and Hard to Detect">
+  <meta name="twitter:description" content="AI ‘news’ produced by LLM-powered content farms are flooding the web. They are currently very cheap and easy to produce, even beyond English, and currently we have no technical means for detecting them ‘in the wild’.">
+  <meta name="twitter:url" content="https://hackingsemantics.xyz/2024/ai-news/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hackingsemantics.xyz/assets/images/llama_on_ita_graphical.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2024-08-12T18:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://hackingsemantics.xyz/2024/ai-news/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hacking semantics Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!--bibtex hack-->
+<script>
+function showBibtex(bibDiv) {
+  var x = document.getElementById(bibDiv);
+  if (x.style.display === "none" || x.style.display === '') {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="icon" type="image/png" href="/assets/images/logo-3col.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-3col.png" alt=""></a>
+        
+        <a class="site-title" href="/">Hacking Semantics</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/aro.jpg" alt="Anna Rogers" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Anna Rogers</h3>
+    
+    
+
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://pure.itu.dk/da/persons/anna-rogers" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-university" aria-hidden="true"></i> IT University of Copenhagen</a></li>
+          
+        
+          
+            <li><a href="http://annargrs.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i> Homepage</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=5oCYOE0AAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar ai" aria-hidden="true"></i> Google Scholar</a></li>
+          
+        
+          
+            <li><a href="https://www.semanticscholar.org/author/Anna-Rogers/145046059" rel="nofollow noopener noreferrer"><i class="ai ai-semantic-scholar ai" aria-hidden="true"></i> Semantic Scholar</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0002-4845-4023" rel="nofollow noopener noreferrer"><i class="ai ai-orcid ai" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+      
+
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/annargrs" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <!--label for="ac-toc">Toggle Menu</label-->
+  <ul class="nav__items">
+    
+  </ul>
+</nav>
+    
+  
+
+
+<!-- stolen from here:
+https://www.gungorbudak.com/blog/2017/12/08/tags-cloud-sorted-by-post-count-for-jekyll-blogs-without-plugins/
+-->
+<!--div class="tag-cloud">
+
+
+
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#peer-review/" rel="tag">#peer-review</a> (9)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#academia/" rel="tag">#academia</a> (6)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#methodology/" rel="tag">#methodology</a> (6)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-5">
+        <a class="tag-link" href="/tags/#transformers/" rel="tag">#transformers</a> (5)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#LLMs/" rel="tag">#LLMs</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#conferences/" rel="tag">#conferences</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-4">
+        <a class="tag-link" href="/tags/#ethics/" rel="tag">#ethics</a> (4)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-2">
+        <a class="tag-link" href="/tags/#debate/" rel="tag">#debate</a> (2)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-2">
+        <a class="tag-link" href="/tags/#society/" rel="tag">#society</a> (2)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#machine-reasoning/" rel="tag">#machine-reasoning</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#negative-results/" rel="tag">#negative-results</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#productivity/" rel="tag">#productivity</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#review/" rel="tag">#review</a> (1)
+    </span>
+
+    
+    
+    
+    
+    <span class="tag-size-1">
+        <a class="tag-link" href="/tags/#teaching/" rel="tag">#teaching</a> (1)
+    </span>
+
+
+
+
+
+</div-->
+
+
+
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AI ‘News’ Content Farms Are Easy to Make and Hard to Detect">
+    <meta itemprop="description" content="AI ‘news’ produced by LLM-powered content farms are flooding the web. They are currently very cheap and easy to produce, even beyond English, and currently we have no technical means for detecting them ‘in the wild’.">
+    <meta itemprop="datePublished" content="August 12, 2024">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">AI ‘News’ Content Farms Are Easy to Make and Hard to Detect
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  12 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="how-bad-is-the-synthetic-news-problem">How bad is the synthetic news problem?</h2>
+
+<p>Do you feel like most sources of information that you used to rely on, have gotten worse? You’re right: <a href="https://www.businessinsider.com/ai-spam-google-ruin-internet-search-scams-chatgpt-2024-1">Internet is already flooded with AI-generated content</a>. I’m a NLP researcher, so I’m mostly monitoring the cases involving text, but here are just a few examples within that domain:</p>
+
+<ul>
+  <li>Amazon is filled with <a href="https://www.wired.com/story/scammy-ai-generated-books-flooding-amazon">scammy AI-generated summaries of real books</a> as well as garbage ‘books’ with advice in high-risk areas, e.g. on <a href="https://www.vox.com/24141648/ai-ebook-grift-mushroom-foraging-mycological-society">mushroom foraging</a> . As a mitigation policy, they currently <a href="https://www.pcmag.com/news/amazon-limits-authors-to-self-publishing-3-books-per-day-amid-flood-of">limit the number of self-published book that an author can upload in a day to three</a> (yes, you read that right!)</li>
+  <li><a href="https://www.vice.com/en/article/5d9bvn/ai-spam-is-already-flooding-the-internet-and-it-has-an-obvious-tell">fake consumer reviews and social media posts</a></li>
+  <li>changing policies on community-moderated websites: e.g. both <a href="https://slate.com/technology/2024/02/quora-what-happened-ai-decline.html">Quora</a> and <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/stack-overflow-bans-users-en-masse-for-rebelling-against-openai-partnership-users-banned-for-deleting-answers-to-prevent-them-being-used-to-train-chatgpt">StackOverflow</a>, which initially prided themselves on authentic content and moderation, are now welcoming AI-generated ‘content’</li>
+  <li><a href="https://www.theverge.com/2023/12/19/24007759/inside-an-ai-powered-seo-heist-that">SEO heists</a>: websites explicitly generated to resemble a known high-quality competitor website, and drive the internet traffic away from it</li>
+  <li>old high-reputation sites <a href="https://mashable.com/article/apple-blogs-ai-fake">resurrected as AI zombies</a></li>
+  <li><a href="https://edition.cnn.com/2024/03/19/us/fake-obituary-scams-ai-cec/index.html">‘obituary pirate’ industry</a>:  fake reports of someone’s death (real or not), to capitalize on spike in search phrases from people trying to figure out what actually happened</li>
+</ul>
+
+<p>To be clear, the above problems are not new: review farms, SEO ‘content’ etc have existed before LLMs went mainstream. E.g. here’s a <a href="https://www.news.com.au/technology/online/security/the-potential-of-ai-generated-crowdturfing-could-undermine-online-reviews-and-dramatically-erode-public-trust/news-story/e1c84ad909b586f8a08238d5f80b6982">2017 discussion</a> of the problem with fake reviews on customer review websites like Yelp. But the scale of the problem has changed, as generating such ‘content’ today now does not even require  technical knowledge.</p>
+
+<p>This year I contributed to a <a href="https://arxiv.org/abs/2406.12128">study published at ACL 2024</a>, led by <a href="https://scholar.google.com/citations?user=djwq5cwAAAAJ&amp;hl=en&amp;oi=ao">Giovanni Puccetti from CNRS Pisa</a>. This study focused on the specific problem of synthetic ‘news’: websites generated to resemble legitimate news outlets, but entirely filled with synthetic text without any clear traces of human editors involved. Here is a screenshot of such a website:</p>
+
+<figure>
+	<img src="/assets/images/20240319223701.png" />
+	<figcaption>Example of a website filled with synthetic text, but formatted and presented as a legitimate news website </figcaption>
+</figure>
+
+<p>This particular example appears to be aimed simply at serving ads, to people who visit because they think it’s a legitimate information source. Here the model that was used to generate the content is clearly bad enough that the synthetic nature of the text is obvious - and still this site must have been making its owners enough money, since it’s been up for at least a year. The main harms are waste of user time and resources, and potentially also misinformation (if the reader does not realize that this source is a scam, and comes away misinformed). There are also websites that <a href="https://www.newsweek.com/how-copycat-sites-use-ai-plagiarize-news-articles-1835212">paraphrase &amp; republish content of real news sites</a>. The main victim in this case is to the original outlet, from which the content is stolen, and the reader may also come away with mis/disinformation. Finally, <a href="https://www.washingtonpost.com/technology/2023/12/17/ai-fake-news-misinformation/">synthetic ‘news’ may disseminate propaganda narratives</a>, potentially harming not just the individual reader, but the society overall. The disinformation campaigns are trying to mix such narratives with real stories, so that they are perceived as more credible.</p>
+
+<p>At present, the only organization I’m aware of that tries to estimate the prevalence of such ‘news’ is <a href="https://www.newsguardtech.com/">NewsGuard</a>, a for-profit organization that also provides ‘reputation management’ services. Newsguard provides as a service their ratings of various news outlets, including their list of unreliable websites manually identified by their team. In April 2023 they <a href="https://www.newsguardtech.com/special-reports/newsbots-ai-generated-news-websites-proliferating/">reported</a> 49 such websites. In August 2024, the latest <a href="https://www.newsguardtech.com/special-reports/ai-tracking-center/">count is 1,021</a>.  At present this is the only tracker I’m aware of, and Newsguard list is not public (it is a for-profit company that sells access to that list through a browser extension). So it is hard to tell how accurate this is as an estimate of the size of the problem, but the examples I could find check out. Their criteria for identifying such sites are quite narrow (e.g. AI-generated website with minimal human editing would not count), and so there probably are a lot more spammy sites that are just masking it better.</p>
+
+<p>Importantly, the issue already went far beyond English. At present, Newsguard <a href="https://www.newsguardtech.com/special-reports/ai-tracking-center/">reports</a> that they identified such websites in 16 languages: Arabic, Chinese, Czech, Dutch, English, French, German, Indonesian, Italian, Korean, Portuguese, Russian, Spanish, Tagalog, Thai, Turkish. A separate, though related, issue is the use of audio/image/video deep fakes to provide seeming legitimacy to fake stories: e.g. in a recent Slovakia elections fake audio recordings went viral two days before elections, damaging the progressive candidate who then lost to a populist with a pro-Russian policy on Ukraine <a class="citation" href="#Meaker_Slovakia_Election_Deepfakes_Show_AI_Is_Danger_to_Democracy">(Meaker, n.d.)</a>).</p>
+
+<p>At present, there is little recourse. Even when spammy sites are identified and called out as such, this does not automatically damage their standing in search engine results, which is what they’re after. Voice of America attempted to reach out to owners of several such websites, but received either no or uninformative responses <a class="citation" href="#Guess_2024_Analysts_Warn_of_Spread_of_AI-Generated_News_Sites">(Guess, 2024)</a>. They conclude that ‘part of the problem in accountability is the difficulty in tracing the owners or producers of the sites’.</p>
+
+<p>According to Newsguard, 90% of ads supporting these websites are through the Google ad services. In response to request from Voice of America <a class="citation" href="#Guess_2024_Analysts_Warn_of_Spread_of_AI-Generated_News_Sites">(Guess, 2024)</a>, Google said that they could not verify that since Newsguard does not share their list of sites (which of course it would not share, since it is their main business asset). But if their list can be considered as an independent test for whatever strategies Google itself is employing to detect spammy websites - these strategies do not appear to work well at present.</p>
+
+<h2 id="plausible-synthetic-news-is-too-easy-to-generate-even-beyond-english">Plausible synthetic ‘news’ is (too) easy to generate, even beyond English</h2>
+
+<p>For our study, we used a relatively old LLM - the first generation Llama (7B and 65B parameters) <a class="citation" href="#TouvronLavrilEtAl_2023_LLaMA_Open_and_Efficient_Foundation_Language_Models">(Touvron et al., 2023)</a>. It is a ‘mostly-English’ model: we know it was not trained to be multilingual, but its training data included Italian Wikipedia (about 500K articles). It could have also seen some other Italian web texts, but there were deliberate efforts to exclude non-English sources. We further used 40K Italian news articles from an open dataset CHANGE-it <a class="citation" href="#changeit_2020">(Mattei, Cafagna, Dell’Orletta, Nissim, &amp; Gatt, 2020)</a>. We fed the model the first thirty tokens of real news articles as a prompt, and generated its continuation. Then we recruited 93 native speakers of Italian to determine whether the text is synthetic or not. They were shown either the original news articles, or their versions with synthetic endings. For the best model (fine-tuned 65B Llama), the accuracy of our native speakers was only 64% (vs 50% random chance).</p>
+
+<p>This result is in line with the experiments OpenAI did to show that already GPT-3 could generate news articles in English that could not be easily detected by humans <a class="citation" href="#BrownMannEtAl_2020_Language_Models_are_Few-Shot_Learners">(Brown et al., 2020)</a>. The new aspect of our work is showing that the problem goes beyond English. We are not claiming that any language + model combination would be equally successful, but the later models (especially multilingual ones) could be expected to do even better than the old Llama we used.</p>
+
+<p>We note that creating a model that could power a scammy news-like website now comes with very few technical or financial difficulties, which could be expected increase the number of bad actors – and would be in line with the proliferation of such websites discussed above. Renting GPUs on cloud providers such as Amazon is now relatively cheap, and it would require as little as 100$ to replicate one of our LLM training sessions and data generation. The technical barrier to fine-tuning LLMs is also low now, thanks to tools like Huggingface’s <a href="https://huggingface.co/autotrain">Autotrain</a>. We do not criticize open-sourcing such tools, but we hope that our results would highlight the problem with detecting synthetic text, and necessity of more research on synthetic text detection.</p>
+
+<h2 id="synthetic-news-is-currently-nearly-impossible-to-detect-in-the-wild">Synthetic ‘news’ is currently nearly-impossible to detect ‘in the wild’</h2>
+
+<h3 id="supervised-detection">Supervised detection.</h3>
+
+<p><strong>Methodology.</strong> The core idea behind this approach is to train a binary classifier on a collection of human-written and synthetic texts. The core problem is that one needs to collect such a dataset, ideally balanced, and that this dataset should represent the distribution of all possible human- and machine-written texts. This seems conceptually non-feasible, even within a given domain such as news. We experimented with training datasets of various sizes (2K, 4K and 8K) and with various distributions of human-written texts:</p>
+<ul>
+  <li><em>in-domain</em>: all human samples come from one dataset (CHANGE-it <a class="citation" href="#changeit_2020">(Mattei, Cafagna, Dell’Orletta, Nissim, &amp; Gatt, 2020)</a>)</li>
+  <li><em>mixed</em>: 50% human samples come from CHANGE-it, and 50% from DICE, a different Italian news dataset <a class="citation" href="#bonisoli2023">(Bonisoli, di Buono, Po, &amp; Rollo, 2023)</a>
+This allows us to see whether the task becomes more difficult for classifier when it has to represent a more complex distribution of human-authored texts. 
+We also experimented with 3 models used for the machine-generated text: llama2-7b, llama2-13b, and mistral-7b. The classifier was based on xlm-roberta-large.</li>
+</ul>
+
+<p><strong>What we found:</strong> for all generator models, the classifier trained on <em>mixed</em> distribution gets consistently worse performance than <em>in-domain</em> (and our mix of just two datasets is a lot simpler than the real distribution of human-authored news). Also, at least 4K samples are needed to get accuracy in the range of 80%.</p>
+
+<figure>
+	<img src="/assets/images/xlm-roberta-large_accuracy.png" />
+	<figcaption>Accuracy of a classifier based on xlm-RoBERTa-large for human/synthetic text classification task, for synthetic texts generated by three LLMs that were fine-tuned on CHANGE-it.</figcaption>
+</figure>
+
+<p><strong>Verdict:</strong> not a practical solution. In reality, the distribution of all possible human-authored texts (even just for Italian news) is much more complex than our settings with 1-2 datasets for Italian. Perhaps this could be the core reason for why OpenAI <a href="https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/">pulled its own classifier</a> ‘due to low accuracy’.  And also we need to collect at least 4K samples of scam texts. That takes time and effort, and ideally we would like to take action on the scammers before they publish that much.</p>
+
+<h3 id="approaches-based-on-token-likelihoods">Approaches based on token likelihoods</h3>
+
+<p><strong>Methodology.</strong> The methods based on token likelihoods assume that we have access to the token likelihood information from the model. We experimented with log-likelihood and DetectGPT <a class="citation" href="#mitchell_detectgpt_2023">(Mitchell, Lee, Khazatsky, Manning, &amp; Finn, 2023)</a> approaches (DetectGPT normalizes the log-likelihood score based on sentence modifications generated by another model, IT5-large <a class="citation" href="#sarti2022it5">(Sarti &amp; Nissim, 2022)</a> in our case). The task is to determine whether a given text came from our llama1, either original version or after fine-tuning on CHANGE-IT news dataset.</p>
+
+<p><strong>What we found.</strong> The simple log-likelihood does not seem to react to fine-tuning at all: the ROC curve is about the same for pre-trained and fine-tuned models. Detect-GPT has a consistently higher ROC curve than log-likelihood, and does rise 5-6 points for fine-tuning. This is counter-intuitive, because fine-tuning should have made the task <em>more</em> rather than less difficult: by qualitative analysis we found that without Italian fine-tuning the original llama tends to switch to English in the middle of the text, which is highly unnatural and was noticed by our human raters.</p>
+
+<figure>
+	<img src="/assets/images/auroc-detectgpt.png" />
+	<figcaption>ROC curve for DetectGPT and log-likelihood. In
+    (a) for Llama 65B measured over 100 sentences from the CHANGE-it data-set (Italian), in (b) the same measure for Llama 65B model after 20,000 fine tuning steps on CHANGE-it training set and in (c) after 60,000 fine-tuning steps.</figcaption>
+</figure>
+
+<p>We also experimented with using token likelihood information from other models to detect an unknown model. The good news is that even a little fine-tuning data on a doman similar to the one used by the scammers is enough. The bad news is that this only seems to work well when the models used for detection and generation are the same. See the paper for details.</p>
+
+<p><strong>Verdict:</strong> not a practical solution. If we are trying to detect whether a given suspicious text was written by a model, we do not have access to the token likelihoods in the first place. And there are already too many ‘open’ models to check them all – not to mention the commercial models provided via API without access to token likelihodd information, or custom non-public models.</p>
+
+<h3 id="what-about-watermarking">What about watermarking?</h3>
+
+<p>Watermarking assumes that the scammers used a model that comes with a watermark. If the watermark is applied at generation time to an ‘open’ model, such as red-green watermarking <a class="citation" href="#KirchenbauerGeipingEtAl_2023_Watermark_for_Large_Language_Models">(Kirchenbauer et al., 2023)</a>,  it is safe to assume that they would try to remove it. If it is embedded in model weights, it is also relatively simple to remove it by fine-tuning (which they would likely do anyway) or even just retokenization. If the scammers used a commercially available model, tampering at the source could be ruled out, but the many current commercially available models do not appear to be watermarked <a class="citation" href="#GloaguenJovanovicEtAl_2024_Black-Box_Detection_of_Language_Model_Watermarks">(Gloaguen, Jovanović, Staab, &amp; Vechev, 2024)</a>. And finally, even if the text was originally watermarked, the watermark could be weakened and even removed by further manipulating the text by a non-watermarked model, e.g. paraphrasing or human editing <a class="citation" href="#KirchenbauerGeipingEtAl_2023_On_Reliability_of_Watermarks_for_Large_Language_Models">(Kirchenbauer et al., 2023)</a>.</p>
+
+<p>Moreover, even if we assume that the watermark is intact (i.e. if the scammers were too lazy to remove it), we have the same problem as with approaches based on token likelihoods: simply too many models to test. For watermarking solutions to be practical, there would have to be a centralized repository of all known watermarks, where one could submit a text sample to check against them all in one step. At present, there do not seem to be any efforts in that direction.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Where do we go from here? The methods relying on token probability distributions currently seem to be the best bet for synthetic text detection methods - but even among the open source models there are already too many options to check, given a suspicious text sample.</p>
+
+<p>This does <em>not</em> entail that open source models should be banned, but we do need to consider ways forward that encourage their development that is responsible by design. Ideally watermarking would be built into model weights, so that it would be at least difficult to remove, and there would ideally be a centralized service enabling anybody to check whether a given text contains any of the known watermarks. For ‘closed’ models watermarking should be even easier, since they control the generation process and ensure that the watermark is applied.</p>
+
+<p>Should we bother at all though, if none of the strategies is likely to be fully successful? Any watermark can probably be removed, if you try hard enough, and the most villainous agents (e.g. content farms acting on behalf of hostile governments) are likely to be sufficiently well-funded to develop their own models if they need to. That is all true, but I will borrow an analogy from Prof. <a href="http://farid.berkeley.edu/">Hany Farid</a> (UCB): we do lock our doors, although we know that there are people who can unlock most common household locks. But since we know that it is a relatively rare skill, it is still rational to use household locks as defense. Similarly, measures that significantly raise the barrier for scammers should at least lower the volume of scammy websites.</p>
+
+<p>Assuming that the research community does mananage to develop better measures for identifying spammy websites - there should be a clear, transparent, and public-accessible way to trigger action on scammy websites. Their owners are now hard to track, and the sites are hard to take down, and it is hard to change any of that without changing Internet in a way that would also endanger people who need the protection of anonymity (e.g. activists in authoritarian regime countries). But at least for the scammy websites that only try to serve ads by misrepresenting their content as human-authored - perhaps there should be a process to at least report them and cut off their monetization. This is their raison d’être.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#ethics" class="page__taxonomy-item" rel="tag">ethics</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#llms" class="page__taxonomy-item" rel="tag">LLMs</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#society" class="page__taxonomy-item" rel="tag">society</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#paper" class="page__taxonomy-item" rel="tag">paper</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-08-12T18:00:00-04:00">August 12, 2024</time></p>
+        
+
+      <div>
+        <script src="https://utteranc.es/client.js"
+        repo="annargrs/blog"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+        </script>
+      </div>
+
+      </footer>
+
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024/emergence/" class="pagination--pager" title="A Sanity Check on ‘Emergent Properties’ in Large Language Models
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/closed-baselines/" rel="permalink">Closed AI Models Make Bad Baselines
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  24 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Will GPT-4 become a universally expected baseline in NLP research, like BERT in its time? Basic scientific methodology demands otherwise.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2020/anonymity/" rel="permalink">Should the reviewers know who the authors are?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  23 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Why fully anonymous peer-review is important, and how we can achieve that in ACL rolling review reform.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/attribution/" rel="permalink">The attribution problem with generative AI
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+
+
+
+  15 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some argue that any publicly available text/art data is fair game for commercial models because human text/art also has sources. But unlike models, we know w...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Hacking semantics. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br/>
+  <!--a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a-->This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'annargrs/blog');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>

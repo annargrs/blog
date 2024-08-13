@@ -130,4 +130,10 @@ var store = [{
         "tags": ["LLMs","transformers","methodology","debate"],
         "url": "/2024/emergence/",
         "teaser": null
+      },{
+        "title": "AI 'News' Content Farms Are Easy to Make and Hard to Detect",
+        "excerpt":"How bad is the synthetic news problem? Do you feel like most sources of information that you used to rely on, have gotten worse? You’re right: Internet is already flooded with AI-generated content. I’m a NLP researcher, so I’m mostly monitoring the cases involving text, but here are just a...","categories": ["paper"],
+        "tags": ["LLMs","ethics","society"],
+        "url": "/2024/ai-news/",
+        "teaser": null
       }]
