@@ -136,4 +136,10 @@ var store = [{
         "tags": ["LLMs","ethics","society"],
         "url": "/2024/ai-news/",
         "teaser": null
+      },{
+        "title": "AI-assisted writing in graduate school: dos and don'ts",
+        "excerpt":"This post is specifically about AI-assisted writing in graduate school. Not covered: writing by experts. Also not covered: other uses of AI assistance, such as coding. LLMs have certainly ‘disrupted’ education. The historically underpayed and under-respected teachers now have to contend with the fact that cheating on their assignments has...","categories": ["squib"],
+        "tags": ["LLMs","teaching","academia"],
+        "url": "/2024/writing/",
+        "teaser": null
       }]
